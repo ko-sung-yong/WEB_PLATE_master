@@ -98,9 +98,13 @@ margin-left:42px;
 
 .food_paging{
 
-margin:30px 0px 40px 180px;  /*위 오 아 왼*/ 
+margin:30px 0px 40px 20px;  /*위 오 아 왼*/ 
 text-align:center;
 
+}
+
+.search_notexist{
+text-align:center;
 }
 </style>
 </head>
@@ -154,6 +158,15 @@ text-align:center;
 
 </c:forEach>
 </c:if>
+
+<div class="search_notexist">
+<c:if test="${empty flist}">
+<h3> 검색 목록이 없습니다!</h3>
+
+</c:if>
+</div>
+
+
 </div>
 
 

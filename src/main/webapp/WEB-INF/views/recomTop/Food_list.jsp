@@ -88,7 +88,7 @@ $(function(){
   <ul>
     <li>   
       <div class="recom_timg">
-        <img alt="" src="#">
+        <img alt="이미지 준비중입니다" src="../resources/upload${food.food_file1}">
       </div>
       
       <div class="recom_tbox">
@@ -133,7 +133,7 @@ $(function(){
   <ul>
     <li>   
       <div class="recom_timg">
-        <img alt="" src="#">
+        <img alt="이미지 준비중입니다" src="../resources/upload${food.food_file1}">
       </div>
       
       <div class="recom_tbox">
@@ -173,7 +173,7 @@ $(function(){
   <ul>
     <li>   
       <div class="recom_timg">
-        <img alt="" src="#">
+        <img alt="이미지 준비중입니다" src="../resources/upload${food.food_file1}">
       </div>
       
       <div class="recom_tbox">

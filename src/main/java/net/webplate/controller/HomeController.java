@@ -42,7 +42,7 @@ public class HomeController {
 		 request.setAttribute("name", name);		
 	}
 	
-	
+	// 검색기능
 	@GetMapping("search")
 	public ModelAndView search(HttpServletResponse response,HttpServletRequest request, @ModelAttribute FoodVO food)throws Exception {	
 		

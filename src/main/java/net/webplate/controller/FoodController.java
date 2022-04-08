@@ -19,6 +19,7 @@ import net.webplate.vo.FoodVO;
 @RequestMapping(value="/recomTop/*")
 public class FoodController {
 	
+	
 	@Autowired
 	private FoodService foodservice;
 	

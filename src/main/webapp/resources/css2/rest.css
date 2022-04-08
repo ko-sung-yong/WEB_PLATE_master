@@ -8,30 +8,30 @@
 	width: 100%;
 	min-width: 900px;
 	height: 350px;
+	text-align:center;
 }
 .re_img{
 	
 	display:inline-block;
 	width:22.5%;
 	 height: 300px;
-	 border: 1px solid red;
 	 text-align:center;
-	 margin-left:60px;
+	 margin-left:20px;
 }
-.re_img a{
-	
+#re_size{
+width: 380px;
+height:300px;
 }
 
 /*------------*/
 
 .rest_main{
 	border-bottom: 1px solid #bcbcbc;
-	width: 1600px;
+	width: 1900px;
 	min-width: 900px;
 	height: 690px;
-	margin: auto;
 	margin-top:-50px;
-	margin-left:30px;
+	margin-left:290px;
 }
 
 .main_rname{
@@ -89,11 +89,10 @@
 /*------------*/
 .right_rmain{
 	float: right;
-	border: 1px solid black;
 	width: 600px;
 	height: 450px;
 	margin: 20px 50px 0px 0px;
-	margin-right:290px;
+	margin-right:440px;
 }
 
 /*------------------------*/

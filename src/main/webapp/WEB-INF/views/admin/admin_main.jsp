@@ -12,7 +12,6 @@
 
 <link rel="stylesheet" href="./resources/css2/admin_main.css">
 <script src="./resources/js2/admin_main.js"></script>
-
 </head>
 <body>
 
@@ -36,7 +35,7 @@
 
 <div class="navbar_admin_logOut" id="navbar_admin_logOut">
 
-<h3> <a href="#" style="color:darkorange">관리자</a>님 환영합니다! &nbsp;</h3>
+<h3> <a href="#" style="color:darkorange" >관리자</a>님 환영합니다! &nbsp;</h3>
 <form method="post" action="admin_logOut">
 <input type="submit" value="로그아웃">
 

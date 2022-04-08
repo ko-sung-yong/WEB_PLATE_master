@@ -15,8 +15,9 @@ import net.webplate.vo.FoodVO;
 public class Ansan {
 
 	public static void main(String[] args) throws IOException {
-
+		// 1. URL을 만들기 위한 StringBuilder.
 		StringBuilder urlBuilder4 = new StringBuilder("https://api.odcloud.kr/api/3071314/v1/uddi:e4e7774d-0b16-4299-b830-dee5045df70f_201909291441?page=1&perPage=30&returnType=json&serviceKey=WZBWWUz20zYgzl3HeuXW1dKiMRMeTTkH2Ak8ssfM%2BJew2%2FbOP5mr5qwRntUWbHnghtJfz6WMjW9%2BXTDGdW9qcA%3D%3D\r\n" ); /*URL*/
+		
         URL url4 = new URL(urlBuilder4.toString());
         HttpURLConnection conn4 = (HttpURLConnection) url4.openConnection();
         conn4.setRequestMethod("GET");

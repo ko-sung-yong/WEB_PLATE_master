@@ -17,4 +17,6 @@ public interface FoodDAO {
 	List<FoodVO> getSearchList(FoodVO food);
 
 
+
+
 }

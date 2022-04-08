@@ -17,6 +17,9 @@ public interface FoodService {
 	int getSearchCount(FoodVO food);
 
 	List<FoodVO> getSearchList(FoodVO food);
+	
+	
+
 
 
 

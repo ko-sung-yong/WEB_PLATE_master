@@ -27,7 +27,8 @@ public class TESt {
 				.collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append) // 결과로 얻어진 것에 대해서 어떻게 처리할지 정의
 				.toString();  //문자화
 		System.out.println(ran_pwd);
-	
+	 System.out.println(1>2);
+	 
 
 	}
 

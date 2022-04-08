@@ -1,18 +1,21 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../include/logo.jsp" />
 
 <script src="../resources/js2/jquery.js"> </script>
-<div class="block"> </div>
+<style>
 
+</style>
+<div class="block"> </div>
 <div class="rest_img">
   <div class="re_img">
-    <a href=""><img alt="1" src=""></a>
+    <a href=""><img id ="re_size"alt="1" src="../resources/upload${f.food_file1}"></a>
   </div>
   <div class="re_img">
-    <a href=""><img alt="2" src=""></a>
+    <a href=""><img id ="re_size" alt="2" src="../resources/upload${f.food_file2}"></a>
   </div>
   <div class="re_img">
-    <a href=""><img alt="3" src=""></a>
+    <a href=""><img id ="re_size" alt="3" src="../resources/upload${f.food_file3}"></a>
   </div>
    
 </div>
@@ -21,7 +24,7 @@
 
 <div class="rest_main">
   <div class="main_rname">
-    <span class="restName">OOO</span>
+    <span class="restName">${f.bsnsnm}</span>
     
     <div class="rew_btn">
       <button type="button" class="btn">
@@ -43,77 +46,64 @@
   <div class="left_rmain">
     <table class="info_menu">
                 <tr>
-                  <th>주소</th>
-                  <td>OOO<br/>
-                    <span class="rest_addrNum">지번</span>
-                    <span class="rest_addrNum_text">OOO</span>
-                  </td>
+                  <th>평점</th>
+                  <td>${f.grade}</td>
                 </tr>
-
                 <tr>
-                  <th>전화번호</th>
-                  <td>000-000-0000</td>
+                  <th>조회수</th>
+                  <td>${f.grade}</td>
                 </tr>
-
+                
+                
                 <tr>
-                  <th>음식 종류</th>
+                  <th>음식 종류 </th>
                   <td>
-                    <span>고기 요리</span>
+                    <span> ${f.bsnscond}</span>
                   </td>
                 </tr>
-
-                <tr>
-                  <th>가격대</th>
-                  <td>만원-2만원</td>
-                </tr>
-
-                <tr>
-                  <th>주차</th>
-                  <td>유료주차 가능 </td>
-                </tr>
-
-                <tr>
-                  <th>영업시간</th>
-                  <td>월-금: 00:00 - 00:00<br /> 토-일: 00:00 - 00:00</td>
-                </tr>
                 
-                <tr>
-                  <th>쉬는시간</th>
-                  <td>00:00 - 00:00</td>
-                </tr>
-                
-                <tr>
-                  <th>휴무일</th>
-                  <td>O요일 or x</td>
-                </tr>
-
                 <tr>
                   <th>메뉴</th>
                   <td class="menu_td">
                     <ul class="restaurant_menuList">
                         <li class="menuIt">
-                          <span class="menu">OOO</span>
-                          <span class="menuPrice">0,000원</span>
+                          <span class="menu">${f.menu }</span>
                         </li>
-                        <li class="menuIt">
-                          <span class="menu">OOO</span>
-                          <span class="menuPrice">0,000원</span>
-                        </li>
-                        <li class="menuIt">
-                          <span class="menu">OOO</span>
-                          <span class="menuPrice">0,000원</span>
-                        </li>
-                        <li class="menuIt">
-                          <span class="menu">OOO</span>
-                          <span class="menuPrice">0,000원</span>
-                        </li>
-                        <li class="menuIt">
-                          <span class="menu">OOO</span>
-                          <span class="menuPrice">0,000원</span>
-                        </li>
+                      
                     </ul>
                   </td>
                 </tr>
+                
+                
+                
+                <tr>
+                  <th>주소</th>
+                  <td>${f.addr } </td>
+                </tr>
+                
+                
+
+                <tr>
+                  <th>전화번호</th>
+                  <td>${f.tel }</td>
+                </tr>
+
+
+                <c:if test="${(!empty f.rest)}">              
+                <tr>
+                  <th>휴무일</th>
+                  <td>${f.rest}</td>
+                </tr>
+                </c:if>
+                
+                <c:if test="${!empty f.suyong}">              
+                <tr>
+                  <th>수용인원</th>
+                  <td>${f.suyong}</td>
+                </tr>
+                </c:if>
+ 
+                
 
               </tbody>
             </table>
@@ -124,13 +114,13 @@
   <div class="right_rmain">
    
 <!-- 지도를 표시할 div 입니다 -->
-<div id="map" style="width:100%;height:450px; z-index:0; "></div>
+<div id="map" style="width:450px;height:400px; z-index:0; "></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	4a9ef0ef123875d2c771898ba8e90d94"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 mapOption = { 
-    center: new kakao.maps.LatLng("35.16261027", "129.1649905"), // 지도의 중심좌표
+    center: new kakao.maps.LatLng("${f.lat}", "${f.lng}"), // 지도의 중심좌표
     level: 3 // 지도의 확대 레벨
 };
 
@@ -148,7 +138,7 @@ map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 
 //마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng("${lat}", "${lng}"); 
+var markerPosition  = new kakao.maps.LatLng("${f.lat}", "${f.lng}"); 
 
 //마커를 생성합니다
 var marker = new kakao.maps.Marker({
@@ -161,7 +151,7 @@ marker.setMap(map);
 //아래 코드는 지도 위의 마커를 제거하는 코드입니다
 //marker.setMap(null);   
 
-var iwContent = '<div style="padding:21px;">"${name}" <br><a href="https://map.kakao.com/link/map/${name},${lat},${lng}" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/${name},${lat},${lng}" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var iwContent = '<div style="padding:21px;">"${f.bsnsnm}" <br><a href="https://map.kakao.com/link/map/${f.bsnsnm},${f.lat},${f.lng}" style="color:blue; font-size:12px;" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/${f.bsnsnm},${f.lat},${f.lng}" style="font-size:13px; color:blue;" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
      iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 
 // 인포윈도우를 생성합니다
@@ -191,6 +181,7 @@ kakao.maps.event.addListener(marker, 'click', function() {
   <div>
   
   </div>
+</div>
 </div>
 
 <jsp:include page="../include/footer.jsp" />

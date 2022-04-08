@@ -62,6 +62,10 @@ margin-top:-500px;
 	border: 0px solid;
 	padding-left: 10px;
 }
+
+.recom_rest_name2{
+font-size:18px;
+font-weight:bold;}
 .recom_rest_null{
 	height: 10px;
 }
@@ -111,7 +115,7 @@ text-align:center;
 <body>
 <div class="recom_wrap">
  <div class="box_sh">
-          
+            
             <form class="box"  action="search">
             
               <input type="text" name="find_name" id="find_name" value="${find_name}" placeholder="지역,식당 또는 음식" maxlength="50">
@@ -130,7 +134,7 @@ text-align:center;
       
       <div class="recom_tbox">
         <div class="recom_rest">
-          <a href="#">
+          <a href="../controller/rest/rest1?f_num=${f.f_num}">
              <span class="recom_rest_name2"> 식당이름 : ${f.bsnsnm}</span>
            
              <div class="recom_rest_null"></div>
@@ -143,7 +147,7 @@ text-align:center;
         <img alt="" src="./resources/images/starb.png" width="80" height="80">
         
         <div class="recom_rdown">
-          <a href="#">
+          <a href="../controller/rest/rest1?f_num=${f.f_num}">
              <span class="sangshe">상세보기 ></span>
           </a>
         </div>

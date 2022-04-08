@@ -66,7 +66,7 @@ $(function(){
         <img alt="" src="../resources/images/starb.png" width="80" height="80">
         
         <div class="recom_rdown">
-          <a href="#">
+          <a href="../rest/rest1">
              <span class="sangshe">상세보기 ></span>
           </a>
         </div>
@@ -106,7 +106,7 @@ $(function(){
         <img alt="" src="../resources/images/starb.png" width="80" height="80">
         
         <div class="recom_rdown">
-          <a href="#">
+          <a href="../rest/rest1">
              <span class="sangshe">상세보기 ></span>
           </a>
         </div>
@@ -151,7 +151,7 @@ $(function(){
         <img alt="" src="../resources/images/starb.png" width="80" height="80">
         
         <div class="recom_rdown">
-          <a href="#">
+          <a href="../rest/rest1">
              <span class="sangshe">상세보기 ></span>
           </a>
         </div>
@@ -191,7 +191,7 @@ $(function(){
         <img alt="" src="../resources/images/starb.png" width="80" height="80">
         
         <div class="recom_rdown">
-          <a href="#">
+          <a href="../rest/rest1">
              <span class="sangshe">상세보기 ></span>
           </a>
         </div>

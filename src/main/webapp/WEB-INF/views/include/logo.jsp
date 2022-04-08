@@ -29,7 +29,7 @@
               <ul class="nav">
               <li><a href="/controller/Member/login">로그인</a></li>
               <li><a href="/controller/Member/loginForm">회원가입</a></li>              
-              <li><a href="#">맛집리스트</a></li>
+              <li><a href="/controller/recomTop/Food_list">맛집리스트</a></li>
             </ul> 
             </c:if>
             

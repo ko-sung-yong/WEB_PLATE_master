@@ -43,6 +43,8 @@ public class FoodDAOImpl implements FoodDAO{
 	public List<FoodVO> getSearchList(FoodVO food) {
 		return sqlSession.selectList("search_List",food);
 	}
+	
+
 
 	
 

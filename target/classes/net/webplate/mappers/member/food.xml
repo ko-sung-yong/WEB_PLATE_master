@@ -41,8 +41,14 @@ select * from (select rowNum rNum,f_num,bsnsnm,menu,addr,tel,food_file1,category
 <where>
  addr like #{find_name} or bsnsnm like #{find_name} or menu like #{find_name}
 </where>
-order by grade asc))
+order by grade desc))
 where rNum &gt;= #{startrow} and rNum &lt;=#{endrow} 
 </select>
+
+
+
+
+
+
 
 </mapper>

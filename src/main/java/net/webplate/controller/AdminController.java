@@ -119,6 +119,7 @@ public class AdminController {
 	
 	
 	
+	
 	// ¸ÀÁý Á¤º¸
 	@GetMapping("admin_Board_list")
 	public String admin_Board(HttpServletResponse response,HttpServletRequest request,HttpSession session,FoodVO food,Model listM) throws Exception {

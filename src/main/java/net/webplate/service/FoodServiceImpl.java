@@ -41,6 +41,23 @@ public class FoodServiceImpl implements FoodService {
 		return foodDao.getSearchList(food);
 	}
 
+	@Override
+	public List<FoodVO> getAddrCont(String divide) {
+		return foodDao.getAddrCont(divide);
+	}
+
+	@Override
+	public int foodAreaCount(String divide) {
+		return foodDao.foodAreaCount(divide);
+	}
+
+	@Override
+	public int foodArea_Hit(String divide) {
+		return foodDao.foodArea_Hit(divide);
+	}
+
+
+
 
 
 

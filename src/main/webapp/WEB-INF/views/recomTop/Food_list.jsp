@@ -53,7 +53,7 @@ $(function(){
       
       <div class="recom_tbox">
         <div class="recom_rest">
-          <a href="#">
+          <a href="../rest/rest1?f_num=${food.f_num}">
              <span class="recom_rest_name2"> 식당이름 : ${food.bsnsnm}</span>
            
              <div class="recom_rest_null"></div>
@@ -66,7 +66,7 @@ $(function(){
         <img alt="" src="../resources/images/starb.png" width="80" height="80">
         
         <div class="recom_rdown">
-          <a href="../rest/rest1">
+          <a href="../rest/rest1?f_num=${food.f_num}">
              <span class="sangshe">상세보기 ></span>
           </a>
         </div>
@@ -93,7 +93,7 @@ $(function(){
       
       <div class="recom_tbox">
         <div class="recom_rest">
-          <a href="#">
+          <a href="../rest/rest1?f_num=${food.f_num}">
              <span class="recom_rest_name2"> 식당이름 : ${food.bsnsnm}</span>
            
              <div class="recom_rest_null"></div>
@@ -106,7 +106,7 @@ $(function(){
         <img alt="" src="../resources/images/starb.png" width="80" height="80">
         
         <div class="recom_rdown">
-          <a href="../rest/rest1">
+          <a href="../rest/rest1?f_num=${food.f_num}">
              <span class="sangshe">상세보기 ></span>
           </a>
         </div>
@@ -138,7 +138,7 @@ $(function(){
       
       <div class="recom_tbox">
         <div class="recom_rest">
-          <a href="#">
+          <a href="../rest/rest1?f_num=${food.f_num}">
              <span class="recom_rest_name2"> 식당이름 : ${food.bsnsnm}</span>
            
              <div class="recom_rest_null"></div>
@@ -151,7 +151,7 @@ $(function(){
         <img alt="" src="../resources/images/starb.png" width="80" height="80">
         
         <div class="recom_rdown">
-          <a href="../rest/rest1">
+          <a href="../rest/rest1?f_num=${food.f_num}">
              <span class="sangshe">상세보기 ></span>
           </a>
         </div>
@@ -178,7 +178,7 @@ $(function(){
       
       <div class="recom_tbox">
         <div class="recom_rest">
-          <a href="#">
+          <a href="../rest/rest1?f_num=${food.f_num}">
              <span class="recom_rest_name2"> 식당이름 : ${food.bsnsnm}</span>
            
              <div class="recom_rest_null"></div>
@@ -191,7 +191,7 @@ $(function(){
         <img alt="" src="../resources/images/starb.png" width="80" height="80">
         
         <div class="recom_rdown">
-          <a href="../rest/rest1">
+          <a href="../rest/rest1?f_num=${food.f_num}">
              <span class="sangshe">상세보기 ></span>
           </a>
         </div>

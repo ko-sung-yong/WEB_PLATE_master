@@ -16,6 +16,14 @@ public interface FoodDAO {
 
 	List<FoodVO> getSearchList(FoodVO food);
 
+	List<FoodVO> getAddrCont(String divide);
+
+	int foodAreaCount(String divide);
+
+	int foodArea_Hit(String divide);
+
+
+
 
 
 

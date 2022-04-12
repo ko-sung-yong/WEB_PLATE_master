@@ -221,7 +221,7 @@ text-align:center;
   
   
   <c:if test="${page>1}">
-  <a href="search?page=${page-1}  &find_name=${find_name}">[이전] </a> &nbsp;
+  <a href="search?page=${page-1}&find_name=${find_name}">[이전] </a> &nbsp;
   </c:if>
   
   <%-- 현재 쪽번호 출력 --%>

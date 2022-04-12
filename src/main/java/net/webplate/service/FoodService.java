@@ -17,6 +17,16 @@ public interface FoodService {
 	int getSearchCount(FoodVO food);
 
 	List<FoodVO> getSearchList(FoodVO food);
+
+	List<FoodVO> getAddrCont(String divide);
+
+	int foodAreaCount(String divide);
+
+	int foodArea_Hit(String divide);
+
+
+
+	
 	
 	
 

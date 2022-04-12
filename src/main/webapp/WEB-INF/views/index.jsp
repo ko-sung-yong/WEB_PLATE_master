@@ -225,20 +225,20 @@
               <div class="list_img">
                  <ul class="list_ul">
                     <li>
-                       <img class="list_img_jpg" alt="강원도 인기 맛집 TOP 10 사진" src="resources/images/loca/squid.jpg">
-                       <a href="/controller/recomTop/reTop10">
+                       <img class="list_img_jpg" alt="안산 인기 맛집 TOP 30 사진" src="resources/images/loca/squid.jpg">
+                       <a href="/controller/recomTop/reTop10?addr=1">
                        <div class="list_img_text">
-                         <span class="title">강원도 인기 맛집 TOP 10</span>
-                         <p class="desc">" 강원도 음식이 맛있다는데 "</p>
+                         <span class="title">안산 인기 맛집 TOP 30</span>
+                         <p class="desc">" 안산 음식 구경해 볼래? "</p>
                        </div>
                        </a>
                      </li>
                      <li>
-                       <img class="list_img_jpg" alt="경기도 인기 맛집 TOP 10 사진" src="resources/images/loca/suwon.jpg">
-                       <a href="/controller/recomTop/reTop10">
+                       <img class="list_img_jpg" alt="횡성 인기 맛집 TOP 10 사진" src="resources/images/loca/suwon.jpg">
+                       <a href="/controller/recomTop/reTop10?addr=2">
                        <div class="list_img_text">
-                         <span class="title">경기도 인기 맛집 TOP 10</span>
-                         <p class="desc">" 경기도 맛집이 여기 다 있네 "</p>
+                         <span class="title">횡성 인기 맛집 TOP 20</span>
+                         <p class="desc">" 안 가본 사람은 있어도 한번 가본사람은 없는 이곳 "</p>
                        </div>
                        </a>
                      </li>
@@ -246,41 +246,41 @@
                   
                   <ul class="list_ul">
                     <li>
-                       <img class="list_img_jpg" alt="제주도 인기 맛집 TOP 10" src="resources/images/loca/jeju.jpg">
-                       <a href="/controller/recomTop/reTop10">
+                       <img class="list_img_jpg" alt="용산 인기 맛집 TOP 10" src="resources/images/loca/jeju.jpg">
+                       <a href="/controller/recomTop/reTop10?addr=3">
                        <div class="list_img_text">
-                         <span class="title">제주도 인기 맛집 TOP 10</span>
-                         <p class="desc">" 제주도를 가면 꼭 가야지 "</p>
+                         <span class="title">용산 인기 맛집 TOP 30</span>
+                         <p class="desc">" 다양한 먹거리는 용산에서 "</p>
                        </div>
                        </a>
                      </li>
                      <li>
-                       <img class="list_img_jpg" alt="부산 인기 맛집 TOP 10" src="resources/images/loca/busan.jpg">
-                       <a href="/controller/recomTop/reTop10">
+                       <img class="list_img_jpg" alt="춘천 인기 맛집 TOP 10" src="resources/images/loca/busan.jpg">
+                       <a href="/controller/recomTop/reTop10?addr=4">
                        <div class="list_img_text">
-                         <span class="title">부산 인기 맛집 TOP 10</span>
+                         <span class="title">춘천 인기 맛집 TOP 10</span>
+                         <p class="desc">" 춘천을 가면  여긴 꼭 가야지 "</p>
+                       </div>
+                       </a>
+                     </li>
+                  </ul>
+                  
+                  <ul class="list_ul">
+                    <li>
+                       <img class="list_img_jpg" alt="대구 인기 맛집 TOP 10" src="resources/images/loca/gangnam.jpg">
+                       <a href="/controller/recomTop/reTop10?addr=5">
+                       <div class="list_img_text">
+                         <span class="title">대구 인기 맛집 TOP 30</span>
+                         <p class="desc">" 맛집하면 대구! 대구하면 맛집! "</p>
+                       </div>
+                       </a>
+                     </li>
+                     <li>
+                       <img class="list_img_jpg" alt="부산 인기 맛집 TOP " src="resources/images/loca/gangbuk.jpg">
+                       <a href="/controller/recomTop/reTop10?addr=6">
+                       <div class="list_img_text">
+                         <span class="title">부산 인기 맛집 TOP 30</span>
                          <p class="desc">" 이곳이 부산 맛집이라 안카나 "</p>
-                       </div>
-                       </a>
-                     </li>
-                  </ul>
-                  
-                  <ul class="list_ul">
-                    <li>
-                       <img class="list_img_jpg" alt="강남 인기 맛집 TOP 10" src="resources/images/loca/gangnam.jpg">
-                       <a href="/controller/recomTop/reTop10">
-                       <div class="list_img_text">
-                         <span class="title">강남 인기 맛집 TOP 10</span>
-                         <p class="desc">" 맛집하면 강남! 강남하면 맛집! "</p>
-                       </div>
-                       </a>
-                     </li>
-                     <li>
-                       <img class="list_img_jpg" alt="강북 인기 맛집 TOP 10" src="resources/images/loca/gangbuk.jpg">
-                       <a href="/controller/recomTop/reTop10">
-                       <div class="list_img_text">
-                         <span class="title">강북 인기 맛집 TOP 10</span>
-                         <p class="desc">" 다양한 먹거리는 강북에서 "</p>
                        </div>
                        </a>
                      </li>

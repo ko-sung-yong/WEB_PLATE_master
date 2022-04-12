@@ -33,17 +33,39 @@ public class FoodDAOImpl implements FoodDAO{
 	public int getTotalCount(FoodVO food) {
 		return sqlSession.selectOne("food_count",food);
 	}
-
+    
+	
+	// 검색 개수
 	@Override
 	public int getSerachCount(FoodVO food) {
 		return sqlSession.selectOne("search_cnt",food);
 	}
-
+    
+	
+	// 검색 리스트
 	@Override
 	public List<FoodVO> getSearchList(FoodVO food) {
 		return sqlSession.selectList("search_List",food);
 	}
+     
+	// 지역별 리스트
+	@Override
+	public List<FoodVO> getAddrCont(String divide) {
+		return sqlSession.selectList("food_Area",divide);
+	}
 	
+    // 지역별 개수
+	@Override
+	public int foodAreaCount(String divide) {
+		return sqlSession.selectOne("food_Area_cnt",divide);
+	}
+
+	@Override
+	public int foodArea_Hit(String divide) {
+		return sqlSession.selectOne("food_Area_hit",divide);
+	}
+
+
 
 
 	

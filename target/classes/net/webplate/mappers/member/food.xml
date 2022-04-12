@@ -17,8 +17,9 @@ where bsnsnm like #{find_name} or menu like #{find_name} or addr like #{find_nam
 <!--  전체 목록   보여주기 -->
 <select id="food_list" resultType="food">
 
-select bsnsnm,addr,food_file1 from food where <![CDATA[rownum<=50]]> 
-order by grade asc
+select f_num,bsnsnm,addr,food_file1 from food 
+where <![CDATA[rownum<=50]]> order by grade asc
+
 </select>
 
 <!-- < 부등호를 TAG로 인식하기 때문에 <![CDATA[내용]]>을 사용하였다.  -->
@@ -43,6 +44,22 @@ select * from (select rowNum rNum,f_num,bsnsnm,menu,addr,tel,food_file1,category
 </where>
 order by grade desc))
 where rNum &gt;= #{startrow} and rNum &lt;=#{endrow} 
+</select>
+
+<!--  지역 리스트 -->
+<select id="food_Area" resultType="food">
+select * from food where addr like #{divide} order by grade desc
+
+</select>
+
+<!--  지역 개수 -->
+<select id="food_Area_cnt" resultType="int">
+select count(f_num) from food where addr like #{divide}
+</select>
+
+<!--  지역별 조회수 -->
+<select id="food_Area_hit" resultType="int">
+select sum(viewcnt) from food where addr like #{divide}
 </select>
 
 

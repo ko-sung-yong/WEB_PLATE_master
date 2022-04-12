@@ -27,11 +27,11 @@ height:300px;
 
 .rest_main{
 	border-bottom: 1px solid #bcbcbc;
-	width: 1900px;
+	width: 1750px;
 	min-width: 900px;
 	height: 690px;
 	margin-top:-50px;
-	margin-left:290px;
+	margin-left:180px;
 }
 
 .main_rname{
@@ -45,6 +45,7 @@ height:300px;
 	font-size: 40px;
 	width: 400px;
 	height: 150px;
+	margin-right:120px;
 }
 .rew_btn{
 	float: right;
@@ -104,3 +105,4 @@ height:300px;
 	margin: auto;
 	margin-right:550px;
 }
+

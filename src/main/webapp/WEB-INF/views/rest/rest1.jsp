@@ -38,21 +38,29 @@
          onmouseout="this.src='../resources/images/pen11.png'" onmouseover="this.src='../resources/images/pen22.png'"
          onclick="location='#'">
       </button>
+      
+     
     </div>
+     <div>
+      <i class="fa-solid fa-eye"></i> &nbsp; ${f.viewcnt}
+      </div>
     
     <div class="clear"></div>
   </div>
   
   <div class="left_rmain">
     <table class="info_menu">
+                 <tr>
+                  <th>주소</th>
+                  <td>${f.addr } </td>
+                </tr>
+    
+    
                 <tr>
                   <th>평점</th>
                   <td>${f.grade}</td>
                 </tr>
-                <tr>
-                  <th>조회수</th>
-                  <td>${f.grade}</td>
-                </tr>
+             
                 
                 
                 <tr>
@@ -76,10 +84,7 @@
                 
                 
                 
-                <tr>
-                  <th>주소</th>
-                  <td>${f.addr } </td>
-                </tr>
+          
                 
                 
 

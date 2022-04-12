@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>  </title>
+
+<script src="https://kit.fontawesome.com/9376c7b079.js"></script>
 <style>
 #board_wrap_cont{
 margin-top:15px;
@@ -27,7 +29,7 @@ margin-bottom:40px;
 
 #board_rest_content{
 width:35%;
-margin-left:120px;
+margin-left:170px;
 float:left;
 margin-right:40px;
 }
@@ -57,7 +59,7 @@ margin-top:70px;
 
 .food_switch{
 margin-top:20px;
-margin-left:120px;
+margin-left:170px;
 }
 
 .food_switch input[type=button]{
@@ -103,7 +105,8 @@ clear:both;
 <div id="board_rest_content">
 <div> <span id="board_bsnsnm"> ${f.bsnsnm} </span>
 <div id="batch2">
-<span> 조회수 :</span>
+
+<span> <i class="fa-solid fa-eye"></i></span>
 <span> ${f.viewcnt}</span>
 </div>
 </div>

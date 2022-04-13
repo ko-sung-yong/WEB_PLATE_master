@@ -56,6 +56,13 @@ public class FoodServiceImpl implements FoodService {
 		return foodDao.foodArea_Hit(divide);
 	}
 
+	@Override
+	public List<FoodVO> getTop_8(String pig) {
+		return foodDao.getTop_8(pig);
+	}
+
+
+
 
 
 

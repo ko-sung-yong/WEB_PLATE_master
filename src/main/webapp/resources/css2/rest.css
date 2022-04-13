@@ -1,51 +1,59 @@
 @charset "UTF-8";
-.block{
-	height:40px;
-}
 .rest_img{
-	
-	display:inline-block;
+	border: 0px solid red;
 	width: 100%;
 	min-width: 900px;
 	height: 350px;
-	text-align:center;
+}
+.r_i{
+	width: 100%;
+	position: relative;
+}
+.r_img{
+	width: 350px;
+	height: 310px;
+	color: #d4d4d4;
+}
+.re_imgbox{
+	width: 1500px;
+	height: 320px;
+	margin: auto;
+	position: absolute;
+	top: 110px;
+	right: 210px;
+	
 }
 .re_img{
-	
-	display:inline-block;
-	width:22.5%;
-	 height: 300px;
-	 text-align:center;
-	 margin-left:20px;
+	 width: 350px;
+	 height: 310px;
+	 border: 0px solid red;
+	 float: right;
+	 margin-right: 20px;
 }
-#re_size{
-width: 380px;
-height:300px;
+.re_img a{
+	
 }
 
 /*------------*/
 
 .rest_main{
 	border-bottom: 1px solid #bcbcbc;
-	width: 1750px;
+	width: 1300px;
 	min-width: 900px;
 	height: 690px;
-	margin-top:-50px;
-	margin-left:180px;
+	margin: auto;
 }
 
 .main_rname{
 	border-bottom: 1px solid #bcbcbc;
 	width: 1300px;
 	height: 198px;
-	padding: 60px 100px 0px 100px;
-	
+	padding: 60px 100px 0px 65px;
 }
 .restName{
-	font-size: 40px;
-	width: 400px;
+	font-size: 42px;
+	width: 500px;
 	height: 150px;
-	margin-right:120px;
 }
 .rew_btn{
 	float: right;
@@ -73,6 +81,8 @@ height:300px;
 	width: 500px;
 	text-align: left;
 	padding-left: 50px;
+	font-size:16px;
+	color:black;
 }
 .rest_addrNum{ /* 주소 지번 css */
 	font-size: 11px;
@@ -84,16 +94,23 @@ height:300px;
 }
 .menu{
 	padding: 0px 50px 0px 0px;
+	line-height:30px;
 }
+
+.food_menu{
+	vertical-align:top;
+	padding-top:10px;
+}
+
 
 
 /*------------*/
 .right_rmain{
 	float: right;
+	border: 1px solid black;
 	width: 600px;
 	height: 450px;
 	margin: 20px 50px 0px 0px;
-	margin-right:440px;
 }
 
 /*------------------------*/
@@ -103,6 +120,4 @@ height:300px;
 	min-width: 900px;
 	height: 1200px;
 	margin: auto;
-	margin-right:550px;
 }
-

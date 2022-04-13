@@ -63,7 +63,9 @@ select sum(viewcnt) from food where addr like #{divide}
 </select>
 
 
-
+<select id="top_pig8" resultType="food">
+select * from (select * from food where category like #{pig}) where  <![CDATA[rownum<=8]]> order by grade desc
+</select>
 
 
 

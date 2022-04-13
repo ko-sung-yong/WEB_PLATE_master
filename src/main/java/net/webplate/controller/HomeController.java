@@ -28,19 +28,25 @@ public class HomeController {
 	private FoodService foodService;
 
 	@GetMapping(value={"/","/index"})
-	public String home() {		
+	public String home(Model list) {	
+		String pig="%돼지%";
+		String sashimi="%회%";
+		
+		// 돼지고기 탑8만 보이게 가져오기
+		List<FoodVO> pig8=foodService.getTop_8(pig);
+		
+		List<FoodVO> sashimi8=foodService.getTop_8(sashimi);
+		
+		
+		
+		
+		list.addAttribute("pig8", pig8);
+		list.addAttribute("sashimi8", sashimi8);
+		
 		return "index";
 	}
 	
-	@RequestMapping("/test")
-	public void test(HttpServletRequest request) {
-		 String lat="35.16261027";
-		 String lng="129.1649905";
-		 String name="해운대소문난삼계탕";
-		 request.setAttribute("lat", lat);
-		 request.setAttribute("lng",lng);
-		 request.setAttribute("name", name);		
-	}
+
 	
 	// 검색기능
 	@GetMapping("search")

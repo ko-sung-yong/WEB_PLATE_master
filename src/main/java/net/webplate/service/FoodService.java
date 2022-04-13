@@ -24,6 +24,10 @@ public interface FoodService {
 
 	int foodArea_Hit(String divide);
 
+	List<FoodVO> getTop_8(String pig);
+	
+
+
 
 
 	

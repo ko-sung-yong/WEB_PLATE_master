@@ -1,34 +1,40 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="../include/logo.jsp" />
+<%@ include file="/WEB-INF/views/include/logo.jsp"%>
 
 <script src="../resources/js2/jquery.js"> </script>
-<style>
 
-</style>
-<div class="block"> </div>
 <div class="rest_img">
-  <div class="re_img">
-    <a href=""><img id ="re_size"alt="1" src="../resources/upload${f.food_file1}"></a>
-  </div>
-  <div class="re_img">
-    <a href=""><img id ="re_size" alt="2" src="../resources/upload${f.food_file2}"></a>
-  </div>
-  <div class="re_img">
-    <a href=""><img id ="re_size" alt="3" src="../resources/upload${f.food_file3}"></a>
-  </div>
+
+  <%-- <img class="r_i" alt="" src="../resources/images/rest1.jpg"> --%>
+
+  <div class="re_imgbox">
+   <div class="re_img">
+     <a href=""><img class="r_img" alt="1" src="../resources/upload${f.food_file3}"></a>
+   </div>
    
+   <div class="re_img">
+     <a href=""><img class="r_img" alt="2" src="../resources/upload${f.food_file2}"></a>
+   </div>
+   <div class="re_img">
+     <a href=""><img class="r_img" alt="3" src="../resources/upload${f.food_file1}"></a>
+   </div>
+   <div class="re_img">
+     <a href=""><img class="r_img" alt="4" src="../resources/images/food_pwd.jpg"></a>
+   </div>
+  </div>
+  
+  <div class="clear"></div>
 </div>
 
 <%----------------------------------------------------%>
 
 <div class="rest_main">
   <div class="main_rname">
-    <span class="restName">${f.bsnsnm}</span>
+    <span class="restName">${f.bsnsnm }</span>
     
     <div class="rew_btn">
       <button type="button" class="btn">
-        <img src="../resources/images/starb.png" width="82" height="82" >
+        <img src="../resources/images/starb.png" width="82" height="82">
       </button>
     </div>
     
@@ -38,11 +44,10 @@
          onmouseout="this.src='../resources/images/pen11.png'" onmouseover="this.src='../resources/images/pen22.png'"
          onclick="location='#'">
       </button>
-      
-     
     </div>
-     <div>
-      <i class="fa-solid fa-eye"></i> &nbsp; ${f.viewcnt}
+    
+      <div>
+      <i class="fa-solid fa-eye" style="padding-top:10px;margin-left:10px;"></i> &nbsp; ${f.viewcnt}
       </div>
     
     <div class="clear"></div>
@@ -50,65 +55,56 @@
   
   <div class="left_rmain">
     <table class="info_menu">
-                 <tr>
+                <tr>
                   <th>주소</th>
-                  <td>${f.addr } </td>
+                  <td>${f.addr } </td>                
                 </tr>
-    
-    
-                <tr>
-                  <th>평점</th>
-                  <td>${f.grade}</td>
-                </tr>
-             
-                
-                
-                <tr>
-                  <th>음식 종류 </th>
-                  <td>
-                    <span> ${f.bsnscond}</span>
-                  </td>
-                </tr>
-                
-                <tr>
-                  <th>메뉴</th>
-                  <td class="menu_td">
-                    <ul class="restaurant_menuList">
-                        <li class="menuIt">
-                          <span class="menu">${f.menu }</span>
-                        </li>
-                      
-                    </ul>
-                  </td>
-                </tr>
-                
-                
-                
-          
-                
-                
 
                 <tr>
                   <th>전화번호</th>
                   <td>${f.tel }</td>
                 </tr>
 
-
-                <c:if test="${(!empty f.rest)}">              
+               
+                <tr>
+                  <th>음식 종류 </th>
+                  <td>
+                    <span> ${f.bsnscond}</span>
+                  </td>
+                </tr>         
+                                                    
+                
+               <c:if test="${(!empty f.rest)}">              
                 <tr>
                   <th>휴무일</th>
                   <td>${f.rest}</td>
                 </tr>
                 </c:if>
                 
-                <c:if test="${!empty f.suyong}">              
+               <c:if test="${!empty f.suyong}">              
                 <tr>
                   <th>수용인원</th>
                   <td>${f.suyong}</td>
                 </tr>
                 </c:if>
- 
                 
+                <tr>
+                  <th> 평점 </th>
+                  <td>${f.grade}</td>
+                </tr>                
+                               
+                
+                 <tr>
+                  <th class=food_menu>메뉴</th>
+                  <td class="menu_td">
+                    <ul class="restaurant_menuList">
+                        <li class="menuIt">
+                          <span class="menu">${food_menu}</span>
+                        </li>
+                      
+                    </ul>
+                  </td>
+                </tr>
 
               </tbody>
             </table>
@@ -119,7 +115,7 @@
   <div class="right_rmain">
    
 <!-- 지도를 표시할 div 입니다 -->
-<div id="map" style="width:450px;height:400px; z-index:0; "></div>
+<div id="map" style="width:100%;height:450px; z-index:0; "></div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	4a9ef0ef123875d2c771898ba8e90d94"></script>
 <script>
@@ -156,7 +152,7 @@ marker.setMap(map);
 //아래 코드는 지도 위의 마커를 제거하는 코드입니다
 //marker.setMap(null);   
 
-var iwContent = '<div style="padding:21px;">"${f.bsnsnm}" <br><a href="https://map.kakao.com/link/map/${f.bsnsnm},${f.lat},${f.lng}" style="color:blue; font-size:12px;" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/${f.bsnsnm},${f.lat},${f.lng}" style="font-size:13px; color:blue;" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var iwContent = '<div style="padding:21px; color:black; font-size:13px; font-weight:bold;">"${f.bsnsnm}" <br><a href="https://map.kakao.com/link/map/${f.bsnsnm},${f.lat},${f.lng}" style="color:blue; font-size:13px;" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/${f.bsnsnm},${f.lat},${f.lng}" style="color:blue; font-size:13px;" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
      iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 
 // 인포윈도우를 생성합니다
@@ -187,6 +183,5 @@ kakao.maps.event.addListener(marker, 'click', function() {
   
   </div>
 </div>
-</div>
 
-<jsp:include page="../include/footer.jsp" />
+<jsp:include page="/WEB-INF/views/include/footer.jsp" />

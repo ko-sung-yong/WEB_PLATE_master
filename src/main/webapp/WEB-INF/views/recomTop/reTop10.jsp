@@ -19,10 +19,11 @@
 <div class="recom_main">
 
 
-  <ul> 
-   <c:if test="${!empty food}"> 
+  <ul>  
+     <c:if test="${!empty food}"> 
  <c:forEach var="f" items="${food}" varStatus="status"> 
     <li>    
+   
       <div class="recom_timg">
         <img alt="업로드 중" src="../resources/upload${f.food_file1}">
       </div>
@@ -31,7 +32,7 @@
         <div class="recom_rest">
           <a href="../rest/rest1?f_num=${f.f_num}">
              <span class="recom_rest_name">${status.count}. ${f.bsnsnm}</span>
-             <div class="recom_rest_null"></div>
+             <div class="recom_rest_null">${f.grade }</div>
              <span class="recom_rest_addr">${f.addr}</span>
           </a>
         </div>
@@ -46,15 +47,16 @@
           </a>
          
         </div>
-      </div>
+      </div>       
+  
        
-       <div class="clear"></div>
     </li>
-    </c:forEach>
+      </c:forEach>
     </c:if>
+
     
     </ul>
-    
+    <div class="clear"></div>
 </div>
 
 

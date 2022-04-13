@@ -65,6 +65,12 @@ public class FoodDAOImpl implements FoodDAO{
 		return sqlSession.selectOne("food_Area_hit",divide);
 	}
 
+	@Override
+	public List<FoodVO> getTop_8(String pig) {
+		return sqlSession.selectList("top_pig8",pig);
+	}
+
+
 
 
 

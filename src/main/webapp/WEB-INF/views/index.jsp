@@ -9,7 +9,18 @@
 <script src="https://kit.fontawesome.com/9376c7b079.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet"  href="resources/css2/index.css">
+<script src="resources/js2/jquery.js"></script>
+<script>
 
+function search_check(){
+	if($.trim($('#find_name').val())==''){
+		alert('검색어를 입력해주세용!');
+		$('#find_name').val('').focus();
+		return false;
+	}
+	
+}
+</script>
 </head>
 <body>
 <!----------- 상단 (로고+메뉴, 배경이미지+텍스트+검색바) ------------->
@@ -47,7 +58,7 @@
           </div>
           <div class="box_sh">
           
-            <form class="box"  action="search">
+            <form class="box"  action="search" onsubmit="return search_check();">
             
               <input type="text" name="find_name" id="find_name" value="${find_name}" placeholder="지역,식당 또는 음식" maxlength="50">
               <%-- 뒷부분 나중에 수정 필요  --%>
@@ -246,7 +257,7 @@
                   
                   <ul class="list_ul">
                     <li>
-                       <img class="list_img_jpg" alt="용산 인기 맛집 TOP 10" src="resources/images/loca/jeju.jpg">
+                       <img class="list_img_jpg" alt="용산 인기 맛집 TOP 10" src="resources/images/loca/gangbuk.jpg">
                        <a href="/controller/recomTop/reTop10?addr=3">
                        <div class="list_img_text">
                          <span class="title">용산 인기 맛집 TOP 30</span>
@@ -276,7 +287,8 @@
                        </a>
                      </li>
                      <li>
-                       <img class="list_img_jpg" alt="부산 인기 맛집 TOP " src="resources/images/loca/gangbuk.jpg">
+                     
+                       <img class="list_img_jpg" alt="부산 인기 맛집 TOP " src="resources/images/loca/jeju.jpg">
                        <a href="/controller/recomTop/reTop10?addr=6">
                        <div class="list_img_text">
                          <span class="title">부산 인기 맛집 TOP 30</span>
@@ -301,79 +313,25 @@
               <div class="clear"></div>
               
               <div class="list_img2">
+              
+                
+                    <c:if test="${!empty pig8}">
+                    <c:forEach var="f" items="${pig8}"> 
                 <div class="contain2">
                   <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/pig_top/tamra.jpg">
-                    <span class="t_b">탐라도야지 본점</span><br>
-                    <span class="t_s">서울 서초구 서초대로50길 82 정원빌딩</span>
-                   </a>
-                  </p>
+                  
+                   <a href="/controller/rest/rest1?f_num=${f.f_num}">
+                    <img src="resources/upload${f.food_file1}">
+                    <span class="t_b">${f.bsnsnm}</span><br>
+                    <span class="t_s">${f.addr}</span>
+                   </a>                   
+                  </p>   
                 </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1.jsp">
-                    <img src="resources/images/pig_top/goldpig.jpg">
-                    <span class="t_b">금돼지식당</span><br>
-                    <span class="t_s">서울 중구 다산로 149</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/pig_top/montwo.jpg">
-                    <span class="t_b">월화고기 보라매점</span><br>
-                    <span class="t_s">서울 관악구 보라매로3길 16</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/pig_top/sixpung.jpg">
-                    <span class="t_b">육풍 구로디지털단지점</span><br>
-                    <span class="t_s">서울 구로구 디지털로32나길 20</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/pig_top/gilmok.jpg">
-                    <span class="t_b">길목</span><br>
-                    <span class="t_s">서울 강남구 영동대로129길 10 진성빌딩</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/pig_top/nam0.jpg">
-                    <span class="t_b">남영돈</span><br>
-                    <span class="t_s">서울 용산구 한강대로80길 17</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/pig_top/jotan.png">
-                    <span class="t_b">조연탄</span><br>
-                    <span class="t_s">서울 강서구 곰달래로60길 29</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/pig_top/migang.jpeg">
-                    <span class="t_b">미강식당</span><br>
-                    <span class="t_s">서울 송파구 백제고분로 122 103호</span>
-                   </a>
-                  </p>
-                </div>
-              </div>  
+                               
+                  </c:forEach>
+                  </c:if>                                
+                
+                </div>  
           </section>
          </div>
          
@@ -382,85 +340,27 @@
          <div class="main">
               <section class="bakery_list">
               <div class = "section">
-                 <h2>OO 맛집 추천</h2>
+                 <h2>횟집 맛집 추천</h2>
                  <%-- <h3><a href="#">리스트 더보기</a></h3> --%>
               </div>
               
               <div class="clear"></div>
               
               <div class="list_img2">
+                <c:if test="${!empty sashimi8}">
+                <c:forEach var="s" items="${sashimi8}"> 
                 <div class="contain2">
                   <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/squid.jpg">
-                    <span class="t_b">OOO</span><br>
-                    <span class="t_s">OO로 OO길 OO</span>
+                   <a href="/controller/rest/rest1?f_num=${s.f_num}">
+                     <img src="resources/upload${s.food_file1}">
+                    <span class="t_b">${s.bsnsnm}</span><br>
+                    <span class="t_s">${s.addr }</span>
                    </a>
                   </p>
                 </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/squid.jpg">
-                    <span class="t_b">OOO</span><br>
-                    <span class="t_s">OO로 OO길 OO</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/squid.jpg">
-                    <span class="t_b">OOO</span><br>
-                    <span class="t_s">OO로 OO길 OO</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/squid.jpg">
-                    <span class="t_b">OOO</span><br>
-                    <span class="t_s">OO로 OO길 OO</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/squid.jpg">
-                    <span class="t_b">OOO</span><br>
-                    <span class="t_s">OO로 OO길 OO</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/squid.jpg">
-                    <span class="t_b">OOO</span><br>
-                    <span class="t_s">OO로 OO길 OO</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1.jsp">
-                    <img src="resources/images/squid.jpg">
-                    <span class="t_b">OOO</span><br>
-                    <span class="t_s">OO로 OO길 OO</span>
-                   </a>
-                  </p>
-                </div>
-                <div class="contain2">
-                  <p>
-                   <a href="/controller/rest/rest1">
-                    <img src="resources/images/squid.jpg">
-                    <span class="t_b">OOO</span><br>
-                    <span class="t_s">OO로 OO길 OO</span>
-                   </a>
-                  </p>
-                </div>
+                 </c:forEach>
+                  </c:if>    
+           
               </div>  
           </section>
          </div>

@@ -21,6 +21,11 @@ public interface FoodDAO {
 	int foodAreaCount(String divide);
 
 	int foodArea_Hit(String divide);
+	
+	// Å¾8 ÃßÃµ
+	List<FoodVO> getTop_8(String pig);
+
+	
 
 
 

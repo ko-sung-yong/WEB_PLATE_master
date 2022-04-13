@@ -7,6 +7,12 @@ admin_name varchar2(20) not null,
 admin_date date
 );
 
+
+-- 관리자 이름 unique로 값 받기
+alter table admin add unique (admin_name);
+
+
+
 select *from admin order by admin_no desc;
 
 delete from admin;

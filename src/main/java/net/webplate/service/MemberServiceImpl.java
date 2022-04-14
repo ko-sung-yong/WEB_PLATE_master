@@ -1,9 +1,13 @@
 package net.webplate.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.webplate.dao.MemberDAO;
+import net.webplate.vo.LikeCheckVO;
+import net.webplate.vo.LikeVO;
 import net.webplate.vo.MemberVO;
 
 @Service
@@ -56,5 +60,14 @@ public class MemberServiceImpl implements MemberService {
 	public MemberVO Idfind(MemberVO m) {
 		return memberDao.Idfind(m);
 	}
+
+	@Override
+	public List<LikeCheckVO> like_view(String Sid) {
+		return memberDao.like_view(Sid);
+	}
+
+
+
+
 
 }

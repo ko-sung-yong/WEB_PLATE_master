@@ -215,7 +215,7 @@ public class FoodController {
 		}else if(cond==5) {
 			String eat="외국 음식";
 			String eat2="%외국%";
-			String ment="오늘 짜장면 어때?";
+			String ment="여기에 이런 맛집이?";
 			
 			int count=foodservice.getCont_Count(eat2);
 			int hit=foodservice.getContHit(eat2);

@@ -37,7 +37,7 @@
               <ul class="nav">              
               <li><a href="/controller/Member/list">MY PAGE </a></li>
               <li><a href="/controller/Member/logOut">로그아웃</a></li>                 
-              <li><a href="#"><i class="fa-solid fa-user-large" style="color:black;"></i></a>
+              <li><a href="/controller/Member/like_view"><i class="fa-solid fa-thumbs-up" style="color:black;"></i></a>
                            
               <li><a href="/controller/recomTop/Food_list">맛집리스트</a></li>
             </ul>

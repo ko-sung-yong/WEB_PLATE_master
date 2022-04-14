@@ -4,6 +4,7 @@ package net.webplate.controller;
 
 
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
@@ -27,6 +28,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.webplate.service.MemberService;
+import net.webplate.vo.LikeCheckVO;
+import net.webplate.vo.LikeVO;
 import net.webplate.vo.MemberVO;
 import pwdconv.PwdChange;
 
@@ -395,5 +398,40 @@ public class MemberController {
 		
 	}
 
+	
+	
+	
+	
+	// 좋아요 추가한거 확인
+
+	@RequestMapping("like_view")
+	public ModelAndView like_check(HttpServletResponse response,HttpServletRequest request,HttpSession session,LikeCheckVO check)throws Exception {
+		
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out=response.getWriter();
+		
+		String Sid=(String)session.getAttribute("Sid");
+		if(Sid==null) {
+			out.println("<script>");
+			out.println("alert('다시 로그인 해주세요!');");
+			out.println("location='../Member/login';");
+			out.println("</script>");
+		}else {
+				
+			
+			
+			List<LikeCheckVO> like=memberService.like_view(Sid);
+						
+						
+			ModelAndView m=new ModelAndView("Member/like_view");
+			
+			m.addObject("like", like);
+			return m;
+			
+		}
+		return null;
+		
+	}
+	
 
 }

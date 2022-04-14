@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<script src="https://kit.fontawesome.com/9376c7b079.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet"  href="resources/css2/index.css">
 
@@ -29,7 +30,7 @@
             <ul class="nav">              
               <li><a href="/controller/Member/list">MY PAGE </a></li>
               <li><a href="/controller/Member/logOut">로그아웃</a></li>                 
-              <li><a href="#"><i class="fa-solid fa-user-large"></i></a>
+              <li><a href="/controller/Member/like_view"><i class="fa-solid fa-thumbs-up"></i></a>
              
               <li><a href="/controller/recomTop/Food_list">맛집리스트</a></li>
             </ul>

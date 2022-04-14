@@ -1,5 +1,8 @@
 package net.webplate.dao;
 
+import java.util.List;
+
+import net.webplate.vo.LikeCheckVO;
 import net.webplate.vo.MemberVO;
 
 public interface MemberDAO {
@@ -21,6 +24,10 @@ public interface MemberDAO {
 	void updatePwd(MemberVO m);
 
 	MemberVO Idfind(MemberVO m);
+
+	List<LikeCheckVO> like_view(String sid);
+
+
 
 	
 

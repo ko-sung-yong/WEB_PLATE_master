@@ -42,7 +42,7 @@ function search_check(){
             <ul class="nav">              
               <li><a href="/controller/Member/list">MY PAGE </a></li>
               <li><a href="/controller/Member/logOut">로그아웃</a></li>                 
-              <li><a href="#"><i class="fa-solid fa-user-large"></i></a>
+              <li><a href="/controller/Member/like_view"><i class="fa-solid fa-thumbs-up"></i></a>
              
               <li><a href="/controller/recomTop/Food_list">맛집리스트</a></li>
             </ul>
@@ -129,7 +129,7 @@ function search_check(){
                        <a href="/controller/recomTop/reTop15?cond=5">
                        <div class="list_img_text">
                          <span class="title">외국 음식 맛집 TOP 8 </span>
-                         <p class="desc">" 여기에 이런 맛집이!? "</p>
+                         <p class="desc">" 여기에 이런 맛집이? "</p>
                        </div>
                        </a>
                      </li>

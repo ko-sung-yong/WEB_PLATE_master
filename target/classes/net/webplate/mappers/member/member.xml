@@ -61,4 +61,15 @@ select * from member where name=#{name} and tel=#{tel}
 
 
 
+
+
+<!--  좋아요 확인 -->
+<select id="like_view" resultType="like_check">
+select like_table.f_num,bsnscond,bsnsnm,menu,addr,tel,food_file1
+from like_table left join food on food.f_num=like_table.f_num where like_table.like_state=1
+and like_table.mem_id=#{Sid}
+
+</select>
+
+
 </mapper>

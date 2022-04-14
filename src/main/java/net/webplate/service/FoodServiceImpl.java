@@ -61,6 +61,21 @@ public class FoodServiceImpl implements FoodService {
 		return foodDao.getTop_8(pig);
 	}
 
+	@Override
+	public List<FoodVO> getCondList(String eat) {
+		return foodDao.getCondList(eat);
+	}
+
+	@Override
+	public int getContHit(String eat) {
+		return foodDao.getContHit(eat);
+	}
+
+	@Override
+	public int getCont_Count(String eat) {
+		return foodDao.getCont_Count(eat);
+	}
+
 
 
 

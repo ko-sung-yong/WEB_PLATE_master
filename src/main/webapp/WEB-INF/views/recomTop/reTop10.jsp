@@ -1,5 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<script src="../resources/js2/jquery.js"></script>
+<script src="../resources/js2/show.js"></script>
+
+
 <jsp:include page="../include/logo.jsp" />
 
 <div class="recom_top">
@@ -12,7 +17,7 @@
     </tr>
   </table>
   <h1>${divide2} 맛집 TOP ${listcount}</h1>
-  <h4>"OOOO"</h4>
+  <h4>${ment }</h4>
 </div>
 
 
@@ -22,7 +27,7 @@
   <ul>  
      <c:if test="${!empty food}"> 
  <c:forEach var="f" items="${food}" varStatus="status"> 
-    <li>    
+    <li class="more_click">    
    
       <div class="recom_timg">
         <img alt="업로드 중" src="../resources/upload${f.food_file1}">
@@ -59,5 +64,8 @@
     <div class="clear"></div>
 </div>
 
+<div class="more">
+  <button onclick="more()">▼  더보기  ▼</button>
+</div>
 
 <jsp:include page="../include/footer.jsp" />

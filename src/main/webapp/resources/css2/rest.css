@@ -84,6 +84,8 @@
 	font-size:16px;
 	color:black;
 }
+
+
 .rest_addrNum{ /* 주소 지번 css */
 	font-size: 11px;
 	border: 1px solid;
@@ -102,6 +104,10 @@
 	padding-top:10px;
 }
 
+.menu_info_cn {
+	width:80px;
+	padding-right:5px;
+}
 
 
 /*------------*/

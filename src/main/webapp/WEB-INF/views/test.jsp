@@ -7,9 +7,13 @@
 <head>
 <meta charset="utf-8">
  <title>지도 생성하기</title>
+ <script src="./resources/js/jquery.js"></script>
+ <style>
+ 
+ 
+ </style>
 </head>
 <body>
-
 
 <!-- 지도를 표시할 div 입니다 -->
 <div id="map" style="width:30%;height:300px;"></div>

@@ -70,6 +70,25 @@ public class FoodDAOImpl implements FoodDAO{
 		return sqlSession.selectList("top_pig8",pig);
 	}
 
+	// 음식 종류 분류
+	@Override
+	public List<FoodVO> getCondList(String eat) {
+		return sqlSession.selectList("cond_divide",eat);
+	}
+	
+	// 믿고 보는 맛집 리스트 조회수
+	@Override
+	public int getContHit(String eat) {
+		return sqlSession.selectOne("cond_hit",eat);
+	}	
+	
+	
+	// 믿고 보는 맛집 리스트 개수
+	@Override
+	public int getCont_Count(String eat) {
+		return sqlSession.selectOne("cond_count",eat);
+	}
+
 
 
 

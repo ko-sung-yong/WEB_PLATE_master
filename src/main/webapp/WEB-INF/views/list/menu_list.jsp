@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<script  src="../js2/jquery.js"></script>
+<script  src="../resources/js2/jquery.js"></script>
 <script>
 $(function(){
 	$(".list_uli").hide();

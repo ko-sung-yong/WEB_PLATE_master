@@ -14,11 +14,11 @@ where bsnsnm like #{find_name} or menu like #{find_name} or addr like #{find_nam
 
 </select>
 
-<!--  전체 목록   보여주기 -->
+<!--  전체 목록   중에 50개 보여주기 -->
 <select id="food_list" resultType="food">
 
 select f_num,bsnsnm,addr,food_file1 from food 
-where <![CDATA[rownum<=50]]> order by grade asc
+where <![CDATA[rownum<=50]]> order by grade desc
 
 </select>
 
@@ -62,12 +62,25 @@ select count(f_num) from food where addr like #{divide}
 select sum(viewcnt) from food where addr like #{divide}
 </select>
 
-
+<!--  메인 맛집 분류  -->
 <select id="top_pig8" resultType="food">
 select * from (select * from food where category like #{pig}) where  <![CDATA[rownum<=8]]> order by grade desc
 </select>
 
+<!--  음식 종류 분류 -->
+<select id="cond_divide" resultType="food">
+select * from (select * from food where bsnscond like #{eat}) where <![CDATA[rownum<=30]]> order by grade desc  
+</select>
 
+<!--  믿고 보는 맛집 리스트 조회수 -->
+<select id="cond_hit" resultType="int">
+select sum(viewcnt) from food where bsnscond like #{eat}
+</select>
+
+<!--  믿고 보는 맛집 리스트 개수 -->
+<select id="cond_count" resultType="int">
+select count(f_num) from food where bsnscond like #{eat}
+</select>
 
 
 </mapper>

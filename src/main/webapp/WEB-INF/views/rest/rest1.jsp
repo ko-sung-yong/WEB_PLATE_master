@@ -19,7 +19,7 @@
      <a href=""><img class="r_img" alt="3" src="../resources/upload${f.food_file1}"></a>
    </div>
    <div class="re_img">
-     <a href=""><img class="r_img" alt="4" src="../resources/images/food_pwd.jpg"></a>
+     <a href=""><img class="r_img"  alt="4" src="../resources/images/logo.png"></a>
    </div>
   </div>
   
@@ -56,18 +56,18 @@
   <div class="left_rmain">
     <table class="info_menu">
                 <tr>
-                  <th>주소</th>
+                  <th class="menu_info_cn">주소</th>
                   <td>${f.addr } </td>                
                 </tr>
 
                 <tr>
-                  <th>전화번호</th>
+                  <th class="menu_info_cn">전화번호</th>
                   <td>${f.tel }</td>
                 </tr>
 
                
                 <tr>
-                  <th>음식 종류 </th>
+                  <th class="menu_info_cn">음식 종류 </th>
                   <td>
                     <span> ${f.bsnscond}</span>
                   </td>
@@ -76,14 +76,14 @@
                 
                <c:if test="${(!empty f.rest)}">              
                 <tr>
-                  <th>휴무일</th>
+                  <th class="menu_info_cn">휴무일</th>
                   <td>${f.rest}</td>
                 </tr>
                 </c:if>
                 
                <c:if test="${!empty f.suyong}">              
                 <tr>
-                  <th>수용인원</th>
+                  <th class="menu_info_cn">수용인원</th>
                   <td>${f.suyong}</td>
                 </tr>
                 </c:if>
@@ -122,7 +122,7 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 mapOption = { 
     center: new kakao.maps.LatLng("${f.lat}", "${f.lng}"), // 지도의 중심좌표
-    level: 3 // 지도의 확대 레벨
+    level: 4 // 지도의 확대 레벨
 };
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다

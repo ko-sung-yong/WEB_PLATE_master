@@ -24,6 +24,12 @@ public interface FoodDAO {
 	
 	// Å¾8 ÃßÃµ
 	List<FoodVO> getTop_8(String pig);
+   
+	List<FoodVO> getCondList(String eat);
+
+	int getContHit(String eat);
+
+	int getCont_Count(String eat);
 
 	
 

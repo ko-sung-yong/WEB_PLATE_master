@@ -46,6 +46,11 @@ public class HomeController {
 		return "index";
 	}
 	
+	@GetMapping("test")
+	public void test() {
+		
+	}
+	
 
 	
 	// 검색기능

@@ -74,7 +74,7 @@ function search_check(){
               <section class="top_list">
               <div class = "section">
                  <h2>믿고 보는 맛집 리스트</h2>
-                 <h3><a href="/controller/list/top_list">리스트 더보기</a></h3>
+                 <%--<h3><a href="/controller/list/top_list">리스트 더보기</a></h3> --%>
               </div>
               
               <div class="clear"></div>
@@ -82,20 +82,20 @@ function search_check(){
               <div class="list_img">
                  <ul class="list_ul">
                     <li>
-                       <img class="list_img_jpg" alt="대구 가족외식 추천 TOP 20 사진" src="resources/images/top/daegu.jpg">
-                       <a href="/controller/recomTop/reTop20">
+                       <img class="list_img_jpg" alt="한식 맛집 TOP 30 사진" src="resources/images/food/jungol.jpg">
+                       <a href="/controller/recomTop/reTop15?cond=1">
                        <div class="list_img_text">
-                         <span class="title">대구 가족외식 추천 TOP 20</span>
+                         <span class="title">한식 맛집 TOP 30</span>
                          <p class="desc">" 가족과 함께 따뜻한 식사를 "</p>
                        </div>
                        </a>
                      </li>
                      <li>
-                       <img class="list_img_jpg" alt="카이스트 맛집 TOP 20 사진" src="resources/images/top/kaist.jpg">
-                       <a href="/controller/recomTop/reTop20">
+                       <img class="list_img_jpg" alt="중식 맛집 TOP 18 사진" src="resources/images/food/jjajang.jpg">
+                       <a href="/controller/recomTop/reTop15?cond=2">
                        <div class="list_img_text">
-                         <span class="title">카이스트 맛집 TOP 20</span>
-                         <p class="desc">" 수재들이 먹는 맛집은 어딜까? "</p>
+                         <span class="title">중식 맛집 TOP 18</span>
+                         <p class="desc">" 오늘 짜장면 어때? "</p>
                        </div>
                        </a>
                      </li>
@@ -104,41 +104,41 @@ function search_check(){
                   
                   <ul class="list_ul">
                     <li>
-                       <img class="list_img_jpg" alt="치즈 맛집 TOP 10 사진" src="resources/images/top/cheese.jpg">
-                       <a href="/controller/recomTop/reTop10">
+                       <img class="list_img_jpg" alt="일식 맛집 TOP 16 사진" src="resources/images/food/ilsik.jpg">
+                       <a href="/controller/recomTop/reTop15?cond=3">
                        <div class="list_img_text">
-                         <span class="title">치즈 맛집 TOP 10</span>
-                         <p class="desc">" 치즈를 정말 좋아한다면! "</p>
+                         <span class="title">일식 맛집 TOP 16</span>
+                         <p class="desc">" 회를 정말 좋아한다면? "</p>
                        </div>
                        </a>
                      </li>
                      <li>
-                       <img class="list_img_jpg" alt="신촌이대 맛집 TOP 20 사진" src="resources/images/top/sin2.jpg">
-                       <a href="/controller/recomTop/reTop20">
+                       <img class="list_img_jpg" alt="양식 맛집 TOP 12 사진" src="resources/images/top/sin2.jpg">
+                       <a href="/controller/recomTop/reTop15?cond=4">
                        <div class="list_img_text">
-                         <span class="title">신촌이대 맛집 TOP 20</span>
-                         <p class="desc">" 신촌이대에 가면 뭐 먹지 "</p>
+                         <span class="title">양식 맛집 TOP 11</span>
+                         <p class="desc">" 용산 가면 뭐 먹지 ?"</p>
                        </div>
                        </a>
                      </li>
                   </ul>
                   
-                  <ul class="list_ul">
-                    <li>
-                       <img class="list_img_jpg" alt="안양 한식집 TOP 15 사진" src="resources/images/top/korea.jpg">
-                       <a href="./recomTop/reTop15">
+                  <ul class="list_ul">                    
+                     <li>
+                       <img class="list_img_jpg" alt="외국 음식 맛집 TOP 8 사진" src="resources/images/food/foreign.jpg">
+                       <a href="/controller/recomTop/reTop15?cond=5">
                        <div class="list_img_text">
-                         <span class="title">안양 한식집 TOP 15</span>
-                         <p class="desc">" 안양에서 한식이 먹고싶다면 "</p>
+                         <span class="title">외국 음식 맛집 TOP 8 </span>
+                         <p class="desc">" 여기에 이런 맛집이!? "</p>
                        </div>
                        </a>
                      </li>
                      <li>
-                       <img class="list_img_jpg" alt="송파구 가락동 맛집 TOP 15 사진" src="resources/images/top/songpa.jpg">
-                       <a href="/controller/recomTop/reTop15">
+                       <img class="list_img_jpg" alt="디저트 맛집 TOP 사진" src="resources/images/food/desert.jpg">
+                       <a href="/controller/recomTop/reTop15?cond=6">
                        <div class="list_img_text">
-                         <span class="title">송파구 가락동 맛집 TOP 15</span>
-                         <p class="desc">" 송파구에 이런 맛집이!? "</p>
+                         <span class="title">디저트 맛집 TOP 2</span>
+                         <p class="desc">" 디저트가 땡긴다면? 요기어때? "</p>
                        </div>
                        </a>
                      </li>
@@ -249,7 +249,7 @@ function search_check(){
                        <a href="/controller/recomTop/reTop10?addr=2">
                        <div class="list_img_text">
                          <span class="title">횡성 인기 맛집 TOP 20</span>
-                         <p class="desc">" 안 가본 사람은 있어도 한번 가본사람은 없는 이곳 "</p>
+                         <p class="desc">" 횡성 찐맛집 여기 다 있네! "</p>
                        </div>
                        </a>
                      </li>

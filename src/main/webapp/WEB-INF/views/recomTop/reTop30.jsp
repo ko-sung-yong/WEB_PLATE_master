@@ -5,7 +5,7 @@
 	Date nowTime = new Date();
 	SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
 %>
-<script  src="../js2/jquery.js"></script>
+<script  src="../resources/js2/jquery.js"></script>
 <script>
 $(function(){
 	$(".recom_main").hide();

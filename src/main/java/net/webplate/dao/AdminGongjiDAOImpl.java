@@ -52,4 +52,9 @@ public class AdminGongjiDAOImpl implements AdminGongjiDAO {
 		
 	}
 
+	@Override
+	public void edit(AdminGongjiVO gongji) {
+		sql.update("gongji_edit",gongji);		
+	}
+
 }

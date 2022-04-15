@@ -64,4 +64,9 @@ update gongji set hit=hit+1 where gongji_no=#{gongji_no}
 delete from gongji where gongji_no=#{gongji_no}
 </delete>
 
+<update id="gongji_edit">
+update gongji set title=#{title}, gongji_cont=#{gongji_cont} where gongji_no=#{gongji_no}
+
+</update>
+
 </mapper>

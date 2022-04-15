@@ -195,6 +195,58 @@ public class AdminGongjiController {
 		
 		
 	}
+	@GetMapping("admin_Gongji_Edit")
+	public ModelAndView admin_Gongji_Edit(HttpServletRequest request,HttpSession session,HttpServletResponse response)throws Exception{
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out=response.getWriter();
+				
+		String admin_id=(String)session.getAttribute("admin_id");
+		if(admin_id==null){
+			out.println("<script>");
+			out.println("alert('관리자님 다시 로그인해주세요!');");
+			out.println("location='admin_Login';");
+			out.println("</script>");
+		}else {
+			int page=1;
+			if(request.getParameter("page") != null) {
+				page=Integer.parseInt(request.getParameter("page"));    		
+			}
+			int gongji_no=Integer.parseInt(request.getParameter("gongji_no"));
+			AdminGongjiVO g=gongjiService.getInfo(gongji_no);
+			String cont=g.getGongji_cont().replace("/n", "<br>");
+			ModelAndView em=new ModelAndView("admin/admin_Gongji_Edit");
+			em.addObject("g",g);
+			em.addObject("cont", cont);
+			em.addObject("page", page);
+			return em;
+			
+		}
+		return null;
+	}
+	
+	
+	@PostMapping("admin_Gongji_Edit_ok")
+	public String admin_Gongji_Edit_ok(HttpServletRequest request,HttpSession session,HttpServletResponse response,AdminGongjiVO gongji)throws Exception{
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out=response.getWriter();
+				
+		String admin_id=(String)session.getAttribute("admin_id");
+		if(admin_id==null){
+			out.println("<script>");
+			out.println("alert('관리자님 다시 로그인해주세요!');");
+			out.println("location='admin_Login';");
+			out.println("</script>");
+		}else {
+			gongjiService.edit(gongji);
+			
+			out.println("<script>");
+			out.println("alert('정보가 수정되었습니다!');");
+			out.println("location='admin_gongji_info?gongji_no="+gongji.getGongji_no()+"';");
+			out.println("</script>");
+			
+		}
+		return null;
+	}
 
 
 }

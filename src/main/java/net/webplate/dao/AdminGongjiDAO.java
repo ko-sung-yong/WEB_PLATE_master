@@ -20,4 +20,6 @@ public interface AdminGongjiDAO {
 
 	void DeleteGongji(int gongji_no);
 
+	void edit(AdminGongjiVO gongji);
+
 }

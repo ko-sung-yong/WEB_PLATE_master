@@ -51,4 +51,9 @@ public class AdminGongjiServiceImpl implements AdminGongjiService {
 		gongjiDao.DeleteGongji(gongji_no);
 	}
 
+	@Override
+	public void edit(AdminGongjiVO gongji) {
+		gongjiDao.edit(gongji);
+	}
+
 }

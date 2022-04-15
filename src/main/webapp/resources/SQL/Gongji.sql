@@ -1,7 +1,7 @@
 -- 공지사항
 create table Gongji(
 gongji_no number(38) primary key,  -- 공지번호
-title varchar2(50),  -- 제목
+title varchar2(200),  -- 제목
 writer varchar2(20), -- 작성자
 gongji_cont varchar2(4000), -- 내용
 Gongji_register date default sysdate, -- 등록날짜

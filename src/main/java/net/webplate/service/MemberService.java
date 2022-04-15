@@ -2,7 +2,7 @@ package net.webplate.service;
 
 import java.util.List;
 
-import net.webplate.vo.LikeCheckVO;
+import net.webplate.vo.FoodVO;
 import net.webplate.vo.LikeVO;
 import net.webplate.vo.MemberVO;
 
@@ -27,7 +27,7 @@ public interface MemberService {
 	MemberVO Idfind(MemberVO m);
 
 
-	List<LikeCheckVO> like_view(String sid);
+	List<FoodVO> like_view(String sid);
 	
 	
 

@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.webplate.service.MemberService;
-import net.webplate.vo.LikeCheckVO;
+import net.webplate.vo.FoodVO;
 import net.webplate.vo.LikeVO;
 import net.webplate.vo.MemberVO;
 import pwdconv.PwdChange;
@@ -74,10 +74,17 @@ public class MemberController {
 	
 	// 회원가입 성공
 	@PostMapping("Join_Ok")
-	public String Join_Ok(MemberVO m)  {
+	public String Join_Ok(MemberVO m,HttpServletResponse response)throws Exception  {
+	response.setContentType("text/html;charset=utf-8");
+	PrintWriter out=response.getWriter();
+		
 	 m.setPw(PwdChange.getPassWordToXEMD5String(m.getPw()));
 	 memberService.insertMember(m);	 
-	 return "redirect:../Member/login";
+	 out.println("<script>");
+	 out.println("alert('회원가입 성공!');");
+	 out.println("location='../Member/login';");
+	 out.println("</script>");
+	 return null;
 		
 	}
 	
@@ -405,7 +412,7 @@ public class MemberController {
 	// 좋아요 추가한거 확인
 
 	@RequestMapping("like_view")
-	public ModelAndView like_check(HttpServletResponse response,HttpServletRequest request,HttpSession session,LikeCheckVO check)throws Exception {
+	public ModelAndView like_check(HttpServletResponse response,HttpServletRequest request,HttpSession session)throws Exception {
 		
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out=response.getWriter();
@@ -420,7 +427,7 @@ public class MemberController {
 				
 			
 			
-			List<LikeCheckVO> like=memberService.like_view(Sid);
+			List<FoodVO> like=memberService.like_view(Sid);
 						
 						
 			ModelAndView m=new ModelAndView("Member/like_view");

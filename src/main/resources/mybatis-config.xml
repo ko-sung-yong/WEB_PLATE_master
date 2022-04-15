@@ -14,8 +14,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   
   <typeAlias type="net.webplate.vo.LikeVO" alias="like"/>
   
-  <typeAlias type="net.webplate.vo.LikeCheckVO" alias="like_check"/>
-  
+  <typeAlias type="net.webplate.vo.AdminGongjiVO" alias="gongji"/>
+
 
      
   </typeAliases>  

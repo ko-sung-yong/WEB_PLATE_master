@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.webplate.dao.MemberDAO;
-import net.webplate.vo.LikeCheckVO;
+import net.webplate.vo.FoodVO;
 import net.webplate.vo.LikeVO;
 import net.webplate.vo.MemberVO;
 
@@ -62,7 +62,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public List<LikeCheckVO> like_view(String Sid) {
+	public List<FoodVO> like_view(String Sid) {
 		return memberDao.like_view(Sid);
 	}
 

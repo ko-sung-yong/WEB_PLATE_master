@@ -11,6 +11,7 @@
 <script src="https://kit.fontawesome.com/9376c7b079.js"></script>
 
 <link rel="stylesheet" href="./resources/css2/admin_main.css">
+<script src="./resources/js2/jquery.js"></script>
 <script src="./resources/js2/admin_main.js"></script>
 </head>
 <body>
@@ -28,14 +29,14 @@
 <ul class="navbar_menu" id="navbar_menu">
  <li><a href="../controller/"> 메인 </a> </li>
  <li><a href="admin_Board_list"> 게시판 </a> </li>
- <li><a href="#"> 공지사항</a> </li>
+ <li><a href="admin_Gongji_list"> 공지사항</a> </li>
  <li><a href="adminMember_List"> 회원관리</a> </li>
  
 </ul>
 
 <div class="navbar_admin_logOut" id="navbar_admin_logOut">
 
-<h3> <a href="#" style="color:darkorange" >관리자</a>님 환영합니다! &nbsp;</h3>
+<h3> <span style="font-size:18px; color:darkorange;" >관리자</span>님 환영합니다! &nbsp;</h3>
 <form method="post" action="admin_logOut">
 <input type="submit" value="로그아웃">
 

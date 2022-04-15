@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import net.webplate.vo.LikeCheckVO;
+import net.webplate.vo.FoodVO;
 import net.webplate.vo.LikeVO;
 import net.webplate.vo.MemberVO;
 
@@ -64,7 +64,7 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public List<LikeCheckVO> like_view(String Sid) {
+	public List<FoodVO> like_view(String Sid) {
 		return sqlSession.selectList("like_view",Sid);
 	}
 

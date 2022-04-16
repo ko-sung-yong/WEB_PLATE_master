@@ -30,12 +30,12 @@ public class RestController {
 		}
 		int f_num=Integer.parseInt(request.getParameter("f_num"));
 								
-		
+
+		adminService.getHit(f_num);
 		FoodVO f=adminService.getDetails(f_num); // 세부정보
 		String food_menu=f.getMenu().replace("\n", "<br>");
 					
 		
-		//adminService.getHit(f_num);
 		
 		ModelAndView cm=new ModelAndView();
 		cm.addObject("page", page);

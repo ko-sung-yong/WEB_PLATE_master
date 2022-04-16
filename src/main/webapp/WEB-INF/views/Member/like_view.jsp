@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title> </title>
-
 <style>
 table{
 width:1300px;
@@ -26,7 +25,26 @@ font-size:23px;
 font-weight:bold;
 font-color:black;}
 
+
+
 </style>
+
+<script>
+$(function(){
+	$(".more_click").hide();
+	$(".more_click").slice(0, 5).show(); // 최초 페이지만 보이게
+	$(".more").click(function(){ // more클래스 클릭시 이벤트 실행
+	  $(".more_click:hidden").slice(0, 5).show(); // 숨김 설정된 페이지중 한개를 선택하여 나타냄
+	  $(".footer").hide();
+	  if($(".more_click:hidden").length ==0){ // 보여질 개수가 없다면 클릭버튼 숨기기
+		  $('.more').hide();
+		  $(".footer").show();
+	  }
+	});
+});
+
+</script>
+
 
 </head>
 <body>
@@ -34,13 +52,12 @@ font-color:black;}
  <table border="1">
  
  <tr>
-  <th> 번호 </th><th>사진  </th><th>음식의 종류 </th><th> 가게이름  </th> <th> 메뉴 </th> <th>주소  </th> <th> 연락처 </th> 
+  <th> 번호 </th><th>음식의 종류 </th><th> 가게이름  </th> <th> 메뉴 </th> <th>주소  </th> <th> 연락처 </th> 
  </tr>
  <c:if test="${!empty like}">
 <c:forEach var="go" items="${like}"  varStatus="status" >
- <tr>
- <td> ${status.count}</td> <td> <img  class="img01" alt="이미지 준비중입니다" src="../resources/upload${go.food_file1}">
-      </td>
+ <tr class="more_click">
+ <td> ${status.count}</td> 
  
  <td>${go.bsnscond} </td> <td><a href="../rest/rest1?f_num=${go.f_num}">${go.bsnsnm} </a> </td> <td>${go.menu} </td> <td>${go.addr} </td> <td> ${go.tel}</td>
  </tr>
@@ -55,7 +72,11 @@ font-color:black;}
 </tr> 
  </table>
  
- 
+ <c:if test="${!empty like}">
+ <div class="more">
+  <button onclick="more()">▼  더보기  ▼</button>
+</div>
+ </c:if>
 
 <jsp:include page="../include/footer.jsp" />
 </body>

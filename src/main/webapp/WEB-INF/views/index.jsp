@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title></title>
 <%-- 아이콘 사용하기 위한 코드  --%>
 <script src="https://kit.fontawesome.com/9376c7b079.js"></script>

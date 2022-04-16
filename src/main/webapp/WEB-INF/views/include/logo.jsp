@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title></title>
 <script src="https://kit.fontawesome.com/9376c7b079.js"></script>
+<script src="../resources/js2/jquery.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../resources/css2/index.css">
 <link rel="stylesheet" type="text/css" href="../resources/css2/list.css">

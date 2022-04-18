@@ -10,6 +10,7 @@
 <style>
 #Tuser{
 width:800px;
+margin-top:-500px;
 margin-left:auto;
 margin-right:auto;
 margin-bottom:100px;
@@ -45,7 +46,7 @@ font-weight:normal;
 }
 </style>
 <body>
-<jsp:include page="../include/logo.jsp" />
+<jsp:include page="../include/Main_logo.jsp" />
 
 <div id="Tuser">
 <h3 class="user_title">웹 플레이트 이용약관 및 개인정보 처리 방침</h3>
@@ -198,7 +199,7 @@ font-weight:normal;
 
 </div>
  
-<jsp:include page="../include/footer.jsp" />
+<jsp:include page="../include/Main_footer.jsp" />
 
 
 </body>

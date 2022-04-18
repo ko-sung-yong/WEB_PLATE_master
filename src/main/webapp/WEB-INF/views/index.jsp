@@ -117,7 +117,7 @@ function search_check(){
                        <img class="list_img_jpg" alt="양식 맛집 TOP 12 사진" src="resources/images/top/sin2.jpg">
                        <a href="/controller/recomTop/reTop15?cond=4">
                        <div class="list_img_text">
-                         <span class="title">양식 맛집 TOP 11</span>
+                         <span class="title">양식 맛집 TOP 12</span>
                          <p class="desc">" 용산 가면 뭐 먹지 ?"</p>
                        </div>
                        </a>
@@ -377,9 +377,9 @@ function search_check(){
              
              <div class="foot_ul" id="foot_ul1">
                <ul>
-                 <li><a href="/controller/footer/Terms_of_Use">이용약관</a></li>
-                 <li><a href="/controller/footer/NonMember">비회원 이용자 이용약관</a></li>
-                 <li><a href="/controller/footer/Terms_of_Use">개인정보처리방침</a></li>
+                 <li><a href="Terms_of_Use">이용약관</a></li>
+                 <li><a href="NonMember">비회원 이용자 이용약관</a></li>
+                 <li><a href="Terms_of_Use">개인정보처리방침</a></li>
                </ul>
              </div>
              <div class="foot_ul" id="foot_ul2">

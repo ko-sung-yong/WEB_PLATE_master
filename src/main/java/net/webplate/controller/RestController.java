@@ -1,9 +1,14 @@
 package net.webplate.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -49,6 +54,39 @@ public class RestController {
 		
 	}
 	
+	
+	@PostMapping("review_ok")
+	public String review_ok(HttpSession session,HttpServletResponse response,HttpServletRequest request)throws Exception {
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out=response.getWriter();
+		
+		String Sid=(String)session.getAttribute("Sid");
+		
+		if(Sid==null) {
+			out.println("<script>");
+			out.println("alert('다시 로그인 하세요!');");
+			out.println("location='../Member/login';");			
+			out.println("</script>");
+			
+		}
+		else {
+			int f_num=Integer.parseInt(request.getParameter("f_num"));			
+			int star_value=Integer.parseInt(request.getParameter("rating"));
+			String cont=request.getParameter("review_cont");
+			
+			System.out.println(star_value);
+			System.out.println(cont);
+			
+			out.println("<script>");
+			out.println("alert('리뷰 등록 완료!');");
+			out.println("location='rest1?f_num="+f_num+"';");			
+			out.println("</script>");
+		}
+		
+		
+		return null;
+		
+	}
 	
 
 }

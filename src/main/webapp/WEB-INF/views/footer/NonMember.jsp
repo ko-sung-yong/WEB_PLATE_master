@@ -1,11 +1,14 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<jsp:include page="../include/logo.jsp" />
+<jsp:include page="../include/Main_logo.jsp" />
 
 <style>
 .nomem{
+margin-top:-500px;
 width: 900px;
 height: 700px;
-margin: 50px auto;
+margin-left: auto;
+margin-right:auto;
+margin-bottom:40px;
 }
 
 #footer_main{
@@ -44,4 +47,4 @@ color: black;
 
 
 
-<jsp:include page="../include/footer.jsp" />
+<jsp:include page="../include/Main_footer.jsp" />

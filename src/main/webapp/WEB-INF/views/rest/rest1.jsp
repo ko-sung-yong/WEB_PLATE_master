@@ -45,6 +45,9 @@
 	border-radius:100%;
 	z-index:1;
 	}
+	input[id*="btn"]+label+div>div>label:hover{
+	cursor:pointer;
+	}
 	
 	input[id*="btn"]+label+div>label{
 	position:absolute;
@@ -236,8 +239,8 @@ cursor:pointer;
 <h3 class="review_title"> 리 뷰</h3>
 <div class="review_wrap">
 <span style="color:orange;">${f.bsnsnm}</span>에 대한 솔직한 리뷰를 써주세요!
-<form method="post" action="" onsubmit="return review_check();">
-<input type="hidden" value="${f.f_num}">
+<form method="post" action="review_ok" onsubmit="return review_check();">
+<input type="hidden" name="f_num" id="f_num" value="${f.f_num}">
 <div class="star-rating space-x-4 mx-auto">
 	<input type="radio" id="5-stars" name="rating" value="5" />
 	<label for="5-stars" class="star pr-4"><i class="fa-solid fa-star" id="star"></i></label>

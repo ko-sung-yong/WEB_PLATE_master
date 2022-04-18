@@ -19,9 +19,9 @@
              
              <div class="foot_ul" id="foot_ul1">
                <ul>
-                 <li><a href="/controller/footer/Terms_of_Use">이용약관</a></li>
-                 <li><a href="/controller/footer/NonMember">비회원 이용자 이용약관</a></li>
-                 <li><a href="/controller/footer/Terms_of_Use">개인정보처리방침</a></li>
+                 <li><a href="Terms_of_Use">이용약관</a></li>
+                 <li><a href="NonMember">비회원 이용자 이용약관</a></li>
+                 <li><a href="Terms_of_Use">개인정보처리방침</a></li>
                </ul>
              </div>
              <div class="foot_ul" id="foot_ul2">

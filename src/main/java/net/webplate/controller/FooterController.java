@@ -2,10 +2,10 @@ package net.webplate.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/footer/*")
+
 public class FooterController {
 	
 	@GetMapping(value="board")
@@ -13,20 +13,19 @@ public class FooterController {
 		
 	}
 	
-	@GetMapping(value="introduce")
-	public void QnA() {	
-		
-	}
+
 	
 	@GetMapping(value="NonMember")
-	public void NonMember() {
-		
+	public ModelAndView NonMember() {
+		ModelAndView m=new ModelAndView("footer/NonMember");
+		return m;
 	}
 	
 	
 	@GetMapping(value="Terms_of_Use")
-	public void Terms_of_Use() {
-		
+	public ModelAndView Terms_of_Use() {
+		ModelAndView m=new ModelAndView("footer/Terms_of_Use");
+		return m;
 	}
 
 }

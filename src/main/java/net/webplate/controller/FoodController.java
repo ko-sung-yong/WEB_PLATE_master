@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -265,7 +266,7 @@ public class FoodController {
 	}
 	
 	@GetMapping("/Food_list")
-	public ModelAndView search(FoodVO food) {		
+	public ModelAndView search(FoodVO food,HttpSession session) {		
 		
 		ModelAndView m=new ModelAndView();
 		int listcount=foodservice.getTotalCount(food);		

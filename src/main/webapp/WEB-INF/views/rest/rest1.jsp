@@ -1,8 +1,185 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ include file="/WEB-INF/views/include/logo.jsp"%>
-
+<%@ include file="../include/logo.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="../resources/js2/jquery.js"> </script>
+<script src="https://kit.fontawesome.com/9376c7b079.js"></script>
 
+<style>
+	input[id*="btn"]{
+	display:none;
+	}
+	input[id*="btn"]+label{
+	display:inline-block;
+	padding:20px;
+	color:#fff;
+	margin-top:-17px;
+	}
+	
+	input[id*="btn"]+label+div{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:100;
+	}
+	input[id*="btn"]+label+div >div{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:500px;
+	height:400px;
+	background:#fff;
+	z-index:2;
+	}
+	
+	/*닫는 버튼 */
+	input[id*="btn"]+label+div>div>label{
+	position:absolute;
+	top:0%;
+	right:0%;
+	transform:translate(30%,-40%);
+	padding:20px;
+	background:#ED544A;
+	border-radius:100%;
+	z-index:1;
+	}
+	
+	input[id*="btn"]+label+div>label{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.05);
+	z-index:1;
+		}
+		
+	/* 버튼 체크전 */
+	input[id*="btn"]+label+div{
+		display:none;
+	}
+	
+	
+	<%-- 버튼 체크후  --%>	
+	input[id*="btn"]:checked+label+div{
+		display:block;
+		}
+	
+	
+  .star-rating {
+  display: flex;
+  flex-direction: row-reverse; /* 아이템이 가로방향으로 흐름(우->좌) */
+  font-size: 4rem;          /* rem 루트 요소 글꼴 */  
+  justify-content: center;  /* 가로축 중심*/
+  letter-spacing:10px;
+  margin-left:60px;
+  margin-top:10px;
+  margin-bottom:10px;
+  text-align: center;
+  width: 5em;
+}
+ 
+.star-rating input {
+  display: none;
+}
+ 
+.star-rating label {
+  -webkit-text-fill-color: transparent; /* 별 부분 투명하게 만들기*/
+  -webkit-text-stroke-width: 2.3px; /* 인사이드로 외곽선이 들어감*/
+  -webkit-text-stroke-color: #2b2a29; /* 외곽선 색상*/
+  cursor: pointer; /* 커서를 클릭할때 반응*/
+}
+ 
+.star-rating :checked ~ label {
+  -webkit-text-fill-color: gold; /* 체크하면 나오는 색상*/
+}
+ 
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  -webkit-text-fill-color: #fff58c;
+}
+
+#star{
+font-size:50px;}
+
+.review_title{
+text-align:center;
+font-size:40px;
+color:black;
+margin-bottom:5px;}
+
+
+.review_button{
+margin-top:20px;
+margin-right:210px;
+}
+
+.review_button input[type=submit]{
+width:90px;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+border:1px solid white;
+padding:10px;
+text-align:center;
+background:darkorange;
+color:white;
+font-style:italic;
+}
+
+.review_button input[type=reset]{
+width:90px;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+border:1px solid white;
+padding:10px;
+text-align:center;
+background:darkorange;
+color:white;
+font-style:italic;
+}
+
+.review_button input[type=reset]:hover{
+cursor:pointer;
+}
+.review_button input[type=submit]:hover{
+cursor:pointer;
+}
+
+.review_wrap{
+    width:500px;
+	height:400px;
+	text-align:center;
+}
+
+#review_cont{
+ resize:none;
+}
+</style> 
+<script>
+    function login(){
+    	alert('로그인이 필요한 기능입니다!');
+    	location='../Member/login';
+    }
+    
+    function review_check(){
+    	if($('input:radio[name=rating]').is(':checked')==false){
+    		alert('별점을 체크해주세요!');
+    		return false;
+    	}
+    	
+    	if($.trim($('#review_cont').val())==''){
+    		alert('리뷰를 남겨주세요!');
+    		$('#review_cont').val('').focus();
+    		return false;
+    	}
+    }
+    
+    
+    </script>
 <div class="rest_img">
 
   <%-- <img class="r_i" alt="" src="../resources/images/rest1.jpg"> --%>
@@ -38,14 +215,76 @@
       </button>
     </div>
     
-    <div class="rew_btn">
-      <button type="button" class="btn">
-        <img src="../resources/images/pen11.png" width="80" height="80"
-         onmouseout="this.src='../resources/images/pen11.png'" onmouseover="this.src='../resources/images/pen22.png'"
-         onclick="location='#'">
-      </button>
-    </div>
+    <c:choose>
+    <c:when test="${Sid!=null}">
+        <div class="rew_btn">      
     
+ <input type="checkbox" id="btn">
+<label for="btn"> <img src="../resources/images/pen11.png" width="80" height="80"
+         onmouseout="this.src='../resources/images/pen11.png'" onmouseover="this.src='../resources/images/pen22.png'">
+</label> <%-- 누르면 가려지는 부분 --%>
+
+
+
+<div>
+ <div>
+ <label for="btn"></label> <%-- 닫는부분 --%>
+ </div>
+ <label for="btn"></label> <%-- 바깥부분 --%>
+<div>
+<%-- 내용 채우는 부분 --%>
+<h3 class="review_title"> 리 뷰</h3>
+<div class="review_wrap">
+<span style="color:orange;">${f.bsnsnm}</span>에 대한 솔직한 리뷰를 써주세요!
+<form method="post" action="" onsubmit="return review_check();">
+<input type="hidden" value="${f.f_num}">
+<div class="star-rating space-x-4 mx-auto">
+	<input type="radio" id="5-stars" name="rating" value="5" />
+	<label for="5-stars" class="star pr-4"><i class="fa-solid fa-star" id="star"></i></label>
+	<input type="radio" id="4-stars" name="rating" value="4" />
+	<label for="4-stars" class="star"><i class="fa-solid fa-star" id="star"></i></label>
+	<input type="radio" id="3-stars" name="rating" value="3" />
+	<label for="3-stars" class="star"><i class="fa-solid fa-star" id="star"></i></label>
+	<input type="radio" id="2-stars" name="rating" value="2" />
+	<label for="2-stars" class="star"><i class="fa-solid fa-star" id="star"></i></label>
+	<input type="radio" id="1-star" name="rating" value="1"  />
+	<label for="1-star" class="star"><i class="fa-solid fa-star" id="star"></i></label>
+</div>
+
+
+<textarea id="review_cont" name="review_cont" rows="5" cols="50" placeholder="식당에 대해 리뷰 남겨주세요!"></textarea><br>
+<div class="review_button">
+<input type="submit" value="업로드">
+<input type="reset" value="초기화" onclick="$('#review_cont').focus();">
+
+</div>
+</form>
+</div>
+</div>
+
+</div>
+</div>
+    
+    </c:when>
+    
+    
+     <c:when test="${Sid==null}">
+        <div class="rew_btn">      
+    
+ <input type="checkbox" id="btn">
+<label for="btn"> <img src="../resources/images/pen11.png" width="80" height="80"
+         onmouseout="this.src='../resources/images/pen11.png'" onmouseover="this.src='../resources/images/pen22.png'"
+         onclick="login();">
+</label> <%-- 누르면 가려지는 부분 --%>
+
+</div> 
+     </c:when>
+     
+     
+    
+    </c:choose>
+    
+        
       <div>
       <i class="fa-solid fa-eye" style="padding-top:10px;margin-left:10px;"></i> &nbsp; ${f.viewcnt}
       </div>
@@ -184,4 +423,4 @@ kakao.maps.event.addListener(marker, 'click', function() {
   </div>
 </div>
 
-<jsp:include page="/WEB-INF/views/include/footer.jsp" />
+<jsp:include page="../include/footer.jsp" />

@@ -29,6 +29,9 @@ public interface MemberService {
 
 	List<FoodVO> like_view(String sid);
 	
+	// 삭제 버튼 누르면 좋아요 삭제
+	void likeDel(FoodVO food);
+	
 	
 
 	

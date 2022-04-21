@@ -2,6 +2,7 @@ package net.webplate.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,11 +30,13 @@ public class FoodController {
 	private FoodService foodservice;
 	
 	@GetMapping(value="/reTop10")
-	public ModelAndView reTop10(HttpServletRequest request)throws Exception {
+	public ModelAndView reTop10(HttpServletRequest request,HttpSession session)throws Exception {
 		
 		Date nowTime = new Date();
 		SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
 		String Date=dt.format(nowTime);
+		String Sid=(String)session.getAttribute("Sid");
+		
 		
 		int res=Integer.parseInt(request.getParameter("addr"));
 		
@@ -44,6 +48,20 @@ public class FoodController {
 			int listcount=foodservice.foodAreaCount(divide);
 			int hit=foodservice.foodArea_Hit(divide); // 총 조회수
 			
+			if(Sid!=null) {
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setAddr(divide);
+				List<FoodVO> like_list=foodservice.getAddrCont2(food);				
+				ModelAndView m=new ModelAndView("recomTop/reTop10");
+				m.addObject("divide2", divide2);
+				m.addObject("like_list", like_list);
+				m.addObject("Date", Date);
+				m.addObject("listcount",listcount);
+				m.addObject("hit", hit);
+				m.addObject("ment",ment);		
+				return m;
+			}else {									
 			List<FoodVO> food=foodservice.getAddrCont(divide);
 			ModelAndView m=new ModelAndView("recomTop/reTop10");
 			m.addObject("divide2", divide2);
@@ -53,15 +71,30 @@ public class FoodController {
 			m.addObject("hit", hit);
 			m.addObject("ment",ment);		
 			return m;
+			}
 		}
 		else if(res==2) {
 			String divide="%횡성%";
 			String divide2="횡성";
-			String ment="횡성 찐맛집 여기 다 있네!";
-			List<FoodVO> food=foodservice.getAddrCont(divide);
+			String ment="횡성 찐맛집 여기 다 있네!";			
 			int listcount=foodservice.foodAreaCount(divide);		
 			int hit=foodservice.foodArea_Hit(divide); // 총 조회수
 			
+			if(Sid!=null) {
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setAddr(divide);
+				List<FoodVO> like_list=foodservice.getAddrCont2(food);				
+				ModelAndView m=new ModelAndView("recomTop/reTop10");
+				m.addObject("divide2", divide2);
+				m.addObject("like_list", like_list);
+				m.addObject("Date", Date);
+				m.addObject("listcount",listcount);
+				m.addObject("hit", hit);
+				m.addObject("ment",ment);		
+				return m;
+			}else {	
+			List<FoodVO> food=foodservice.getAddrCont(divide);
 			ModelAndView m2=new ModelAndView("recomTop/reTop10");
 			m2.addObject("divide2", divide2);
 			m2.addObject("food", food);
@@ -71,13 +104,30 @@ public class FoodController {
 			m2.addObject("hit",hit);
 			m2.addObject("ment",ment);	
 			return m2;
+			}
 		}
 		else if(res==3) {
 			String divide="%용산구%";
 			String divide2="용산";
 			String ment="다양한 먹거리는 용산에서";
 			int listcount=foodservice.foodAreaCount(divide);
-			int hit=foodservice.foodArea_Hit(divide); // 총 조회수			
+			int hit=foodservice.foodArea_Hit(divide); // 총 조회수
+			
+			if(Sid!=null) {
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setAddr(divide);
+				List<FoodVO> like_list=foodservice.getAddrCont2(food);				
+				ModelAndView m=new ModelAndView("recomTop/reTop10");
+				m.addObject("divide2", divide2);
+				m.addObject("like_list", like_list);
+				m.addObject("Date", Date);
+				m.addObject("listcount",listcount);
+				m.addObject("hit", hit);
+				m.addObject("ment",ment);		
+				return m;
+			} else {
+							
 			List<FoodVO> food=foodservice.getAddrCont(divide);
 			ModelAndView m3=new ModelAndView("recomTop/reTop10");
 			m3.addObject("divide2", divide2);
@@ -87,6 +137,7 @@ public class FoodController {
 			m3.addObject("hit",hit);
 			m3.addObject("ment",ment);	
 			return m3;
+			}
 		}
 		else if(res==4) {
 			String divide="%춘천시%";
@@ -94,6 +145,21 @@ public class FoodController {
 			String ment="춘천을 가면 여긴 꼭 가야지";
 			int listcount=foodservice.foodAreaCount(divide);
 			int hit=foodservice.foodArea_Hit(divide); // 총 조회수
+			
+			if(Sid!=null) {
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setAddr(divide);
+				List<FoodVO> like_list=foodservice.getAddrCont2(food);				
+				ModelAndView m=new ModelAndView("recomTop/reTop10");
+				m.addObject("divide2", divide2);
+				m.addObject("like_list", like_list);
+				m.addObject("Date", Date);
+				m.addObject("listcount",listcount);
+				m.addObject("hit", hit);
+				m.addObject("ment",ment);		
+				return m;
+			}else {
 			List<FoodVO> food=foodservice.getAddrCont(divide);
 			ModelAndView m4=new ModelAndView("recomTop/reTop10");
 			m4.addObject("divide2", divide2);
@@ -103,6 +169,7 @@ public class FoodController {
 			m4.addObject("hit",hit);
 			m4.addObject("ment",ment);	
 			return m4;
+			}
 		}
 		else if(res==5) {
 			String divide="%대구광역시%";			
@@ -110,6 +177,21 @@ public class FoodController {
 			String ment="맛집하면 대구! 대구하면 맛집!";
 			int listcount=foodservice.foodAreaCount(divide);
 			int hit=foodservice.foodArea_Hit(divide); // 총 조회수
+			if(Sid!=null) {
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setAddr(divide);
+				List<FoodVO> like_list=foodservice.getAddrCont2(food);				
+				ModelAndView m=new ModelAndView("recomTop/reTop10");
+				m.addObject("divide2", divide2);
+				m.addObject("like_list", like_list);
+				m.addObject("Date", Date);
+				m.addObject("listcount",listcount);
+				m.addObject("hit", hit);
+				m.addObject("ment",ment);		
+				return m;
+			}else {
+							
 			List<FoodVO> food=foodservice.getAddrCont(divide);
 			ModelAndView m5=new ModelAndView("recomTop/reTop10");
 			m5.addObject("divide2", divide2);
@@ -119,6 +201,7 @@ public class FoodController {
 			m5.addObject("hit",hit);	
 			m5.addObject("ment",ment);	
 			return m5;
+			}
 		}
 		else if(res==6) {
 			String divide="%부산광역시%";
@@ -126,6 +209,21 @@ public class FoodController {
 			String ment="이곳이 부산 맛집이라 안카나";
 			int listcount=foodservice.foodAreaCount(divide);
 			int hit=foodservice.foodArea_Hit(divide); // 총 조회수
+			if(Sid!=null) {
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setAddr(divide);
+				List<FoodVO> like_list=foodservice.getAddrCont2(food);				
+				ModelAndView m=new ModelAndView("recomTop/reTop10");
+				m.addObject("divide2", divide2);
+				m.addObject("like_list", like_list);
+				m.addObject("Date", Date);
+				m.addObject("listcount",listcount);
+				m.addObject("hit", hit);
+				m.addObject("ment",ment);		
+				return m;
+			}else {			
+			
 			List<FoodVO> food=foodservice.getAddrCont(divide);
 			ModelAndView m6=new ModelAndView("recomTop/reTop10");
 			m6.addObject("divide2", divide2);
@@ -135,27 +233,45 @@ public class FoodController {
 			m6.addObject("hit", hit);
 			m6.addObject("ment",ment);	
 			return m6;
+			}
 		}
 				
 		return null;			
 	}
 	
 	@RequestMapping(value="/reTop15")
-	public ModelAndView reTop15(HttpServletRequest request) {
+	public ModelAndView reTop15(HttpServletRequest request,HttpSession session) {
 		Date nowTime = new Date();
 		SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
 		String Date=dt.format(nowTime);		
 		
 		int cond=Integer.parseInt(request.getParameter("cond"));
+		String Sid=(String)session.getAttribute("Sid");
+		
 		
 		if(cond==1) {
 			String eat="한식";
 			String ment="가족과 함께 따뜻한 식사를";
-			
 			int count=30;
 			int hit=foodservice.getContHit(eat);
-			List<FoodVO>food=foodservice.getCondList(eat);
-			
+			if(Sid!=null) {
+				
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setBsnscond(eat);
+	
+				List<FoodVO>like_list=foodservice.getCondList2(food);
+				
+				ModelAndView m=new ModelAndView("recomTop/reTop15");
+				m.addObject("eat", eat);
+				m.addObject("Date", Date);
+				m.addObject("like_list", like_list);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				m.addObject("count", count);
+				return m;
+			}else {		
+			List<FoodVO>food=foodservice.getCondList(eat);			
 			ModelAndView m=new ModelAndView("recomTop/reTop15");
 			m.addObject("eat", eat);
 			m.addObject("Date", Date);
@@ -164,6 +280,7 @@ public class FoodController {
 			m.addObject("hit", hit);
 			m.addObject("count", count);
 			return m;
+			}
 		}
 		else if(cond==2) {
 			String eat="중식";
@@ -171,7 +288,27 @@ public class FoodController {
 			
 			int count=foodservice.getCont_Count(eat);
 			int hit=foodservice.getContHit(eat);
-			List<FoodVO>food=foodservice.getCondList(eat);
+		    if(Sid!=null) {
+				
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setBsnscond(eat);
+	
+				List<FoodVO>like_list=foodservice.getCondList2(food);
+				
+				ModelAndView m=new ModelAndView("recomTop/reTop15");
+				m.addObject("eat", eat);
+				m.addObject("Date", Date);
+				m.addObject("like_list", like_list);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				m.addObject("count", count);
+				return m;
+			}		
+			
+		    else {
+		    	List<FoodVO>food=foodservice.getCondList(eat);
+		    
 			
 			ModelAndView m=new ModelAndView("recomTop/reTop15");
 			m.addObject("eat", eat);
@@ -181,12 +318,32 @@ public class FoodController {
 			m.addObject("hit", hit);
 			m.addObject("count", count);
 			return m;
+		    }
 		}	else if(cond==3) {
 			String eat="일식";
 			String ment="회를 정말 좋아한다면?";
 			
 			int count=foodservice.getCont_Count(eat);
 			int hit=foodservice.getContHit(eat);
+			
+		    if(Sid!=null) {
+				
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setBsnscond(eat);
+	
+				List<FoodVO>like_list=foodservice.getCondList2(food);
+				
+				ModelAndView m=new ModelAndView("recomTop/reTop15");
+				m.addObject("eat", eat);
+				m.addObject("Date", Date);
+				m.addObject("like_list", like_list);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				m.addObject("count", count);
+				return m;
+			}else {				
+			
 			List<FoodVO>food=foodservice.getCondList(eat);
 			
 			ModelAndView m=new ModelAndView("recomTop/reTop15");
@@ -197,12 +354,31 @@ public class FoodController {
 			m.addObject("hit", hit);
 			m.addObject("count", count);
 			return m;
+			}
 		}	else if(cond==4) {
 			String eat="양식";
 			String ment="용산 가면 뭐 먹지?";
 			
 			int count=foodservice.getCont_Count(eat);
 			int hit=foodservice.getContHit(eat);
+		    if(Sid!=null) {
+				
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setBsnscond(eat);
+	
+				List<FoodVO>like_list=foodservice.getCondList2(food);
+				
+				ModelAndView m=new ModelAndView("recomTop/reTop15");
+				m.addObject("eat", eat);
+				m.addObject("Date", Date);
+				m.addObject("like_list", like_list);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				m.addObject("count", count);
+				return m;
+			}else {				
+			
 			List<FoodVO>food=foodservice.getCondList(eat);
 			
 			ModelAndView m=new ModelAndView("recomTop/reTop15");
@@ -213,6 +389,7 @@ public class FoodController {
 			m.addObject("hit", hit);
 			m.addObject("count", count);
 			return m;
+			}
 		}else if(cond==5) {
 			String eat="외국 음식";
 			String eat2="%외국%";
@@ -220,6 +397,25 @@ public class FoodController {
 			
 			int count=foodservice.getCont_Count(eat2);
 			int hit=foodservice.getContHit(eat2);
+			
+		    if(Sid!=null) {
+				
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setBsnscond(eat2);
+	
+				List<FoodVO>like_list=foodservice.getCondList2(food);
+				
+				ModelAndView m=new ModelAndView("recomTop/reTop15");
+				m.addObject("eat", eat);
+				m.addObject("Date", Date);
+				m.addObject("like_list", like_list);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				m.addObject("count", count);
+				return m;
+			}else {
+							
 			List<FoodVO>food=foodservice.getCondList(eat2);
 			
 			ModelAndView m=new ModelAndView("recomTop/reTop15");
@@ -230,6 +426,7 @@ public class FoodController {
 			m.addObject("hit", hit);
 			m.addObject("count", count);
 			return m;
+			}
 		}	else if(cond==6) {
 			String eat="디저트";
 
@@ -238,6 +435,26 @@ public class FoodController {
 			
 			int count=foodservice.getCont_Count(eat2);
 			int hit=foodservice.getContHit(eat2);
+		    
+			if(Sid!=null) {
+				
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setBsnscond(eat2);
+	
+				List<FoodVO>like_list=foodservice.getCondList2(food);
+				
+				ModelAndView m=new ModelAndView("recomTop/reTop15");
+				m.addObject("eat", eat);
+				m.addObject("Date", Date);
+				m.addObject("like_list", like_list);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				m.addObject("count", count);
+				return m;
+			}
+			else {				
+			
 			List<FoodVO>food=foodservice.getCondList(eat2);
 			
 			ModelAndView m=new ModelAndView("recomTop/reTop15");
@@ -248,6 +465,7 @@ public class FoodController {
 			m.addObject("hit", hit);
 			m.addObject("count", count);
 			return m;
+			}
 		}
 		
 		
@@ -265,8 +483,21 @@ public class FoodController {
 		
 	}
 	
+	
 	@GetMapping("/Food_list")
 	public ModelAndView search(FoodVO food,HttpSession session) {		
+		String Sid=(String)session.getAttribute("Sid");
+		
+		if(Sid!=null) {
+			ModelAndView m=new ModelAndView();
+			int listcount=foodservice.getTotalCount(food);
+			List<FoodVO> like_list=foodservice.getLike_state(Sid);			
+			
+			m.addObject("like_list", like_list);		
+			m.addObject("listcount", listcount);
+			m.setViewName("/recomTop/Food_list");
+			return m;
+		}else {
 		
 		ModelAndView m=new ModelAndView();
 		int listcount=foodservice.getTotalCount(food);		
@@ -278,8 +509,9 @@ public class FoodController {
 		m.setViewName("/recomTop/Food_list");
 				
 		return m;
+		
+		}
 	}
-
 	
 	
 

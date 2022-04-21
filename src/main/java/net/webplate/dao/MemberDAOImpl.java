@@ -68,6 +68,11 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectList("like_view",Sid);
 	}
 
+	@Override
+	public void likeDel(FoodVO food) {
+		sqlSession.delete("like_User_del",food);
+	}
+
 
 	
 	

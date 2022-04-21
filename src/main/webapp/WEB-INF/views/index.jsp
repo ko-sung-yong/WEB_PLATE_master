@@ -323,7 +323,8 @@ function search_check(){
                   
                    <a href="/controller/rest/rest1?f_num=${f.f_num}">
                     <img src="resources/upload${f.food_file1}">
-                    <span class="t_b">${f.bsnsnm}</span><br>
+                    <span class="t_b">${f.bsnsnm}</span>
+                    <span class="t_p">${f.grade }</span> <br>                    
                     <span class="t_s">${f.addr}</span>
                    </a>                   
                   </p>   
@@ -341,7 +342,7 @@ function search_check(){
          <div class="main">
               <section class="bakery_list">
               <div class = "section">
-                 <h2>횟집 맛집 추천</h2>
+                 <h2>평점 맛집 추천</h2>
                  <%-- <h3><a href="#">리스트 더보기</a></h3> --%>
               </div>
               
@@ -355,6 +356,7 @@ function search_check(){
                    <a href="/controller/rest/rest1?f_num=${s.f_num}">
                      <img src="resources/upload${s.food_file1}">
                     <span class="t_b">${s.bsnsnm}</span><br>
+                    <span class="t_p">${s.grade }</span> <br>
                     <span class="t_s">${s.addr }</span>
                    </a>
                   </p>

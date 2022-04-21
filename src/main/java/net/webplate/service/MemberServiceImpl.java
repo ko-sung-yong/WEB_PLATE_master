@@ -66,6 +66,11 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.like_view(Sid);
 	}
 
+	@Override
+	public void likeDel(FoodVO food) {
+		memberDao.likeDel(food);		
+	}
+
 
 
 

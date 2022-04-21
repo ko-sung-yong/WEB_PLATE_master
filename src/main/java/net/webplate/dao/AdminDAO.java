@@ -4,6 +4,8 @@ import java.util.List;
 
 import net.webplate.vo.AdminVO;
 import net.webplate.vo.FoodVO;
+import net.webplate.vo.LikeVO;
+import net.webplate.vo.ReviewVO;
 
 public interface AdminDAO {
 
@@ -23,5 +25,19 @@ public interface AdminDAO {
 	FoodVO getDetails(int f_num);
 
 	void getHit(int f_num);
+
+	void insertReview(ReviewVO r);
+
+	double getPoint(int f_num);
+
+	void updateReviewPoint(FoodVO food);
+     
+	// 조회수 감소
+	void downhit(ReviewVO r);
+
+
+
+
+	
 
 }

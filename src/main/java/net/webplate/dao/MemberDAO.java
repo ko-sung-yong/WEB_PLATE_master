@@ -27,6 +27,8 @@ public interface MemberDAO {
 
 	List<FoodVO> like_view(String sid);
 
+	void likeDel(FoodVO food);
+
 
 
 	

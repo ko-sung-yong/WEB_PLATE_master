@@ -1,5 +1,6 @@
 package net.webplate.service;
 
+
 import java.util.List;
 
 import net.webplate.vo.FoodVO;
@@ -36,6 +37,23 @@ public interface FoodService {
 	
 	 // 믿고 보는 맛집리스트 개수
 	int getCont_Count(String eat);
+
+	List<FoodVO> getTop_8();
+	
+	List<FoodVO> getLike_state(String Sid);
+
+	List<FoodVO> getCondList2(FoodVO food);
+	
+	// 지역별 맛집리스트
+	List<FoodVO> getAddrCont2(FoodVO food);
+    
+	
+	
+
+	
+
+
+	
 	
 
 

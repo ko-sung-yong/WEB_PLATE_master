@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,12 +31,11 @@ public class HomeController {
 	@GetMapping(value={"/","/index"})
 	public String home(Model list) {	
 		String pig="%돼지%";
-		String sashimi="%회%";
 		
 		// 돼지고기 탑8만 보이게 가져오기
 		List<FoodVO> pig8=foodService.getTop_8(pig);
 		
-		List<FoodVO> sashimi8=foodService.getTop_8(sashimi);
+		List<FoodVO> sashimi8=foodService.getTop_8();
 		
 		
 		
@@ -56,7 +56,7 @@ public class HomeController {
 	// 검색기능
 	@GetMapping("search")
 	public ModelAndView search(HttpServletResponse response,HttpServletRequest request, @ModelAttribute FoodVO food)throws Exception {	
-		
+				
 		int page=1;
 		int limit=5;
 		if(request.getParameter("page")!=null) {
@@ -66,30 +66,32 @@ public class HomeController {
 		food.setFind_name("%"+find_name+"%");
 		
 		int listcount=foodService.getSearchCount(food);	
-		System.out.println("count"+listcount);
+		
 		food.setStartrow((page-1)*5+1);
 		food.setEndrow(food.getStartrow()+limit-1);
-		
+				
 		List<FoodVO> flist=foodService.getSearchList(food);
-		
-		int maxpage=(int)((double)listcount/limit+0.95);
+
+	    int maxpage=(int)((double)listcount/limit+0.95);
 		int startpage=(((int)((double)page/10+0.9))-1)*10+1;
-		
+			
 		int endpage=maxpage;
 		if(endpage>startpage+10-1) {
 			endpage=startpage+10-1;
 		}
-		ModelAndView m=new ModelAndView();
-		m.addObject("page", page);
-		m.addObject("flist", flist);
-		m.addObject("startpage", startpage);
-		m.addObject("endpage", endpage);
-		m.addObject("maxpage", maxpage);
-		m.addObject("listcount", listcount);
-		m.addObject("find_name",find_name);
-		m.setViewName("search");
+			ModelAndView m=new ModelAndView();
+			m.addObject("page", page);
+			m.addObject("flist", flist);
+			m.addObject("startpage", startpage);
+			m.addObject("endpage", endpage);
+			m.addObject("maxpage", maxpage);
+			m.addObject("listcount", listcount);
+			m.addObject("find_name",find_name);
+			m.setViewName("search");
+			
+			return m;
 		
-		return m;
+		
 	}
 	
 	

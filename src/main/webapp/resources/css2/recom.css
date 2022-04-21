@@ -69,7 +69,8 @@
 	padding-top: 10px;
 }
 .recom_rest_name{
-	font-size: 30px;
+	font-size: 27px;
+	font-weight:strong;
 	width: 350px;
 	display: inline-block;
 	border: 0px solid;
@@ -77,8 +78,11 @@
 }
 .recom_rest_null{
 	height: 10px;
+	font-size:18px;
+	color:orange;
 	text-align:left;
-	margin-left:50px;
+	margin-left:45px;
+	margin-bottom:5px;
 }
 .recom_rest_addr{
 	font-size: 20px;

@@ -440,5 +440,33 @@ public class MemberController {
 		
 	}
 	
+	
+	@GetMapping("like_del")
+	public String like_del(HttpSession session,HttpServletResponse response,HttpServletRequest request) throws Exception{
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out=response.getWriter();
+		
+		String Sid=(String)session.getAttribute("Sid");
+		if(Sid==null) {
+			out.println("<script>");
+			out.println("alert('다시 로그인 해주세요!');");
+			out.println("location='../Member/login';");
+			out.println("</script>");
+		}else {
+			
+			int f_num=Integer.parseInt(request.getParameter("f_num"));
+			FoodVO food=new FoodVO();
+			food.setF_num(f_num);
+			food.setMem_id(Sid);
+			
+			memberService.likeDel(food);
+			out.println("<script>");
+			out.println("console.log('취소 되었습니다!');");
+			out.println("location='like_view';");
+			out.println("</script>");
+			
+		}
+		return null;
+	}
 
 }

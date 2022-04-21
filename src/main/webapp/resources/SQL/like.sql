@@ -1,8 +1,8 @@
 create table like_table(
- like_no number(38) primary key,   -- 좋아요 번호
- f_num number(38),     -- 글번호
- mem_id varchar2(50),   -- 아이디
- like_state number(3) default 0, -- 좋아요 1 아니면 0  (체크 여부)
+ like_no number(38) not null primary key,   -- 좋아요 번호
+ f_num number(38) not null,     -- 글번호
+ mem_id varchar2(50) not null,   -- 아이디
+ like_state number(3) default 0 null, -- 좋아요 1 아니면 0  (체크 여부)
  like_sysdate date default sysdate,
  foreign key(f_num) references food(f_num) on delete cascade,
  foreign key(mem_id) references member(id) on delete cascade

@@ -48,9 +48,10 @@ margin-top:-500px;
 }
 .recom_rest{
 	padding: 45px 0px 0px 0px;
-	width: 370px;
+	width: 380px;
 	height: 255px;
-	border: 0.5px solid gray;
+	border:0px; 
+	border-left:1px solid;
 }
 .recom_rest span{
 	padding-top: 10px;
@@ -64,8 +65,9 @@ margin-top:-500px;
 }
 
 .recom_rest_name2{
-font-size:18px;
-font-weight:bold;}
+font-size:25px;
+font-weight:bold;
+margin-left:10px;}
 .recom_rest_null{
 	height: 10px;
 }
@@ -81,17 +83,28 @@ font-weight:bold;}
 .recom_right{
 	width: 120px;
 	float: right;
-	margin-top: 20px;
+	 height:300px;
 }
 .recom_right img:hover{
 	cursor: pointer;
 }
 
 .recom_rdown{
-	padding-top: 150px;
+ 
+
 }
+
+#grade_batch{
+margin-bottom:150px;
+vertical-align:bottom;
+padding:35px;
+font-size:33px;
+color:darkorange;}
+
 .sangshe{
 	font-size: 18px;
+	margin-left:20px; 
+	   
 }
 
 .box input[type=text]{
@@ -133,9 +146,9 @@ text-align:center;
       </div>
       
       <div class="recom_tbox">
-        <div class="recom_rest">
+        <div class="recom_rest" >
           <a href="../controller/rest/rest1?f_num=${f.f_num}">
-             <span class="recom_rest_name2"> 식당이름 : ${f.bsnsnm}</span>
+             <span class="recom_rest_name2">  ${f.bsnsnm}</span>
            
              <div class="recom_rest_null"></div>
              <span class="recom_rest_addr">주소 : ${f.addr }</span>
@@ -144,8 +157,7 @@ text-align:center;
       </div>  
       
       <div class="recom_right">
-        <img alt="" src="./resources/images/starb.png" width="80" height="80">
-        
+        <p id="grade_batch"> ${f.grade}</p>
         <div class="recom_rdown">
           <a href="../controller/rest/rest1?f_num=${f.f_num}">
              <span class="sangshe">상세보기 ></span>

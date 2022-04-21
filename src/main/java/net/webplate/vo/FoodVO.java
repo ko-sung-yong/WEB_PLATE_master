@@ -23,7 +23,9 @@ public class FoodVO {
 	private double grade;
 	private String regdate;
 	
-		
+	// 임시로 저장되기 위한 변수
+	private int like_state;
+	private String mem_id;	
 	
 	//  페이징 변수
 	private int startrow;
@@ -162,6 +164,22 @@ public class FoodVO {
 	public void setGrade(double grade) {
 		this.grade = grade;
 	}
+	
+	
+	public int getLike_state() {
+		return like_state;
+	}
+	public void setLike_state(int like_state) {
+		this.like_state = like_state;
+	}
+	public String getMem_id() {
+		return mem_id;
+	}
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
+	}
+
+
 	
 	
 	

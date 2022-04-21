@@ -4,10 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.webplate.dao.AdminDAO;
 import net.webplate.vo.AdminVO;
 import net.webplate.vo.FoodVO;
+import net.webplate.vo.LikeVO;
+import net.webplate.vo.ReviewVO;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -62,6 +65,36 @@ public class AdminServiceImpl implements AdminService {
 	public void getHit(int f_num) {
 		adminDao.getHit(f_num);
 	}
+
+    
+	
+	// ¸®ºäµî·Ï
+	@Transactional
+	@Override
+	public void insertReview(ReviewVO r) {
+		adminDao.insertReview(r);	
+		adminDao.downhit(r);
+	}
+
+    // ¸®ºä Æò±Õ °¡Á®¿À±â
+	@Override
+	public double getPoint(int f_num) {
+		return adminDao.getPoint(f_num);
+	}
+
+
+	@Override
+	public void updateReviewPoint(FoodVO food) {
+		adminDao.updateReviewPoint(food);		
+	}
+
+
+
+
+
+
+
+
 
 
 

@@ -84,12 +84,35 @@ update food set bsnscond=#{bsnscond},bsnsnm=#{bsnsnm},menu=#{menu},addr=#{addr},
 
 <!--  세부 정보 보기 -->
 <select id="admin_food_detail" resultType="food">
-select * from food where f_num=#{f_num}
+select * from food where f_num=#{f_num} order by grade desc
 </select>
 
 <!--  조회수 증가 -->
 <update id="adfood_hit_up">
 update food set viewcnt=viewcnt+1 where f_num=#{f_num}
 </update>
+
+<!--  리뷰 등록 -->
+
+<insert id="review_insert">
+insert into review(rno,f_num,mem_id,r_point,r_cont,regdate) values(rno.nextval,#{f_num},#{mem_id},#{r_point},#{r_cont},sysdate)
+</insert>
+
+<!--  리뷰 점수 불러오기 -->
+<select id="review_point" resultType="double">
+select round(avg(r_point),1) from review where f_num=#{f_num}
+</select>
+
+<!--  리뷰 점수 갱신 -->
+<update id="food_grade">
+update food set grade=#{grade} where f_num=#{f_num}
+</update>
+
+<!--  조회수 감소 -->
+<update id="food_hit_down">
+update food set viewcnt=viewcnt-1 where f_num=#{f_num} 
+</update>
+
+
 
 </mapper>

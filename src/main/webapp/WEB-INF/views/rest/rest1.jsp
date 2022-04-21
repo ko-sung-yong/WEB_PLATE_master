@@ -5,7 +5,8 @@
 <script src="https://kit.fontawesome.com/9376c7b079.js"></script>
 
 <style>
-	input[id*="btn"]{
+/*-------- 모달 창  -------- */
+input[id*="btn"]{
 	display:none;
 	}
 	input[id*="btn"]+label{
@@ -161,7 +162,155 @@ cursor:pointer;
 #review_cont{
  resize:none;
 }
-</style> 
+
+div.rest_down{
+	width: 95%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+h2.down_title {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #4F4F4F;
+    margin: 10px;
+}
+
+header.down_header {
+	display: -webkit-flex;
+	margin-bottom: 10px;
+}
+
+ul.point_filter {
+	display: -webkit-flex;
+    list-style: none;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+li.point_item:after {
+	content: '|';
+	margin: 0 7px;
+}
+
+li.point_item:last-child:after {
+	content: '';
+	display: none;
+}
+
+button.point_button {
+    appearance: none;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 18px;
+    color: #4F4F4F;
+}
+
+li.review_item {
+    margin: 0px 0px 20px 0px;
+}
+
+a.review_box{
+	display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    padding: 20px 0 20px 0;
+}
+
+div.review_user {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-basis: 70px;
+    -ms-flex-preferred-size: 70px;
+    flex-basis: 70px;
+    -webkit-flex-basis: 70px;
+    margin: 55px 35px 0 8px;
+}
+
+div.review_content2{
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+}
+
+div.review_wrap2{
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    width: fit-content;
+    height: fit-content;
+    text-align: -webkit-auto;
+    
+}
+
+p.review_text {
+    font-size: 20px;
+    line-height: 1.8;
+    word-break: break-all;
+    color: #000000;
+    font-weight: bold;
+}
+
+span.review_date {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #9B9B9B;
+}
+
+div.edit_button {
+    margin-left: 143px;
+}
+
+button.review_edit{
+	appearance: none;
+    cursor: pointer;
+    border: solid #767676;
+    border-radius: 8px;
+    background-color: #767676;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: lighter;
+}
+
+button.review_del{
+	margin-left: 8px;
+	appearance: none;
+    cursor: pointer;
+    border: solid #767676;
+    border-radius: 8px;
+    background-color: #767676;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: lighter;
+}
+
+</style>
 <script>
     function login(){
     	alert('로그인이 필요한 기능입니다!');
@@ -181,6 +330,44 @@ cursor:pointer;
     	}
     }
     
+    /* 좋아요 */
+    function like_func(){
+      var frm_read = $('#frm_read');
+      var boardno = $('#boardno').val();
+      console.log("boardno" + boardno);
+      
+      $.ajax({
+        url: "../like",
+        type: "GET",
+        cache: false,
+        dataType: "json",
+        data: 'boardno=' +boardno,
+        success: function(data) {
+          var msg = '';
+          var like_img = '';
+          msg += data.msg;
+          alert(msg);
+          
+          if(data.like_check == 0){
+              like_img = "../resources/images/starb.png";
+            } else {
+              like_img = "../resources/images/staro.png";
+            }
+          $('#like_img', frm_read).attr('src', like_img);
+          $('#like_check').html(data.like_check);
+
+        },
+        error: function(request, status, error){
+          alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+          console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        }
+      });
+    }
+
+      function login_need(){
+      	alert('로그인이 필요합니다');
+      	
+     }
     
     </script>
 <div class="rest_img">
@@ -213,9 +400,19 @@ cursor:pointer;
     <span class="restName">${f.bsnsnm }</span>
     
     <div class="rew_btn">
-      <button type="button" class="btn">
-        <img src="../resources/images/starb.png" width="82" height="82">
-      </button>
+       <form name="frm_read" id="frm_read" method="get">      
+      <input type="hidden" id='boardno' name="boardno" value='${f.f_num}'>
+      
+      <c:choose>
+      	<c:when test="${Sid ne null}">
+       		<img id="like_img" src="../resources/images/starb.png" width="80" height="80" onclick=" like_func();">
+       </c:when>
+       <c:otherwise>
+       		<img  src="../resources/images/starb.png" width="80" height="80" onclick="login_need();">
+       </c:otherwise>
+        </c:choose>           
+      
+      </form>
     </div>
     
     <c:choose>
@@ -421,9 +618,50 @@ kakao.maps.event.addListener(marker, 'click', function() {
 <%----------------------------------------------------%>
 
 <div class="rest_down">
-  <div>
-  
-  </div>
+<header class="down_header">
+<h2 class="down_title">리뷰</h2>
+<ul class="point_filter">
+<li class="point_item"><button class="point_button" value="">전체<span class="point_count">(<%--댓글 갯수--%>)</span></button></li>
+<li class="point_item"><button class="point_button" value="">☆☆☆☆☆<span class="point_count">(<%--댓글 갯수--%>)</span></button></li>
+<li class="point_item"><button class="point_button" value="">☆☆☆☆<span class="point_count">(<%--댓글 갯수--%>)</span></button></li>
+<li class="point_item"><button class="point_button" value="">☆☆☆<span class="point_count">(<%--댓글 갯수--%>)</span></button></li>
+<li class="point_item"><button class="point_button" value="">☆☆<span class="point_count">(<%--댓글 갯수--%>)</span></button></li>
+<li class="point_item"><button class="point_button" value="">☆<span class="point_count">(<%--댓글 갯수--%>)</span></button></li>
+</ul>
+</header>
+<ul class="review_list">
+<li class="review_item">
+<a class="review_box">
+<div class="review_user">
+<div class="profile_wrap">
+<img src="../resources/images/profile.png" width="100" height="100"/>
+</div>
+<span class="review_username" style="text-align: center; color: #000000; font-weight: 600;"><%-- 리뷰 유저 이름 --%>TestUser</span>
+</div>
+<div class="review_content2" style="width: 80%;">
+<div class="review_wrap2">
+<p class="review_text" style="font-size: 20px; line-height: 1.8; color: #000000; font-weight: bold;">
+<%-- 작성한 리뷰 --%>TestReview TestReview TestReview TestReview TestReview TestReview TestReview TestReview 
+TestReview TestReview TestReview TestReview TestReview TestReview TestReview TestReview
+TestReview TestReview TestReview TestReview TestReview TestReview TestReview TestReview
+TestReview TestReview TestReview TestReview TestReview TestReview TestReview TestReview
+TestReview TestReview TestReview TestReview TestReview TestReview TestReview TestReview
+TestReview TestReview TestReview TestReview TestReview TestReview TestReview TestReview
+TestReview TestReview TestReview TestReview TestReview TestReview TestReview TestReview
+TestReview TestReview TestReview TestReview TestReview TestReview TestReview TestReview
+</p>
+<span class="review_date" style="font-size: 16px; line-height: 3; color: #C8C8C8;"><%-- 리뷰 작성 시간 --%>2022-04-19</span>
+</div>
+</div>
+<div class="point_rating">
+<img src="../resources/images/like.jpg" width="60" height="60" style="margin-top: 55px; margin-left: 20px;"/>
+</div>
+</a>
+<div class="edit_button">
+<button class="review_edit">수정</button><button class="review_del">삭제</button>
+</div>
+</li>
+</ul>
 </div>
 
 <jsp:include page="../include/footer.jsp" />

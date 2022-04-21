@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.webplate.vo.FoodVO;
 
@@ -64,6 +65,8 @@ public class FoodDAOImpl implements FoodDAO{
 	public int foodArea_Hit(String divide) {
 		return sqlSession.selectOne("food_Area_hit",divide);
 	}
+	
+	// 돼지고기 맛집 탑 8
 
 	@Override
 	public List<FoodVO> getTop_8(String pig) {
@@ -88,6 +91,31 @@ public class FoodDAOImpl implements FoodDAO{
 	public int getCont_Count(String eat) {
 		return sqlSession.selectOne("cond_count",eat);
 	}
+	
+	// 평점 탑 8 리스트
+	@Override
+	public List<FoodVO> getTop_8() {
+		return sqlSession.selectList("Grade_Top8");
+	}
+	
+	// 좋아요 구분
+	@Override
+	public List<FoodVO> getLike_state(String Sid) {
+		return  sqlSession.selectList("food_like_state",Sid);
+	}
+
+	@Override
+	public List<FoodVO> getCondList2(FoodVO food) {	
+		return sqlSession.selectList("food_cont_like",food);
+	}
+
+	// 좋아요 구분하기 위한 지역별 맛집리스트
+	@Override
+	public List<FoodVO> getAddrCont2(FoodVO food) {
+		return sqlSession.selectList("food_addr_like",food);
+	}
+	
+
 
 
 

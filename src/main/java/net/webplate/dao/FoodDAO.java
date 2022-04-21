@@ -31,6 +31,20 @@ public interface FoodDAO {
 
 	int getCont_Count(String eat);
 
+	List<FoodVO> getTop_8();
+	
+	List<FoodVO> getLike_state(String Sid);
+
+	List<FoodVO> getCondList2(FoodVO food);
+
+	List<FoodVO> getAddrCont2(FoodVO food);
+
+
+
+	
+
+
+
 	
 
 

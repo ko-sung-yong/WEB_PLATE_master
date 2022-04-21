@@ -1,6 +1,7 @@
 package net.webplate.service;
 
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,6 +76,39 @@ public class FoodServiceImpl implements FoodService {
 	public int getCont_Count(String eat) {
 		return foodDao.getCont_Count(eat);
 	}
+	
+	// 평점 탑 8 리스트 출력
+	@Override
+	public List<FoodVO> getTop_8() {
+		
+		return foodDao.getTop_8();
+	}
+
+	@Override
+	public List<FoodVO> getLike_state(String Sid) {
+		return foodDao.getLike_state(Sid);
+	}
+
+	// 좋아요 구분하기 위한 믿고보는 맛집리스트
+	@Override
+	public List<FoodVO> getCondList2(FoodVO food) {		
+		return foodDao.getCondList2(food);
+	}
+	
+	// 좋아요 구분하기 위한 지역별 맛집리스트
+	@Override
+	public List<FoodVO> getAddrCont2(FoodVO food) {
+		return foodDao.getAddrCont2(food);
+	}
+
+
+
+
+	
+	
+
+
+
 
 
 

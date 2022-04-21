@@ -1,15 +1,14 @@
 package net.webplate.vo;
 
+
 public class LikeVO {
 	
-	private int like_no;
-	private int f_num;
-	private String mem_id;
-	private int like_state;
-	private String like_sysdate;
-	
-	
-	
+	 private int like_no;
+	 private int f_num;
+	 private String mem_id;
+	 private int like_state;
+	 private String like_sysdate;
+	 
 	public int getLike_no() {
 		return like_no;
 	}
@@ -40,7 +39,6 @@ public class LikeVO {
 	public void setLike_sysdate(String like_sysdate) {
 		this.like_sysdate = like_sysdate;
 	}
-	
-	
+
 
 }

@@ -71,5 +71,9 @@ and like_table.mem_id=#{Sid}
 
 </select>
 
+<!--  사용자가 삭제 버튼 눌렀을 때 경우 -->
+<delete id="like_User_del">
+delete from like_table where mem_id=#{mem_id} and f_num=#{f_num}
+</delete>
 
 </mapper>

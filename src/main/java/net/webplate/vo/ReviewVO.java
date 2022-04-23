@@ -10,5 +10,8 @@ public class ReviewVO {
 	private int r_point;
 	private String r_cont;
 	private String regdate;
+	
+	private int Startrow;
+	private int Endrow;
 
 }

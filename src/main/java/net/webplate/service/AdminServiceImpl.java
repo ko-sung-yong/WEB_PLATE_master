@@ -90,6 +90,43 @@ public class AdminServiceImpl implements AdminService {
 
 
 
+	@Override
+	public List<FoodVO> getmem_cont(FoodVO f) {
+		return adminDao.getmem_cont(f);
+	}
+
+
+	@Override
+	public List<FoodVO> getnon_cont(FoodVO f) {
+		return adminDao.getnon_cont(f);
+	}
+	
+	@Override
+	public List<ReviewVO> GetReviewInfo(ReviewVO review) {
+		return adminDao.GetReviewInfo(review);
+	}
+
+
+	@Override
+	public int GetReviewInfoCount(ReviewVO review) {
+		return adminDao.GetReviewInfoCount(review);
+	}
+	
+	@Override
+	public String getmem_id(ReviewVO review) {
+		return adminDao.getmem_id(review);
+	}
+
+
+	@Override
+	public void updateReviewEdit(ReviewVO review) {
+		this.adminDao.updateReviewEdit(review);
+		
+	}
+
+
+
+
 
 
 

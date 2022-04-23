@@ -28,6 +28,17 @@ public interface AdminService {
 	double getPoint(int f_num);
 	// °ª º¯°æ
 	void updateReviewPoint(FoodVO food);
+	List<FoodVO> getmem_cont(FoodVO f);
+	
+	List<FoodVO> getnon_cont(FoodVO f);
+	
+	int GetReviewInfoCount(ReviewVO review);
+	
+	List<ReviewVO> GetReviewInfo(ReviewVO review);
+	
+	void updateReviewEdit(ReviewVO review);
+	
+	String getmem_id(ReviewVO review);
 	
 	
 	

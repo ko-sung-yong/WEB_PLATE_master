@@ -478,9 +478,250 @@ public class FoodController {
 		
 	}
 	
+	// 메뉴별 맛집 리스트
 	@RequestMapping(value="/reTop30")
-	public void reTop30() {
+	public ModelAndView reTop30(HttpServletRequest request,HttpSession session) {
+		Date nowTime = new Date();
+		SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
+		String Date=dt.format(nowTime);		
 		
+		int menu=Integer.parseInt(request.getParameter("menu"));
+		String Sid=(String)session.getAttribute("Sid");
+		
+		if(menu==1) {
+			String eat="국수 인기";
+			String eat2="%국수%";
+			String ment="국수가 땡기는 날엔~";
+			
+			int hit=foodservice.getTotal_MenuContHit(eat2);
+			if(Sid!=null) {
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setCategory(eat2);
+				
+				List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+				ModelAndView m=new ModelAndView("recomTop/reTop30");
+				m.addObject("eat", eat);
+				m.addObject("like_list", like_list);
+				m.addObject("Date", Date);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				return m;
+			}else {
+				List<FoodVO>food=foodservice.getMenuList(eat2);
+				ModelAndView m=new ModelAndView("recomTop/reTop30");
+				m.addObject("eat", eat);
+				m.addObject("eat2", eat2);
+				m.addObject("food", food);
+				m.addObject("Date", Date);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				return m;
+			}
+			
+		}
+			else if(menu==2) {
+				String eat="스시 인기";
+				String eat2="%회%";
+				String ment="스시 먹으려면  여기를 가야지";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+				
+			}else if(menu==3) {
+				String eat="돼지고기 인기";
+				String eat2="%돼지%";
+				String ment="한국인의 소울푸드는 돼지고기가 아닐까?";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+				
+			}else if(menu==4) {
+				String eat="소고기 인기";
+				String eat2="%소고기%";
+				String ment="소고기가 입에 들어가면 정말 행복해!";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+				
+			}else if(menu==5) {
+				String eat="스테이크 인기";
+				String eat2="%스테이크%";
+				String ment="스테이크 썰어서 먹어볼까?";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+				
+			}else if(menu==5) {
+				String eat="스테이크 인기";
+				String eat2="%스테이크%";
+				String ment="스테이크 썰어서 먹어볼까?";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+								
+			}
+			else if(menu==6) {
+				String eat="정식 인기";
+				String eat2="%정식%";
+				String ment="2022 한식 맛집이 궁금하다면 주목!";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop30");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}
+		
+			return null;
 	}
 	
 	

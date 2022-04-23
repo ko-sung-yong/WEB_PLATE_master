@@ -107,10 +107,22 @@ select food.f_num as f_num ,bsnsnm ,addr,grade,food_file1,nvl(like_table.like_st
 food.f_num=like_table.f_num and mem_id=#{mem_id} where <![CDATA[rownum<=30]]> and addr like #{addr} order by grade desc
 </select>
 
+<!--  메뉴별 맛집리스트 조회수 -->
+<select id="food_menu_hit" resultType="int">
+select sum(viewcnt) from food where category like #{eat2}
+</select>
 
 
+<!--   로그인 상태시 메뉴별 조회  -->
+<select id="food_menu_List" resultType="food">
+select food.f_num as f_num ,bsnsnm ,addr,grade,food_file1,nvl(like_table.like_state,0) like_state from food  left join like_table on
+food.f_num=like_table.f_num and mem_id=#{mem_id} where <![CDATA[rownum<=30]]> and category like #{category} order by grade desc
+</select>
 
-
+<!--  비회원 메뉴별 조회  -->
+<select id="food_getMenuList2" resultType="food">
+select * from food where category like #{category}
+</select>
 
 
 </mapper>

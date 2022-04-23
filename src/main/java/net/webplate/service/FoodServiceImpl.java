@@ -101,6 +101,21 @@ public class FoodServiceImpl implements FoodService {
 		return foodDao.getAddrCont2(food);
 	}
 
+	@Override
+	public int getTotal_MenuContHit(String eat2) {
+		return foodDao.getTotal_MenuContHit(eat2);
+	}
+
+	@Override
+	public List<FoodVO> getMenuList2(FoodVO food) {		
+		return foodDao.getMenuList2(food);
+	}
+
+	@Override
+	public List<FoodVO> getMenuList(String eat2) {
+		return foodDao.getMenuList(eat2);
+	}
+
 
 
 

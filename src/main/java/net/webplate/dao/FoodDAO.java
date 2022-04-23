@@ -39,6 +39,12 @@ public interface FoodDAO {
 
 	List<FoodVO> getAddrCont2(FoodVO food);
 
+	int getTotal_MenuContHit(String eat2);
+
+	List<FoodVO> getMenuList2(FoodVO food);
+
+	List<FoodVO> getMenuList(String eat2);
+
 
 
 	

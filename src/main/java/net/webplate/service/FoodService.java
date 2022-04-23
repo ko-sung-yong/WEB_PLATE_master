@@ -46,6 +46,14 @@ public interface FoodService {
 	
 	// 지역별 맛집리스트
 	List<FoodVO> getAddrCont2(FoodVO food);
+	
+	// 메뉴별 맛집리스트 조회
+	int getTotal_MenuContHit(String eat2);
+	
+	// 회원에 따라 메뉴리스트 좋아요 구분
+	List<FoodVO> getMenuList2(FoodVO food);
+    //메뉴리스트 좋아요 구분
+	List<FoodVO> getMenuList(String eat2);
     
 	
 	

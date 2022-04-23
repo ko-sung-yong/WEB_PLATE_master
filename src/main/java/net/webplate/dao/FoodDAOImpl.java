@@ -115,6 +115,24 @@ public class FoodDAOImpl implements FoodDAO{
 		return sqlSession.selectList("food_addr_like",food);
 	}
 	
+	// 메뉴별 조회수
+	@Override
+	public int getTotal_MenuContHit(String eat2) {
+		return sqlSession.selectOne("food_menu_hit",eat2);
+	}
+	
+	// 로그인 상태시 메뉴별 조회
+	@Override
+	public List<FoodVO> getMenuList2(FoodVO food) {
+		return sqlSession.selectList("food_menu_List",food);
+	}
+	
+	// 비회원 메뉴별 조회
+	@Override
+	public List<FoodVO> getMenuList(String eat2) {
+		return sqlSession.selectList("food_getMenuList2",eat2);
+	}
+	
 
 
 

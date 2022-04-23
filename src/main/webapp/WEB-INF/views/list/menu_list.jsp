@@ -22,7 +22,7 @@ $(function(){
        <ul class="l_ul1">
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/pasta.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=1" class="l_img_text">
              <div class="tit_de">
                <span class="tit">파스타 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -31,7 +31,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/pig.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=2" class="l_img_text">
              <div class="tit_de">
                <span class="tit">돼지고기 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -40,7 +40,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/donkgas.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=3" class="l_img_text">
              <div class="tit_de">
                <span class="tit">돈까스 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -49,7 +49,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/piggob.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=4" class="l_img_text">
              <div class="tit_de">
                <span class="tit">돼지곱창 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -58,7 +58,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/dduck.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=5" class="l_img_text">
              <div class="tit_de">
                <span class="tit">떡볶이 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -67,7 +67,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/daegu.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=6" class="l_img_text">
              <div class="tit_de">
                <span class="tit">OO OOOO 추천 TOP OO</span>
                <p class="de">" OOOO "</p>
@@ -76,7 +76,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/daegu.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=7" class="l_img_text">
              <div class="tit_de">
                <span class="tit">OO OOOO 추천 TOP OO</span>
                <p class="de">" OOOO "</p>
@@ -88,7 +88,7 @@ $(function(){
        <ul class="l_ul2">
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/sushi.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=8" class="l_img_text">
              <div class="tit_de">
                <span class="tit">스시 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -97,7 +97,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/cow.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=9" class="l_img_text">
              <div class="tit_de">
                <span class="tit">소고기 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -106,7 +106,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/ramen.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=10" class="l_img_text">
              <div class="tit_de">
                <span class="tit">라멘 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -115,7 +115,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/cowgob.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=11" class="l_img_text">
              <div class="tit_de">
                <span class="tit">소곱창 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -124,7 +124,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/menu/pizza.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=12" class="l_img_text">
              <div class="tit_de">
                <span class="tit">피자 인기 맛집 TOP 30</span>
                <p class="de">" OOOO "</p>
@@ -133,7 +133,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/daegu.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=13" class="l_img_text">
              <div class="tit_de">
                <span class="tit">OO OOOO 추천 TOP OO</span>
                <p class="de">" OOOO "</p>
@@ -142,7 +142,7 @@ $(function(){
          </li>
          <li>
            <img class="l_img" alt="OO OOOO 추천 TOP OO 사진" src="../resources/images/daegu.jpg" width="550" height="250">
-           <a href="#" class="l_img_text">
+           <a href="../recomTop/reTop20?category=14" class="l_img_text">
              <div class="tit_de">
                <span class="tit">OO OOOO 추천 TOP OO</span>
                <p class="de">" OOOO "</p>

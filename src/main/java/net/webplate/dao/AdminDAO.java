@@ -35,6 +35,18 @@ public interface AdminDAO {
 	// 조회수 감소
 	void downhit(ReviewVO r);
 
+	List<FoodVO> getmem_cont(FoodVO f);
+
+	List<FoodVO> getnon_cont(FoodVO f);
+
+	List<ReviewVO> GetReviewInfo(ReviewVO review);
+
+	int GetReviewInfoCount(ReviewVO review);
+
+	String getmem_id(ReviewVO review);
+
+	void updateReviewEdit(ReviewVO review);
+
 
 
 

@@ -101,6 +101,45 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 
+	 // 회원일때 세부내역 조회
+		@Override
+		public List<FoodVO> getmem_cont(FoodVO f) {
+			return sql.selectList("food_like_m_state",f);
+		}
+
+
+	    // 비회원일때  세부내역 조회
+		@Override
+		public List<FoodVO> getnon_cont(FoodVO f) {
+			return sql.selectList("food_like_none",f);
+		}
+		
+		
+		@Override
+		public List<ReviewVO> GetReviewInfo(ReviewVO review) {
+			return sql.selectList("review_read", review);
+		}
+
+
+
+		@Override
+		public int GetReviewInfoCount(ReviewVO review) {
+			return sql.selectOne("review_csum", review);
+		}
+		
+		
+		@Override
+		public String getmem_id(ReviewVO review) {
+			return sql.selectOne("review_memid", review);
+		}
+
+
+
+		@Override
+		public void updateReviewEdit(ReviewVO review) {
+			this.sql.update("review_editok", review);
+			
+		}
 
 
 

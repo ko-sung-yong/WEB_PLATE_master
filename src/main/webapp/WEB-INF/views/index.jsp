@@ -161,19 +161,19 @@ function search_check(){
               <div class="list_img">
                  <ul class="list_ul">
                     <li>
-                       <img class="list_img_jpg" alt="파스타 인기 맛집 TOP 30 사진" src="resources/images/menu/pasta.jpg">
-                       <a href="/controller/recomTop/reTop30">
+                       <img class="list_img_jpg" alt="국수 인기 맛집 TOP 30 사진" src="resources/images/menu/noodle.jpg">
+                       <a href="/controller/recomTop/reTop30?menu=1">
                        <div class="list_img_text">
-                         <span class="title">파스타 인기 맛집 TOP 30</span>
-                         <p class="desc">" 파스타가 먹고싶은날엔~ "</p>
+                         <span class="title">국수 인기 맛집 TOP </span>
+                         <p class="desc">" 국수가 땡기는 날엔~ "</p>
                        </div>
                        </a>
                      </li>
                      <li>
                        <img class="list_img_jpg" alt="스시 인기 맛집 TOP 30 사진" src="resources/images/menu/sushi.jpg">
-                       <a href="/controller/recomTop/reTop30">
+                       <a href="/controller/recomTop/reTop30?menu=2">
                        <div class="list_img_text">
-                         <span class="title">스시 인기 맛집 TOP 30</span>
+                         <span class="title">스시 인기 맛집 TOP </span>
                          <p class="desc">" 스시 먹으려면  여기를 가야지"</p>
                        </div>
                        </a>
@@ -183,18 +183,18 @@ function search_check(){
                   <ul class="list_ul">
                     <li>
                        <img class="list_img_jpg" alt="돼지고기 인기 맛집 TOP 30 사진" src="resources/images/menu/pig.jpg">
-                       <a href="/controller/recomTop/reTop30">
+                       <a href="/controller/recomTop/reTop30?menu=3">
                        <div class="list_img_text">
-                         <span class="title">돼지고기 인기 맛집 TOP 30</span>
+                         <span class="title">돼지고기 인기 맛집 TOP </span>
                          <p class="desc">" 한국인의 소울푸드는 돼지고기가 아닐까?  "</p>
                        </div>
                        </a>
                      </li>
                      <li>
                        <img class="list_img_jpg" alt="소고기 인기 맛집 TOP 30 사진" src="resources/images/menu/cow.jpg">
-                       <a href="/controller/recomTop/reTop30">
+                       <a href="/controller/recomTop/reTop30?menu=4">
                        <div class="list_img_text">
-                         <span class="title">소고기 인기 맛집 TOP 30</span>
+                         <span class="title">소고기 인기 맛집 TOP </span>
                          <p class="desc">" 소고기가 입에 들어가면 정말 행복해 "</p>
                        </div>
                        </a>
@@ -203,20 +203,20 @@ function search_check(){
                   
                   <ul class="list_ul">
                     <li>
-                       <img class="list_img_jpg" alt="돈까스 인기 맛집 TOP 30 사진" src="resources/images/menu/donkgas.jpg">
-                       <a href="/controller/recomTop/reTop30">
+                       <img class="list_img_jpg" alt="스테이크 인기 맛집 TOP 30 사진" src="resources/images/menu/stake.jpg">
+                       <a href="/controller/recomTop/reTop30?menu=5">
                        <div class="list_img_text">
-                         <span class="title">돈까스 인기 맛집 TOP 30</span>
-                         <p class="desc">" 돈까스를 소스에 찍어 먹어야지  "</p>
+                         <span class="title">스테이크 인기 맛집 TOP </span>
+                         <p class="desc">" 스테이크 썰어서 먹어볼까?  "</p>
                        </div>
                        </a>
                      </li>
                      <li>
-                       <img class="list_img_jpg" alt="라멘 인기 맛집 TOP 30 사진" src="resources/images/menu/ramen.jpg">
-                       <a href="/controller/recomTop/reTop30">
+                       <img class="list_img_jpg" alt="정식 인기 맛집 TOP 30 사진" src="resources/images/menu/jungsik.jpg">
+                       <a href="/controller/recomTop/reTop30?menu=6">
                        <div class="list_img_text">
-                         <span class="title">라멘 인기 맛집 TOP 30</span>
-                         <p class="desc">" 추운 날 따듯한 라멘 한 그릇 "</p>
+                         <span class="title">정식 인기 맛집 TOP </span>
+                         <p class="desc">" 2022 한식 맛집이 궁금하다면 주목! "</p>
                        </div>
                        </a>
                      </li>

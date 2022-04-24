@@ -746,6 +746,8 @@ kakao.maps.event.addListener(marker, 'click', function() {
 <img src="../resources/images/like.jpg" width="60" height="60" style="margin-top: 55px; margin-left: 20px;"/>
 </div>
 </a>
+
+<c:if test="${Sid==r.mem_id }">
 <div class="edit_button">
  <input type="checkbox" id="editbtn">
 <label for="editbtn" >
@@ -774,7 +776,10 @@ kakao.maps.event.addListener(marker, 'click', function() {
 </div>
 
 <button class="review_del" onclick="">삭제</button>
+
+
 </div>
+</c:if>
 </li>
 </c:forEach>
 </c:if>

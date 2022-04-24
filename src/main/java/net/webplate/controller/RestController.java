@@ -68,7 +68,7 @@ public class RestController {
 			cm.addObject("food_menu", food_menu);
 			cm.setViewName("/rest/rest1");
 			cm.addObject("rlist",rlist);
-			cm.addObject("istcount", listcount);
+			cm.addObject("listcount", listcount);
 			return cm;	
 		   
 	   }else {
@@ -86,7 +86,7 @@ public class RestController {
 		cm.addObject("non", non);
 		cm.addObject("f_num",f_num);
 		cm.addObject("rlist",rlist);
-		cm.addObject("istcount", listcount);
+		cm.addObject("listcount", listcount);
 		cm.addObject("point", point);	
 		cm.addObject("food_menu", food_menu);
 		cm.setViewName("/rest/rest1");

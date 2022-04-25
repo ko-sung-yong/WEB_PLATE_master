@@ -16,4 +16,4 @@ foreign key(mem_id) references member(id) on delete set null -- 아이디가 삭
 select round(avg(r_point),1) from review where f_num=1 ;
 
 -- 시퀀스 번호 생성
-create sequence review_no start with 1 increment by 1 nocache;
+create sequence rno start with 1 increment by 1 nocache;

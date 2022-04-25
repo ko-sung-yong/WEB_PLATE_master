@@ -28,6 +28,7 @@ import net.webplate.service.AdminService;
 import net.webplate.vo.AdminVO;
 import net.webplate.vo.FoodVO;
 import net.webplate.vo.MemberVO;
+import net.webplate.vo.ReviewVO;
 import pwdconv.PwdChange;
 
 @Controller
@@ -422,7 +423,7 @@ public class AdminController {
 	
 	
 	@GetMapping("admin_Board_cont")
-	public ModelAndView admin_Board_cont(HttpServletRequest request,HttpServletResponse response, HttpSession session,FoodVO food)throws Exception{
+	public ModelAndView admin_Board_cont(HttpServletRequest request,HttpServletResponse response, HttpSession session,FoodVO food,ReviewVO review)throws Exception{
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		
@@ -435,23 +436,30 @@ public class AdminController {
 			out.println("</script>");
 		}else {
 			int page=1;
+			int limit=1000;
 			if(request.getParameter("page")!=null) {
 				page=Integer.parseInt(request.getParameter("page"));
 			}
 			int f_num=Integer.parseInt(request.getParameter("f_num"));
-									
+			double point=adminService.getPoint(f_num);						
 			
 			FoodVO f=adminService.getDetails(f_num); // 세부정보
 			String food_menu=f.getMenu().replace("\n", "<br>");
+			int listcount=adminService.GetReviewInfoCount(review);	
+			review.setStartrow((page-1)*10+1);
+			review.setEndrow(review.getStartrow()+limit-1);	
+			
+			List<ReviewVO> rlist=adminService.GetReviewInfo(review);
+					
 						
-			
-			//adminService.getHit(f_num);
-			
 			ModelAndView cm=new ModelAndView();
 			cm.addObject("page", page);
 			cm.addObject("f_num",f_num);
 			cm.addObject("f", f);
 			cm.addObject("food_menu", food_menu);
+			cm.addObject("point", point);
+			cm.addObject("rlist",rlist);
+			cm.addObject("listcount", listcount);
 			cm.setViewName("admin/admin_Board_cont");
 			return cm;			
 		}

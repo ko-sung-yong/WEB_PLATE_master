@@ -41,12 +41,12 @@ public class FoodController {
 		int res=Integer.parseInt(request.getParameter("addr"));
 		
 		if(res==1) {
-			String divide="%¾È»ê%";
-			String divide2="¾È»ê";
-			String ment="¾È»ê À½½Ä ±¸°æÇØ º¼·¡?";
+			String divide="%ì•ˆì‚°%";
+			String divide2="ì•ˆì‚°";
+			String ment="ì•ˆì‚° ìŒì‹ êµ¬ê²½í•´ ë³¼ë˜?";
 			
 			int listcount=foodservice.foodAreaCount(divide);
-			int hit=foodservice.foodArea_Hit(divide); // ÃÑ Á¶È¸¼ö
+			int hit=foodservice.foodArea_Hit(divide); // ì´ ì¡°íšŒìˆ˜
 			
 			if(Sid!=null) {
 				FoodVO food=new FoodVO();
@@ -74,11 +74,11 @@ public class FoodController {
 			}
 		}
 		else if(res==2) {
-			String divide="%È¾¼º%";
-			String divide2="È¾¼º";
-			String ment="È¾¼º Âğ¸ÀÁı ¿©±â ´Ù ÀÖ³×!";			
+			String divide="%íš¡ì„±%";
+			String divide2="íš¡ì„±";
+			String ment="íš¡ì„± ì°ë§›ì§‘ ì—¬ê¸° ë‹¤ ìˆë„¤!";			
 			int listcount=foodservice.foodAreaCount(divide);		
-			int hit=foodservice.foodArea_Hit(divide); // ÃÑ Á¶È¸¼ö
+			int hit=foodservice.foodArea_Hit(divide); // ì´ ì¡°íšŒìˆ˜
 			
 			if(Sid!=null) {
 				FoodVO food=new FoodVO();
@@ -107,11 +107,11 @@ public class FoodController {
 			}
 		}
 		else if(res==3) {
-			String divide="%¿ë»ê±¸%";
-			String divide2="¿ë»ê";
-			String ment="´Ù¾çÇÑ ¸Ô°Å¸®´Â ¿ë»ê¿¡¼­";
+			String divide="%ìš©ì‚°êµ¬%";
+			String divide2="ìš©ì‚°";
+			String ment="ë‹¤ì–‘í•œ ë¨¹ê±°ë¦¬ëŠ” ìš©ì‚°ì—ì„œ";
 			int listcount=foodservice.foodAreaCount(divide);
-			int hit=foodservice.foodArea_Hit(divide); // ÃÑ Á¶È¸¼ö
+			int hit=foodservice.foodArea_Hit(divide); // ì´ ì¡°íšŒìˆ˜
 			
 			if(Sid!=null) {
 				FoodVO food=new FoodVO();
@@ -140,11 +140,11 @@ public class FoodController {
 			}
 		}
 		else if(res==4) {
-			String divide="%ÃáÃµ½Ã%";
-			String divide2="ÃáÃµ";
-			String ment="ÃáÃµÀ» °¡¸é ¿©±ä ²À °¡¾ßÁö";
+			String divide="%ì¶˜ì²œì‹œ%";
+			String divide2="ì¶˜ì²œ";
+			String ment="ì¶˜ì²œì„ ê°€ë©´ ì—¬ê¸´ ê¼­ ê°€ì•¼ì§€";
 			int listcount=foodservice.foodAreaCount(divide);
-			int hit=foodservice.foodArea_Hit(divide); // ÃÑ Á¶È¸¼ö
+			int hit=foodservice.foodArea_Hit(divide); // ì´ ì¡°íšŒìˆ˜
 			
 			if(Sid!=null) {
 				FoodVO food=new FoodVO();
@@ -172,11 +172,11 @@ public class FoodController {
 			}
 		}
 		else if(res==5) {
-			String divide="%´ë±¸±¤¿ª½Ã%";			
-			String divide2="´ë±¸";
-			String ment="¸ÀÁıÇÏ¸é ´ë±¸! ´ë±¸ÇÏ¸é ¸ÀÁı!";
+			String divide="%ëŒ€êµ¬ê´‘ì—­ì‹œ%";			
+			String divide2="ëŒ€êµ¬";
+			String ment="ë§›ì§‘í•˜ë©´ ëŒ€êµ¬! ëŒ€êµ¬í•˜ë©´ ë§›ì§‘!";
 			int listcount=foodservice.foodAreaCount(divide);
-			int hit=foodservice.foodArea_Hit(divide); // ÃÑ Á¶È¸¼ö
+			int hit=foodservice.foodArea_Hit(divide); // ì´ ì¡°íšŒìˆ˜
 			if(Sid!=null) {
 				FoodVO food=new FoodVO();
 				food.setMem_id(Sid);
@@ -204,11 +204,11 @@ public class FoodController {
 			}
 		}
 		else if(res==6) {
-			String divide="%ºÎ»ê±¤¿ª½Ã%";
-			String divide2="ºÎ»ê";
-			String ment="ÀÌ°÷ÀÌ ºÎ»ê ¸ÀÁıÀÌ¶ó ¾ÈÄ«³ª";
+			String divide="%ë¶€ì‚°ê´‘ì—­ì‹œ%";
+			String divide2="ë¶€ì‚°";
+			String ment="ì´ê³³ì´ ë¶€ì‚° ë§›ì§‘ì´ë¼ ì•ˆì¹´ë‚˜";
 			int listcount=foodservice.foodAreaCount(divide);
-			int hit=foodservice.foodArea_Hit(divide); // ÃÑ Á¶È¸¼ö
+			int hit=foodservice.foodArea_Hit(divide); // ì´ ì¡°íšŒìˆ˜
 			if(Sid!=null) {
 				FoodVO food=new FoodVO();
 				food.setMem_id(Sid);
@@ -250,8 +250,8 @@ public class FoodController {
 		
 		
 		if(cond==1) {
-			String eat="ÇÑ½Ä";
-			String ment="°¡Á·°ú ÇÔ²² µû¶æÇÑ ½Ä»ç¸¦";
+			String eat="í•œì‹";
+			String ment="ê°€ì¡±ê³¼ í•¨ê»˜ ë”°ëœ»í•œ ì‹ì‚¬ë¥¼";
 			int count=30;
 			int hit=foodservice.getContHit(eat);
 			if(Sid!=null) {
@@ -283,8 +283,8 @@ public class FoodController {
 			}
 		}
 		else if(cond==2) {
-			String eat="Áß½Ä";
-			String ment="¿À´Ã Â¥Àå¸é ¾î¶§?";
+			String eat="ì¤‘ì‹";
+			String ment="ì˜¤ëŠ˜ ì§œì¥ë©´ ì–´ë•Œ?";
 			
 			int count=foodservice.getCont_Count(eat);
 			int hit=foodservice.getContHit(eat);
@@ -320,8 +320,8 @@ public class FoodController {
 			return m;
 		    }
 		}	else if(cond==3) {
-			String eat="ÀÏ½Ä";
-			String ment="È¸¸¦ Á¤¸» ÁÁ¾ÆÇÑ´Ù¸é?";
+			String eat="ì¼ì‹";
+			String ment="íšŒë¥¼ ì •ë§ ì¢‹ì•„í•œë‹¤ë©´?";
 			
 			int count=foodservice.getCont_Count(eat);
 			int hit=foodservice.getContHit(eat);
@@ -356,8 +356,8 @@ public class FoodController {
 			return m;
 			}
 		}	else if(cond==4) {
-			String eat="¾ç½Ä";
-			String ment="¿ë»ê °¡¸é ¹¹ ¸ÔÁö?";
+			String eat="ì–‘ì‹";
+			String ment="ìš©ì‚° ê°€ë©´ ë­ ë¨¹ì§€?";
 			
 			int count=foodservice.getCont_Count(eat);
 			int hit=foodservice.getContHit(eat);
@@ -391,9 +391,9 @@ public class FoodController {
 			return m;
 			}
 		}else if(cond==5) {
-			String eat="¿Ü±¹ À½½Ä";
-			String eat2="%¿Ü±¹%";
-			String ment="¿©±â¿¡ ÀÌ·± ¸ÀÁıÀÌ?";
+			String eat="ì™¸êµ­ ìŒì‹";
+			String eat2="%ì™¸êµ­%";
+			String ment="ì—¬ê¸°ì— ì´ëŸ° ë§›ì§‘ì´?";
 			
 			int count=foodservice.getCont_Count(eat2);
 			int hit=foodservice.getContHit(eat2);
@@ -428,10 +428,10 @@ public class FoodController {
 			return m;
 			}
 		}	else if(cond==6) {
-			String eat="µğÀúÆ®";
+			String eat="ë””ì €íŠ¸";
 
-			String eat2="%µğÀúÆ®%";
-			String ment="µğÀúÆ®°¡ ¶¯±ä´Ù¸é? ¿ä±â¾î¶§?";
+			String eat2="%ë””ì €íŠ¸%";
+			String ment="ë””ì €íŠ¸ê°€ ë•¡ê¸´ë‹¤ë©´? ìš”ê¸°ì–´ë•Œ?";
 			
 			int count=foodservice.getCont_Count(eat2);
 			int hit=foodservice.getContHit(eat2);
@@ -471,14 +471,10 @@ public class FoodController {
 		
 		return null;
 	}
-	
-	
-	@RequestMapping(value="/reTop20")
-	public void reTop20() {
 		
-	}
+
 	
-	// ¸Ş´ºº° ¸ÀÁı ¸®½ºÆ®
+	// ë©”ë‰´ë³„ ë§›ì§‘ ë¦¬ìŠ¤íŠ¸
 	@RequestMapping(value="/reTop30")
 	public ModelAndView reTop30(HttpServletRequest request,HttpSession session) {
 		Date nowTime = new Date();
@@ -489,9 +485,9 @@ public class FoodController {
 		String Sid=(String)session.getAttribute("Sid");
 		
 		if(menu==1) {
-			String eat="±¹¼ö ÀÎ±â";
-			String eat2="%±¹¼ö%";
-			String ment="±¹¼ö°¡ ¶¯±â´Â ³¯¿£~";
+			String eat="êµ­ìˆ˜ ì¸ê¸°";
+			String eat2="%êµ­ìˆ˜%";
+			String ment="êµ­ìˆ˜ê°€ ë•¡ê¸°ëŠ” ë‚ ì—”~";
 			
 			int hit=foodservice.getTotal_MenuContHit(eat2);
 			if(Sid!=null) {
@@ -522,9 +518,9 @@ public class FoodController {
 			
 		}
 			else if(menu==2) {
-				String eat="½º½Ã ÀÎ±â";
-				String eat2="%È¸%";
-				String ment="½º½Ã ¸ÔÀ¸·Á¸é  ¿©±â¸¦ °¡¾ßÁö";
+				String eat="ìŠ¤ì‹œ ì¸ê¸°";
+				String eat2="%íšŒ%";
+				String ment="ìŠ¤ì‹œ ë¨¹ìœ¼ë ¤ë©´  ì—¬ê¸°ë¥¼ ê°€ì•¼ì§€";
 				
 				int hit=foodservice.getTotal_MenuContHit(eat2);
 				
@@ -555,9 +551,9 @@ public class FoodController {
 				}
 				
 			}else if(menu==3) {
-				String eat="µÅÁö°í±â ÀÎ±â";
-				String eat2="%µÅÁö%";
-				String ment="ÇÑ±¹ÀÎÀÇ ¼Ò¿ïÇªµå´Â µÅÁö°í±â°¡ ¾Æ´Ò±î?";
+				String eat="ë¼ì§€ê³ ê¸° ì¸ê¸°";
+				String eat2="%ë¼ì§€%";
+				String ment="í•œêµ­ì¸ì˜ ì†Œìš¸í‘¸ë“œëŠ” ë¼ì§€ê³ ê¸°ê°€ ì•„ë‹ê¹Œ?";
 				
 				int hit=foodservice.getTotal_MenuContHit(eat2);
 				
@@ -588,9 +584,9 @@ public class FoodController {
 				}
 				
 			}else if(menu==4) {
-				String eat="¼Ò°í±â ÀÎ±â";
-				String eat2="%¼Ò°í±â%";
-				String ment="¼Ò°í±â°¡ ÀÔ¿¡ µé¾î°¡¸é Á¤¸» Çàº¹ÇØ!";
+				String eat="ì†Œê³ ê¸° ì¸ê¸°";
+				String eat2="%ì†Œê³ ê¸°%";
+				String ment="ì†Œê³ ê¸°ê°€ ì…ì— ë“¤ì–´ê°€ë©´ ì •ë§ í–‰ë³µí•´!";
 				
 				int hit=foodservice.getTotal_MenuContHit(eat2);
 				
@@ -621,9 +617,9 @@ public class FoodController {
 				}
 				
 			}else if(menu==5) {
-				String eat="½ºÅ×ÀÌÅ© ÀÎ±â";
-				String eat2="%½ºÅ×ÀÌÅ©%";
-				String ment="½ºÅ×ÀÌÅ© ½ä¾î¼­ ¸Ô¾îº¼±î?";
+				String eat="ìŠ¤í…Œì´í¬ ì¸ê¸°";
+				String eat2="%ìŠ¤í…Œì´í¬%";
+				String ment="ìŠ¤í…Œì´í¬ ì°ì–´ì„œ ë¨¹ì–´ë³¼ê¹Œ?";
 				
 				int hit=foodservice.getTotal_MenuContHit(eat2);
 				
@@ -654,9 +650,9 @@ public class FoodController {
 				}
 				
 			}else if(menu==5) {
-				String eat="½ºÅ×ÀÌÅ© ÀÎ±â";
-				String eat2="%½ºÅ×ÀÌÅ©%";
-				String ment="½ºÅ×ÀÌÅ© ½ä¾î¼­ ¸Ô¾îº¼±î?";
+				String eat="ìŠ¤í…Œì´í¬ ì¸ê¸°";
+				String eat2="%ìŠ¤í…Œì´í¬%";
+				String ment="ìŠ¤í…Œì´í¬ ì°ì–´ì„œ ë¨¹ì–´ë³¼ê¹Œ?";
 				
 				int hit=foodservice.getTotal_MenuContHit(eat2);
 				
@@ -688,9 +684,9 @@ public class FoodController {
 								
 			}
 			else if(menu==6) {
-				String eat="Á¤½Ä ÀÎ±â";
-				String eat2="%Á¤½Ä%";
-				String ment="2022 ÇÑ½Ä ¸ÀÁıÀÌ ±Ã±İÇÏ´Ù¸é ÁÖ¸ñ!";
+				String eat="ì •ì‹ ì¸ê¸°";
+				String eat2="%ì •ì‹%";
+				String ment="2022 ì •ì‹ ë§›ì§‘ì´ ê¶ê¸ˆí•˜ë‹¤ë©´ ì£¼ëª©!";
 				
 				int hit=foodservice.getTotal_MenuContHit(eat2);
 				
@@ -754,6 +750,397 @@ public class FoodController {
 		}
 	}
 	
+	
+	// ë¦¬ìŠ¤íŠ¸ ë”ë³´ê¸° í–ˆì„ë•Œ ë©”ë‰´ë³„ ë§›ì§‘ ë¦¬ìŠ¤íŠ¸
+	@RequestMapping(value="/reTop20")
+	public ModelAndView reTop20(HttpSession session,HttpServletRequest request)throws Exception {
+		Date nowTime = new Date();
+		SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd");
+		String Date=dt.format(nowTime);		
+		
+		int menu=Integer.parseInt(request.getParameter("menu"));
+		String Sid=(String)session.getAttribute("Sid");
+		
+		
+		if(menu==1) {
+			String eat="êµ­ìˆ˜ ì¸ê¸°";
+			String eat2="%êµ­ìˆ˜%";
+			String ment="êµ­ìˆ˜ê°€ ë•¡ê¸°ëŠ” ë‚ ì—”~";
+			
+			int hit=foodservice.getTotal_MenuContHit(eat2);
+			if(Sid!=null) {
+				FoodVO food=new FoodVO();
+				food.setMem_id(Sid);
+				food.setCategory(eat2);
+				
+				List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+				ModelAndView m=new ModelAndView("recomTop/reTop20");
+				m.addObject("eat", eat);
+				m.addObject("like_list", like_list);
+				m.addObject("Date", Date);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				return m;
+			}else {
+				List<FoodVO>food=foodservice.getMenuList(eat2);
+				ModelAndView m=new ModelAndView("recomTop/reTop20");
+				m.addObject("eat", eat);
+				m.addObject("eat2", eat2);
+				m.addObject("food", food);
+				m.addObject("Date", Date);		
+				m.addObject("ment", ment);
+				m.addObject("hit", hit);
+				return m;
+			}
+		}
+			else if(menu==2) {
+				String eat="ìŠ¤ì‹œ ì¸ê¸°";
+				String eat2="%íšŒ%";
+				String ment=" ìŠ¤ì‹œ ë¨¹ìœ¼ë ¤ë©´  ì—¬ê¸°ë¥¼ ê°€ì•¼ì§€ ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}else if(menu==3) {
+				String eat="ë¼ì§€ê³ ê¸° ì¸ê¸°";
+				String eat2="%ë¼ì§€%";
+				String ment=" í•œêµ­ì¸ì˜ ì†Œìš¸í‘¸ë“œëŠ” ë¼ì§€ê³ ê¸°ê°€ ì•„ë‹ê¹Œ?  ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}else if(menu==4) {
+				String eat="ì†Œê³ ê¸° ì¸ê¸°";
+				String eat2="%ì†Œ%";
+				String ment=" ì†Œê³ ê¸°ê°€ ì…ì— ë“¤ì–´ê°€ë©´ ì •ë§ í–‰ë³µí•´ ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}else if(menu==5) {
+				String eat="ìŠ¤í…Œì´í¬ ì¸ê¸°";
+				String eat2="%ìŠ¤í…Œì´í¬%";
+				String ment=" ìŠ¤í…Œì´í¬ ì°ì–´ì„œ ë¨¹ì–´ë³¼ê¹Œ? ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}else if(menu==6) {
+				String eat="ë‹­ìš”ë¦¬  ì¸ê¸°";
+				String eat2="%ë‹­%";
+				String ment=" ì¹˜í‚¨ë§ê³  ì˜¤ëŠ˜ì€ ì´ ë‹­ ì–´ë•Œ...? ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}else if(menu==7) {
+				String eat="ì •ì‹  ì¸ê¸°";
+				String eat2="%ì •ì‹%";
+				String ment=" 2022 ì •ì‹ ë§›ì§‘ì´ ê¶ê¸ˆí•˜ë‹¤ë©´ ì£¼ëª©! ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}else if(menu==8) {
+				String eat="í–„ë²„ê±°  ì¸ê¸°";
+				String eat2="%í–„ë²„ê±°%";
+				String ment=" ì¶œì¶œí• ë• í–„ë²„ì–´ì–µ ~~~ ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}else if(menu==9) {
+				String eat="ì–‘ê³ ê¸°  ì¸ê¸°";
+				String eat2="%ì–‘ê³ ê¸°%";
+				String ment=" ë§¥ì£¼ê°€ ë–™ê¸¸ë•? ì–‘ê³ ê¸°ì§€~ ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}
+			else if(menu==10) {
+				String eat="ë³´ìŒˆ  ì¸ê¸°";
+				String eat2="%ë³´ìŒˆ%";
+				String ment=" ì˜¤ëŠ˜ì€ ì–´ë–¤ ê³ ê¸°ë¥¼ ì‹¸ë¨¹ì–´ë³¼ê¹Œ? ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}
+			else if(menu==11) {
+				String eat="ì§œì¥ë©´  ì¸ê¸°";
+				String eat2="%ì§œì¥ë©´%";
+				String ment=" ì˜¤ëŠ˜ì€ ë‚´ê°€ ì¤‘êµ­ì§‘ ìš”ë¦¬ì‚¬~  ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}else if(menu==12) {
+				String eat="ë‚™ì§€  ì¸ê¸°";
+				String eat2="%ë‚™ì§€%";
+				String ment=" ì«„ê¹ƒì«„ê¹ƒí•˜ê³  ì‹±ì‹±í•œ ë‚™ì§€ë§› ";
+				
+				int hit=foodservice.getTotal_MenuContHit(eat2);
+				if(Sid!=null) {
+					FoodVO food=new FoodVO();
+					food.setMem_id(Sid);
+					food.setCategory(eat2);
+					
+					List<FoodVO>like_list=foodservice.getMenuList2(food);
+
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("like_list", like_list);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}else {
+					List<FoodVO>food=foodservice.getMenuList(eat2);
+					ModelAndView m=new ModelAndView("recomTop/reTop20");
+					m.addObject("eat", eat);
+					m.addObject("eat2", eat2);
+					m.addObject("food", food);
+					m.addObject("Date", Date);		
+					m.addObject("ment", ment);
+					m.addObject("hit", hit);
+					return m;
+				}
+			}
+		return null;
+		
+	}
 	
 
 }

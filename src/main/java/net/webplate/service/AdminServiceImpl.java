@@ -117,10 +117,11 @@ public class AdminServiceImpl implements AdminService {
 		return adminDao.getmem_id(review);
 	}
 
-
+	@Transactional
 	@Override
 	public void updateReviewEdit(ReviewVO review) {
 		this.adminDao.updateReviewEdit(review);
+		adminDao.downhit(review);
 		
 	}
 

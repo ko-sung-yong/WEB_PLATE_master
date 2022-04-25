@@ -59,7 +59,7 @@ select count(f_num) from food where addr like #{divide}
 
 <!--  지역별 조회수 -->
 <select id="food_Area_hit" resultType="int">
-select sum(viewcnt) from food where addr like #{divide}
+select sum(viewcnt) from food where addr like #{divide} and <![CDATA[rownum<=30]]> 
 </select>
 
 <!--  메인 맛집 분류  -->
@@ -79,7 +79,7 @@ select * from (select * from food where bsnscond like #{eat}) where <![CDATA[row
 
 <!--  믿고 보는 맛집 리스트 조회수 -->
 <select id="cond_hit" resultType="int">
-select sum(viewcnt) from food where bsnscond like #{eat}
+select sum(viewcnt) from food where bsnscond like #{eat} and <![CDATA[rownum<=30]]> 
 </select>
 
 <!--  믿고 보는 맛집 리스트 개수 -->
@@ -109,7 +109,7 @@ food.f_num=like_table.f_num and mem_id=#{mem_id} where <![CDATA[rownum<=30]]> an
 
 <!--  메뉴별 맛집리스트 조회수 -->
 <select id="food_menu_hit" resultType="int">
-select sum(viewcnt) from food where category like #{eat2}
+select sum(viewcnt) from food where category like #{eat2} and <![CDATA[rownum<=30]]>
 </select>
 
 

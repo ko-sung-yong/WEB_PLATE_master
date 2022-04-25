@@ -7,9 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <title>  </title>
-
+<script src="./resources/js2/review.js"></script>
 <script src="https://kit.fontawesome.com/9376c7b079.js"></script>
 <style>
+*{
+list-style: none;
+
+}
 #board_wrap_cont{
 margin-top:15px;
 width:100%;
@@ -86,6 +90,432 @@ border:1px solid gray;
 .clear{
 clear:both;
 }
+
+
+.review_wrap{
+    width:500px;
+	height:400px;
+	text-align:center;
+}
+
+#review_cont{
+ resize:none;
+}
+
+div.rest_down{
+	width: 95%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+h2.down_title {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #4F4F4F;
+    margin: 10px;
+}
+
+header.down_header {
+	display: -webkit-flex;
+	margin-bottom: 10px;
+}
+
+ul.point_filter {
+	display: -webkit-flex;
+    list-style: none;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+li.point_item:after {
+	content: '|';
+	margin: 0 7px;
+}
+
+li.point_item:last-child:after {
+	content: '';
+	display: none;
+}
+
+button.point_button {
+    appearance: none;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 18px;
+    color: #4F4F4F;
+}
+
+li.review_item {
+    margin: 0px 0px 20px 0px;
+}
+
+a.review_box{
+	display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    padding: 20px 0 20px 0;
+}
+
+div.review_user {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-basis: 70px;
+    -ms-flex-preferred-size: 70px;
+    flex-basis: 70px;
+    -webkit-flex-basis: 70px;
+    margin: 55px 35px 0 8px;
+}
+
+div.review_content2{
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+}
+
+div.review_wrap2{
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    width: fit-content;
+    height: fit-content;
+    text-align: -webkit-auto;
+    
+}
+
+p.review_text {
+    font-size: 20px;
+    line-height: 1.8;
+    word-break: break-all;
+    color: #000000;
+    font-weight: bold;
+}
+
+span.review_date {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #9B9B9B;
+}
+
+div.edit_button {
+    margin-left: 143px;
+}
+
+button.review_edit{
+	appearance: none;
+    cursor: pointer;
+    border: solid #767676;
+    border-radius: 8px;
+    background-color: #767676;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: lighter;
+}
+
+button.review_del{
+	margin-left: 8px;
+	appearance: none;
+    cursor: pointer;
+    border: solid #767676;
+    border-radius: 8px;
+    background-color: #767676;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: lighter;
+}
+
+div.review_page{
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    min-width: 120px;
+    height: 72px;
+    margin: 0 auto;
+    font-size: 19px;
+    color: #ff792a;
+    cursor: pointer;
+}
+
+
+.review_title{
+text-align:center;
+font-size:40px;
+color:black;
+margin-bottom:5px;}
+
+
+.review_button{
+margin-top:20px;
+margin-right:210px;
+}
+
+.review_button input[type=submit]{
+width:90px;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+border:1px solid white;
+padding:10px;
+text-align:center;
+background:darkorange;
+color:white;
+font-style:italic;
+}
+
+.review_button input[type=reset]{
+width:90px;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+border:1px solid white;
+padding:10px;
+text-align:center;
+background:darkorange;
+color:white;
+font-style:italic;
+}
+
+.review_button input[type=reset]:hover{
+cursor:pointer;
+}
+.review_button input[type=submit]:hover{
+cursor:pointer;
+}
+
+.review_wrap{
+    width:500px;
+	height:400px;
+	text-align:center;
+}
+
+#review_cont{
+ resize:none;
+}
+
+div.rest_down{
+	width: 95%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+h2.down_title {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #4F4F4F;
+    margin: 10px;
+}
+
+header.down_header {
+	display: -webkit-flex;
+	margin-bottom: 10px;
+}
+
+ul.point_filter {
+	display: -webkit-flex;
+    list-style: none;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+li.point_item:after {
+	content: '|';
+	margin: 0 7px;
+}
+
+li.point_item:last-child:after {
+	content: '';
+	display: none;
+}
+
+button.point_button {
+    appearance: none;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 18px;
+    color: #4F4F4F;
+}
+
+li.review_item {
+    margin: 0px 0px 20px 0px;
+}
+
+a.review_box{
+	display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    padding: 20px 0 20px 0;
+}
+
+div.review_user {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-basis: 70px;
+    -ms-flex-preferred-size: 70px;
+    flex-basis: 70px;
+    -webkit-flex-basis: 70px;
+    margin: 55px 35px 0 8px;
+}
+
+div.review_content2{
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+}
+
+div.review_wrap2{
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    width: fit-content;
+    height: fit-content;
+    text-align: -webkit-auto;
+    
+}
+
+p.review_text {
+    font-size: 20px;
+    line-height: 1.8;
+    word-break: break-all;
+    color: #000000;
+    font-weight: bold;
+}
+
+span.review_date {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #9B9B9B;
+}
+
+div.edit_button {
+    margin-left: 143px;
+}
+
+button.review_edit{
+	appearance: none;
+    cursor: pointer;
+    border: solid #767676;
+    border-radius: 8px;
+    background-color: #767676;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: lighter;
+}
+
+button.review_del{
+	margin-left: 8px;
+	appearance: none;
+    cursor: pointer;
+    border: solid #767676;
+    border-radius: 8px;
+    background-color: #767676;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: lighter;
+}
+
+div.review_page{
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    min-width: 120px;
+    height: 72px;
+    margin: 0 auto;
+    font-size: 19px;
+    color: #ff792a;
+    cursor: pointer;
+}
+	
+	h2.m_edit_header {
+    text-align: center;
+    margin-top: 10px;
+    color: #7a7a7a;
+}
+
+p.m_edit_text {
+    text-align: center;
+    margin-top: 10px;
+    color: black;
+    font-weight: bolder;
+}
+
+textarea.m_edit_input {
+    margin: 20px 20px 10px 20px;
+    width: 95%;
+    height: 65%;
+    padding: 5px 10px 5px 10px;
+    font-size: 18px;
+}
+
+.m_edit_btn {
+    text-align: -webkit-center;
+}
+
+input[type="submit"] {
+	margin-left: 8px;
+	appearance: none;
+    cursor: pointer;
+    border: solid #767676;
+    border-radius: 8px;
+    background-color: #767676;
+    font-size: 17px;
+    color: #FFFFFF;
+    font-weight: lighter;
+}
+	
+
+
+
 </style>
 
 </head>
@@ -258,12 +688,80 @@ kakao.maps.event.addListener(marker, 'click', function() {
 
 
 
-<%-- 리뷰 배치 --%>
-<div class="review_batch">
-
 
 </div>
+<%-- 리뷰 배치 --%>
 
+
+<div class="rest_down" style="height: -webkit-fill-available;">
+<header class="down_header">
+<h2 class="down_title">리뷰</h2>
+<ul class="point_filter">
+<li class="point_item"><button class="point_button" value="">전체 평점<span class="point_count"> ( ${point} )</span></button></li>
+</ul>
+</header>
+<ul class="review_list">
+<c:if test="${empty rlist}">
+<li class="review_item">
+<a class="review_box">
+<div class="review_user">
+<div class="profile_wrap">
+</div>
+<span class="review_username" style="text-align: center; color: #000000; font-weight: 600;"><%-- 리뷰 유저 이름 --%></span>
+</div>
+<div class="review_content" style="width: 80%;">
+<div class="review_wrap2">
+<p class="review_text" style="font-size: 20px; line-height: 1.8; color: #000000; font-weight: bold;">
+<%-- 작성한 리뷰 --%>작성된 리뷰가 없습니다.
+</p>
+<span class="review_date" style="font-size: 16px; line-height: 3; color: #C8C8C8;"><%-- 리뷰 작성 시간 --%></span>
+</div>
+</div>
+<div class="point_rating">
+</div>
+</a>
+<div class="edit_button">
+</div>
+</li>
+</c:if>
+<c:if test="${!empty rlist}">
+ <c:forEach var="r" items="${rlist}" varStatus="status">
+<li class="review_item">
+<a class="review_box">
+<div class="review_user">
+<div class="profile_wrap">
+<img src="./resources/images/like.jpg" width="100" height="100"/>
+</div>
+<c:if test="${!empty r.mem_id}">
+<span class="review_username" style="text-align: center; color: #000000; font-weight: 600;"><%-- 리뷰 유저 이름 --%>${r.mem_id}</span>
+</c:if>
+<c:if test="${r.mem_id==null}">
+<span class="review_username" style="text-align: center; color: #000000; font-weight: 600;"> 탈퇴한 회원</span>
+</c:if>
+</div>
+<div class="review_content" style="width: 80%;">
+<div class="review_wrap2">
+<p class="review_text" style="font-size: 20px; line-height: 1.8; color: #000000; font-weight: bold;">
+<%-- 작성한 리뷰 --%>${r.r_cont}
+</p>
+<span class="review_date" style="font-size: 16px; line-height: 3; color: #C8C8C8;"><%-- 리뷰 작성 시간 --%>${r.regdate}</span>
+</div>
+</div>
+<div class="point_rating">
+<img src="./resources/images/like.jpg" width="60" height="60" style="margin-top: 55px; margin-left: 20px;"/>
+</div>
+</a>
+<div class="edit_button">
+
+<button class="review_del" onclick="">삭제</button>
+</div>
+</li>
+</c:forEach>
+</c:if>
+</ul>
+<c:if test="${listcount > 5}">
+<div class="review_page" role="button" onclick="review_page()" style="margin: 0 50% 0 45%;">더보기</div>
+</c:if>
 </div>
 
 

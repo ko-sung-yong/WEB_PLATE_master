@@ -1022,7 +1022,15 @@ kakao.maps.event.addListener(marker, 'click', function() {
 <div class="profile_wrap">
 <img src="../resources/images/like.jpg" width="100" height="100"/>
 </div>
+
+<c:if test="${!empty r.mem_id }">
 <span class="review_username" style="text-align: center; color: #000000; font-weight: 600;"><%-- 리뷰 유저 이름 --%>${r.mem_id}</span>
+</c:if>
+
+<c:if test="${empty r.mem_id }">
+<span class="review_username" style="text-align: center; color: #000000; font-weight: 600;"> 탈퇴한 회원 </span>
+</c:if>
+
 </div>
 <div class="review_content" style="width: 80%;">
 <div class="review_wrap2">

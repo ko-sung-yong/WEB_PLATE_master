@@ -1,13 +1,19 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="../include/logo.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
 <script src="../resources/js2/jquery.js"> </script>
 <script src="https://kit.fontawesome.com/9376c7b079.js"></script>
-
 <link rel="stylesheet" href="../resources/css2/review.css">
 <script src="../resources/js2/review.js"></script>
 <style>
-/*-------- 모달 창  -------- */
+
 input[id*="btn"]{
 	display:none;
 	}
@@ -155,175 +161,7 @@ cursor:pointer;
 cursor:pointer;
 }
 
-.review_wrap{
-    width:500px;
-	height:400px;
-	text-align:center;
-}
-
-#review_cont{
- resize:none;
-}
-
-div.rest_down{
-	width: 95%;
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
-h2.down_title {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #4F4F4F;
-    margin: 10px;
-}
-
-header.down_header {
-	display: -webkit-flex;
-	margin-bottom: 10px;
-}
-
-ul.point_filter {
-	display: -webkit-flex;
-    list-style: none;
-    margin-left: auto;
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-li.point_item:after {
-	content: '|';
-	margin: 0 7px;
-}
-
-li.point_item:last-child:after {
-	content: '';
-	display: none;
-}
-
-button.point_button {
-    appearance: none;
-    cursor: pointer;
-    border: 0px;
-    border-radius: 0;
-    background-color: transparent;
-    font-size: 18px;
-    color: #4F4F4F;
-}
-
-li.review_item {
-    margin: 0px 0px 20px 0px;
-}
-
-a.review_box{
-	display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    -moz-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-direction: row;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    padding: 20px 0 20px 0;
-}
-
-div.review_user {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -moz-flex-basis: 70px;
-    -ms-flex-preferred-size: 70px;
-    flex-basis: 70px;
-    -webkit-flex-basis: 70px;
-    margin: 55px 35px 0 8px;
-}
-
-div.review_content2{
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-}
-
-div.review_wrap2{
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    flex-direction: column-reverse;
-    -webkit-flex-direction: column-reverse;
-    -webkit-box-direction: reverse;
-    -webkit-box-orient: vertical;
-    width: fit-content;
-    height: fit-content;
-    text-align: -webkit-auto;
-    
-}
-
-p.review_text {
-    font-size: 20px;
-    line-height: 1.8;
-    word-break: break-all;
-    color: #000000;
-    font-weight: bold;
-}
-
-span.review_date {
-    font-size: 14px;
-    line-height: 1.2;
-    color: #9B9B9B;
-}
-
-div.edit_button {
-    margin-left: 143px;
-}
-
-button.review_edit{
-	appearance: none;
-    cursor: pointer;
-    border: solid #767676;
-    border-radius: 8px;
-    background-color: #767676;
-    font-size: 18px;
-    color: #FFFFFF;
-    font-weight: lighter;
-}
-
-button.review_del{
-	margin-left: 8px;
-	appearance: none;
-    cursor: pointer;
-    border: solid #767676;
-    border-radius: 8px;
-    background-color: #767676;
-    font-size: 18px;
-    color: #FFFFFF;
-    font-weight: lighter;
-}
-
-div.review_page{
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    min-width: 120px;
-    height: 72px;
-    margin: 0 auto;
-    font-size: 19px;
-    color: #ff792a;
-    cursor: pointer;
-}
-
+<%-- 수정 모달 창--%>
 input[id*="editbtn"]{
 	display: none;
 }
@@ -444,8 +282,10 @@ input[type="reset"] {
     font-weight: lighter;
 }
 
-
-</style>    
+</style>
+</head>
+<body>
+  
 <c:if test="${!empty Sid}">    
 <c:forEach var="like" items="${mem}">
 
@@ -684,11 +524,6 @@ kakao.maps.event.addListener(marker, 'click', function() {
 <h2 class="down_title">리뷰</h2>
 <ul class="point_filter">
 <li class="point_item"><button class="point_button" value="">전체 평점<span class="point_count"> ( ${point} )</span></button></li>
-<!--<li class="point_item"><button class="point_button" value="">☆☆☆☆☆<span class="point_count">()</span></button></li>
-<li class="point_item"><button class="point_button" value="">☆☆☆☆<span class="point_count">()</span></button></li>
-<li class="point_item"><button class="point_button" value="">☆☆☆<span class="point_count">()</span></button></li>
-<li class="point_item"><button class="point_button" value="">☆☆<span class="point_count">()</span></button></li>
-<li class="point_item"><button class="point_button" value="">☆<span class="point_count">()</span></button></li>  -->
 </ul>
 </header>
 <ul class="review_list">
@@ -775,7 +610,12 @@ kakao.maps.event.addListener(marker, 'click', function() {
 	</div>
 </div>
 
-<button class="review_del" onclick="">삭제</button>
+<form style="display: -webkit-inline-box;" method="post" action="review_del_ok" >
+<input type="hidden" name="mem_id" value="${Sid}">
+<input type="hidden" name="rno" value="${r.rno}">
+<input type="hidden" name="f_num" id="f_num" value="${f_num}">
+<button type="submit" class="review_del" >삭제</button>
+</form>
 
 
 </div>
@@ -983,11 +823,6 @@ kakao.maps.event.addListener(marker, 'click', function() {
 <h2 class="down_title">리뷰</h2>
 <ul class="point_filter">
 <li class="point_item"><button class="point_button" value="">전체 평점<span class="point_count"> ( ${point} )</span></button></li>
-<!--<li class="point_item"><button class="point_button" value="">☆☆☆☆☆<span class="point_count">()</span></button></li>
-<li class="point_item"><button class="point_button" value="">☆☆☆☆<span class="point_count">()</span></button></li>
-<li class="point_item"><button class="point_button" value="">☆☆☆<span class="point_count">()</span></button></li>
-<li class="point_item"><button class="point_button" value="">☆☆<span class="point_count">()</span></button></li>
-<li class="point_item"><button class="point_button" value="">☆<span class="point_count">()</span></button></li>  -->
 </ul>
 </header>
 <ul class="review_list">
@@ -1058,5 +893,8 @@ kakao.maps.event.addListener(marker, 'click', function() {
 
 </c:if>
 <%-- 회원이 아닐때 end --%>
+
+</body>
+</html>
 
 <jsp:include page="../include/footer.jsp" />

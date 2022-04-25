@@ -39,6 +39,12 @@ public interface AdminService {
 	void updateReviewEdit(ReviewVO review);
 	
 	String getmem_id(ReviewVO review);
+	// 府轰 昏力
+	void delReview(ReviewVO review);
+	
+	// 包府磊 府轰 昏力
+	
+	void delReview(int rno);
 	
 	
 	

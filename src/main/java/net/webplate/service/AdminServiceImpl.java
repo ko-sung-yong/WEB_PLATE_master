@@ -125,6 +125,21 @@ public class AdminServiceImpl implements AdminService {
 		
 	}
 
+	@Transactional
+	@Override
+	public void delReview(ReviewVO review) {
+		adminDao.delReview(review);
+		adminDao.downhit(review);
+		
+	}
+
+
+	// 包府磊 府轰 昏力
+	@Override
+	public void delReview(int rno) {
+		adminDao.delReview(rno);		
+	}
+
 
 
 

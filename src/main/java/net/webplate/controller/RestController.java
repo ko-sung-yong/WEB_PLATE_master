@@ -190,5 +190,20 @@ public class RestController {
 		
 	}
 	
+	@RequestMapping("review_del_ok")
+    public String review_del_ok(HttpServletResponse response,HttpServletRequest request,ReviewVO review) throws Exception{
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out=response.getWriter();
+
+        int f_num=Integer.parseInt(request.getParameter("f_num"));
+        int rno=Integer.parseInt(request.getParameter("rno"));
+        String mem_id=request.getParameter("mem_id");
+
+        adminService.delReview(review);
+
+        return "redirect:/rest/rest1?f_num="+f_num;
+
+    }
+	
 
 }

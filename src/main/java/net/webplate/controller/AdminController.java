@@ -467,5 +467,45 @@ public class AdminController {
 		
 	}
 	
+	
+	@RequestMapping("admin_review_del")
+	public String admin_review_del(HttpServletRequest request,HttpServletResponse response, HttpSession session)throws Exception {
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out=response.getWriter();
+		
+		String admin_id=(String)session.getAttribute("admin_id");
+		
+		if(admin_id==null) {
+			out.println("<script>");
+			out.println("alert('관리자님 다시 로그인 해주세요!');");
+			out.println("location='admin_Login';");
+			out.println("</script>");
+		}else {
+			int f_num=Integer.parseInt(request.getParameter("f_num"));
+			int rno=Integer.parseInt(request.getParameter("rno"));
+			
+			int page=1;
+			int limit=1000;
+			if(request.getParameter("page")!=null) {
+				page=Integer.parseInt(request.getParameter("page"));
+			}
+			
+			
+			adminService.delReview(rno);
+		
+			
+
+			out.println("<script>");
+			out.println("alert('리뷰가 삭제되었습니다!');");
+			out.println("location='admin_Board_cont?f_num="+f_num+"&page="+page+"';");
+			
+			out.println("</script>");
+			
+			
+		}
+		return null;
+		
+	}
+	
 
 }

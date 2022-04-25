@@ -146,4 +146,16 @@ select mem_id from review where rno=#{rno}
 update review set r_cont=#{r_cont} where rno=#{rno} and mem_id=#{mem_id}
 </update>
 
+<!--  리뷰 삭제  -->
+<delete id="review_delok">
+delete from review where rno=#{rno} and mem_id=#{mem_id}
+</delete>
+
+<!--  관리자 리뷰 삭제 -->
+<delete id="review_addel_ok">
+delete from review where rno=#{rno}
+</delete>
+
+
+
 </mapper>

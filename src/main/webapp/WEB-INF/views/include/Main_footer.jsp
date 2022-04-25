@@ -26,7 +26,7 @@
              </div>
              <div class="foot_ul" id="foot_ul2">
                <ul>               
-                 <li><a href="#">회사소개</a></li>
+                 <li><a href="#">사이트 소개</a></li>
                  <li><a href="board">고객센터</a></li>
                  <li><a href="#">공지사항</a></li>
                </ul>

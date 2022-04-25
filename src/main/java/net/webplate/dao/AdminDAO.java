@@ -47,6 +47,12 @@ public interface AdminDAO {
 
 	void updateReviewEdit(ReviewVO review);
 
+	void delReview(ReviewVO review);
+   
+	// 包府磊 府轰 昏力
+	
+	void delReview(int rno);
+
 
 
 

@@ -143,6 +143,24 @@ public class AdminDAOImpl implements AdminDAO {
 
 
 
+		@Override
+		public void delReview(ReviewVO review) {
+			sql.delete("review_delok",review);
+			
+		}
+
+
+		
+       
+		// 包府磊 府轰 昏力
+		@Override
+		public void delReview(int rno) {
+			sql.delete("review_addel_ok",rno);
+			
+		}
+
+
+
 
 
 	

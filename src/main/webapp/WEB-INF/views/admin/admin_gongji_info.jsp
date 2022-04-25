@@ -6,57 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title> 공지사항 글쓰기 </title>
+<link rel="stylesheet" href="./resources/css2/gongji_insert.css">
 
-<style>
-.gongji_wrap{
-width:600px;
-text-align:center;
-border:1px solid orange;
-margin:auto;
-letter-spacing: 3px;
-}
-.gongji_content{
-line-height:30px;
-}
-
-#ad_title{
-margin-left:18px;
-}
-#cont{
-vertical-align:top;
-}
-
-#gongji_cont{
-margin-top:5px;
-resize:none;
-}
-
-.cont_button_page{
-margin-bottom:30px;
-margin-right:100px;
-}
-
-
-
-.cont_button_page input[type=button]{
-width:50px;
-margin-left:5px;
-padding:5px;
-background-color:darkorange;
-border:0px;
-color:white;
-border-radius:15px;
-}
-
-
-.cont_button_page input[type=button]:hover{
-cursor:pointer;
-}
-</style>
 </head>
 <body>
 <div class="gongji_wrap"> 
-<h2> 공지사항 글쓰기</h2>
+<h2> 공지사항 내용</h2>
 
 
 <div class="gongji_content">

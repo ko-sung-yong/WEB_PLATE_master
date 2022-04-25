@@ -113,3 +113,22 @@ function Check_memAdmin(){
 }
 
 /* 회원 정보 수정  페이지*/
+
+/*  공지사항 글쓰기 */
+function check_gongji(){
+	if($.trim($('#title').val())==''){
+		alert('제목을 입력해주세요!');
+		$('#title').val('').focus();
+		return false;
+	}
+	if($.trim($('#gongji_cont').val())==''){
+		alert('글내용을 입력해주세요!');
+		$('#gongji_cont').val('').focus();
+		return false;
+	}	
+	
+}
+
+
+
+

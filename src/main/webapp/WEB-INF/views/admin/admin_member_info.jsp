@@ -3,88 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="admin_main.jsp" />
+<link rel="stylesheet" href="./resources/css2/admin_member_info.css">
 
-<style>
-
-
-
-#mlist_wrap{
-width:300px; height:370px;
-margin-left:auto; margin-right:auto;
-color:black;
-}
-
-.mlist_title{
-color:black;
-margin-bottom:20px;
-}
-
-.mem_label{
-padding:10px;
-color:black;
-}
-
-#mem_list{
-color:black;}
-
-
-#cont_list{
-margin-top:20px;
-}
-
-#cont_list input[type=submit]{
-width:130px;
-font-size:15px;
-
-font-weight:bold;
-border-radius:10px;
-border:1px solid white;
-padding:15px;
-text-align:center;
-background:darkorange;
-color:white;
-font-style:italic;
-}
-
-#cont_list input[type=button]{
-width:130px;
-font-size:15px;
-
-font-weight:bold;
-border-radius:10px;
-border:1px solid white;
-padding:15px;
-margin-left:13px;
-text-align:center;
-background:darkorange;
-color:white;
-font-style:italic;
-}
-
-#cont_list input[type=button]:hover{
-cursor:pointer;
-}
-
-#cont_list input[type=submit]:hover{
-cursor:pointer;
-}
-
-.mem_dellabel{
-padding:10px;
-color:black;
-font-weight:bold;
-font-size:16px;
-margin-bottom:20px;
-}
-
-#mem_delcont{
-margin-top:10px;
-resize:none;
-margin-left:10px;
-}
-
-
-</style>
    
 
 <br>

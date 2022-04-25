@@ -63,6 +63,23 @@ public class FooterController {
 		return gm;
 	}
 	
+	
+	@GetMapping("board_cont")
+	public ModelAndView board_cont(HttpServletRequest request) {
+		int gongji_no=Integer.parseInt(request.getParameter("gongji_no"));
+		int page=1;
+		if(request.getParameter("page")!=null) {
+			page=Integer.parseInt(request.getParameter("page"));
+		}
+		
+		AdminGongjiVO gongji=gongjiService.getInfo(gongji_no);
+		gongjiService.updateHit(gongji_no);
+		
+		ModelAndView cm=new ModelAndView("footer/board_cont");
+		cm.addObject("page", page);
+		cm.addObject("gongji", gongji);
+		return cm;
+	}
 
 	
 	@GetMapping(value="NonMember")

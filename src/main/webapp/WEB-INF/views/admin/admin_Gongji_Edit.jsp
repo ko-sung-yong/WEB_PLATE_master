@@ -5,81 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 공지사항 글쓰기 </title>
-
-<script>
-function check_gongji(){
-	if($.trim($('#title').val())==''){
-		alert('제목을 입력해주세요!');
-		$('#title').val('').focus();
-		return false;
-	}
-	if($.trim($('#gongji_cont').val())==''){
-		alert('글내용을 입력해주세요!');
-		$('#gongji_cont').val('').focus();
-		return false;
-	}	
-	
-}
+<title> 공지사항 글 수정 </title>
+<script src="./resources/js2/admin_main.js"></script>
+<link rel="stylesheet" href="./resources/css2/gongji_edit.css">
 
 
-</script>
-<style>
-.gongji_wrap{
-width:600px;
-text-align:center;
-border:1px solid orange;
-margin:auto;
-letter-spacing: 3px;
-}
-.gongji_content{
-line-height:30px;
-}
-
-#ad_title{
-margin-left:18px;
-}
-#cont{
-vertical-align:top;
-}
-
-#gongji_cont{
-margin-top:5px;
-resize:none;
-}
-
-.button_page{
-margin-bottom:30px;
-margin-right:115px;
-}
-
-.button_page input[type=submit]{
-width:40px;
-margin-left:5px;
-padding:5px;
-background-color:darkorange;
-border:0px;
-color:white;
-border-radius:15px;
-}
-
-.button_page input[type=button]{
-width:40px;
-margin-left:5px;
-padding:5px;
-background-color:darkorange;
-border:0px;
-color:white;
-border-radius:15px;
-}
-
-.button_page input[type=submit]:hover{
-cursor:pointer;
-}
-.button_page input[type=button]:hover{
-cursor:pointer;
-}
-</style>
 </head>
 <body>
 <div class="gongji_wrap"> 

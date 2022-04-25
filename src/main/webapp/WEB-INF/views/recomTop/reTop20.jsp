@@ -3,7 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="../resources/js2/jquery.js"></script>
 <script src="../resources/js2/show.js"></script>
-
+<style>
+.more{
+margin-top:10px;
+}
+.footer{
+margin-top:30px;
+}
+</style>
 <jsp:include page="../include/logo.jsp" />
 
 

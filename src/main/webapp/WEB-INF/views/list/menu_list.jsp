@@ -11,7 +11,9 @@ $(function(){
 	
 	});
 });
+
 </script>
+
 <jsp:include page="../include/logo.jsp" />
 
   <div class="list_layout">

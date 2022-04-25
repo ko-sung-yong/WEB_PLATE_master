@@ -74,10 +74,13 @@ public class FooterController {
 		
 		AdminGongjiVO gongji=gongjiService.getInfo(gongji_no);
 		gongjiService.updateHit(gongji_no);
-		
+		String regdate=gongji.getGongji_register().substring(0,10);
+		String cont=gongji.getGongji_cont().replace("\n", "<br>");
 		ModelAndView cm=new ModelAndView("footer/board_cont");
 		cm.addObject("page", page);
 		cm.addObject("gongji", gongji);
+		cm.addObject("cont", cont);
+		cm.addObject("regdate", regdate);
 		return cm;
 	}
 

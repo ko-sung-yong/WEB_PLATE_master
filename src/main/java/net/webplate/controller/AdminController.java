@@ -492,6 +492,14 @@ public class AdminController {
 			
 			
 			adminService.delReview(rno);
+			  // 평점 가져오기
+	    	double point=adminService.getPoint(f_num);
+	    	
+	    	FoodVO food=new FoodVO();
+			food.setGrade(point);
+			food.setF_num(f_num);
+	    	// 평점 업데이트
+	    	adminService.updateReviewPoint(food);
 		
 			
 

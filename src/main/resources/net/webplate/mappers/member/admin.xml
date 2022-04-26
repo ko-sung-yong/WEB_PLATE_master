@@ -100,7 +100,7 @@ insert into review(rno,f_num,mem_id,r_point,r_cont,regdate) values(rno.nextval,#
 
 <!--  리뷰 점수 불러오기 -->
 <select id="review_point" resultType="double">
-select round(avg(r_point),1) from review where f_num=#{f_num}
+select nvl(round(avg(r_point),1),0) from review where f_num=#{f_num}
 </select>
 
 <!--  리뷰 점수 갱신 -->

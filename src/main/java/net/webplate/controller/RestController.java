@@ -200,6 +200,17 @@ public class RestController {
         String mem_id=request.getParameter("mem_id");
 
         adminService.delReview(review);
+        
+        // 평점 가져오기
+    	double point=adminService.getPoint(f_num);
+    	
+    	FoodVO food=new FoodVO();
+		food.setGrade(point);
+		food.setF_num(f_num);
+    	// 평점 업데이트
+    	adminService.updateReviewPoint(food);
+		
+		
 
         return "redirect:/rest/rest1?f_num="+f_num;
 

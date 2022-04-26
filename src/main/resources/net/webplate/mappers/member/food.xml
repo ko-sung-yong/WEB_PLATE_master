@@ -17,7 +17,7 @@ where bsnsnm like #{find_name} or menu like #{find_name} or addr like #{find_nam
 <!--  전체 목록   중에 50개 보여주기 -->
 <select id="food_list" resultType="food">
 
-select f_num,bsnsnm,addr,food_file1 from food 
+select f_num,bsnsnm,addr,food_file1,grade from food 
 where <![CDATA[rownum<=50]]> order by grade desc
 
 </select>

@@ -97,5 +97,18 @@ public class FooterController {
 		ModelAndView m=new ModelAndView("footer/Terms_of_Use");
 		return m;
 	}
+	
+	@GetMapping(value="AboutUS")
+	public ModelAndView AboutUS() {
+		ModelAndView m=new ModelAndView("footer/AboutUs");
+		return m;
+	}
+	
+	
+	@GetMapping(value="Inquire")
+	public ModelAndView Inquire() {
+		ModelAndView m=new ModelAndView("footer/Inquire");
+		return m;
+	}
 
 }

@@ -4,7 +4,6 @@
 <script src="../resources/js2/jquery.js"></script>
 <script src="../resources/js2/show.js"></script>
 
-
 <jsp:include page="../include/logo.jsp" />
 
 <div class="recom_top">
@@ -40,7 +39,7 @@
           </a>
         </div>
       </div>  
-      
+   
       <div class="recom_right">
         <c:if test="${like.like_state==0}">
       <img name="heart"id="heart" alt="" src="../resources/images/starb.png" width="80" height="80" > 

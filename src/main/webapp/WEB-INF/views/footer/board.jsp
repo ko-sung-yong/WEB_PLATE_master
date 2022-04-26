@@ -196,7 +196,7 @@ cursor:pointer;
 <%-- 검색후 전체 목록으로 돌아가는 기능 --%>
 <div class="gongji_total_list">
 <c:if test="${(!empty find_field) && (!empty find_name)}">
- <input type="button" value="전체목록" onclick="location='admin_Gongji_list?page=${page}';">
+ <input type="button" value="전체목록" onclick="location='board?page=${page}';">
 
 </c:if>
 

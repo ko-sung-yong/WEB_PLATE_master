@@ -12,11 +12,7 @@ public class ListController {
 	public void menu_list() {
 		
 	}
-	
-	@RequestMapping(value="test")
-	public void test() {
-		
-	}
+
 	
 	@RequestMapping(value="top_list")
 	public void top_list() {

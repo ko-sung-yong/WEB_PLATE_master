@@ -215,7 +215,7 @@ public class AdminController {
 			}
 			
 			FoodVO f=adminService.getAdminFoodCont(f_num);
-			String food_menu=f.getMenu().replace("\n", "<br>");
+			String food_menu=f.getMenu().replace("/n", "<br>");
 						
 			ModelAndView m=new ModelAndView("admin/admin_Board_Edit");
 			m.addObject("f", f);

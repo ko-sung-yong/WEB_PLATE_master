@@ -71,9 +71,8 @@ public class FooterController {
 		if(request.getParameter("page")!=null) {
 			page=Integer.parseInt(request.getParameter("page"));
 		}
-		
-		AdminGongjiVO gongji=gongjiService.getInfo(gongji_no);
 		gongjiService.updateHit(gongji_no);
+		AdminGongjiVO gongji=gongjiService.getInfo(gongji_no);		
 		String regdate=gongji.getGongji_register().substring(0,10);
 		String cont=gongji.getGongji_cont().replace("/n", "<br>");
 		ModelAndView cm=new ModelAndView("footer/board_cont");

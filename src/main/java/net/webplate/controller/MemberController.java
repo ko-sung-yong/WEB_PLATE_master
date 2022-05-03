@@ -384,8 +384,7 @@ public class MemberController {
     			message.setText("회원님의 임시 비밀번호는"+ran_pwd+" 입니다.");  // 로그인할때 암호화니까 초기값 넣음
  			    			
     			Transport.send(message);  // 메시지 전송
-    			System.out.println("메일 발송 성공!");    			
-				
+    			
     			out.println("<script>");
     			out.println("alert('메일을 확인해주세요!');");
     			out.println("self.close();");
